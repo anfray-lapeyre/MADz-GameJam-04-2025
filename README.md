@@ -1,6 +1,33 @@
 # MADz-GameJam-04-2025
  Gamedev.js game jam from 04/2025 - MADz team
 
+ <h1>Project Architecture</h1>
+ <b>://res</b>
+ <ul>
+   <li>Assets</li>
+     <ul>
+      <li>Music</li>
+      <li>SFX</li>
+      <li>VFX</li>
+      <li>UI</li>
+      <li>2D</li>
+      <li>3D</li>
+     </ul>
+   <li>Scenes</li>
+     <ul>
+      <li>Levels</li>
+      <li>Objects</li>
+      <li>UI</li>
+     </ul>
+   <li>Scripts</li>
+      <ul>
+       <li>Global</li>
+       <li>NodeScripts</li>
+       <li>Resources</li>
+       <li>Tools</li>
+      </ul>
+ </ul>
+  
 <h1>Naming conventions: </h1>
 <h2>Scenes :</h2> 
 <b>UI Element (Menu, HUD, Overlay,...)</b> - ui_button<br/>

@@ -1,17 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dutmn56llcgu6"]
+[gd_scene load_steps=4 format=3 uid="uid://dutmn56llcgu6"]
 
-[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_parent_piece.tscn" id="1_rijgl"]
+[ext_resource type="Texture2D" uid="uid://dp7igmvsk0mcr" path="res://Assets/2D/icon.svg" id="1_fau7e"]
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_parent_experience.tscn" id="1_rijgl"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mvf2v"]
-distance = -133.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix5m4"]
+size = Vector2(652, 119)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-shape = SubResource("WorldBoundaryShape2D_mvf2v")
+position = Vector2(-3, 49.5)
+shape = SubResource("RectangleShape2D_ix5m4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(-4, 55)
+scale = Vector2(5.07813, 1)
+texture = ExtResource("1_fau7e")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="parent piece" parent="." instance=ExtResource("1_rijgl")]
+position = Vector2(-2, -264)
+
+[node name="parent piece2" parent="." instance=ExtResource("1_rijgl")]
+position = Vector2(-57, -496)
+
+[node name="parent piece3" parent="." instance=ExtResource("1_rijgl")]
+position = Vector2(14, -708)

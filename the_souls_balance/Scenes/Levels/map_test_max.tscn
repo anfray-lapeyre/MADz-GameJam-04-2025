@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dutmn56llcgu6"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Pieces/obj_parent_piece.tscn" id="1_rijgl"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mvf2v"]
+distance = -133.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape2D_mvf2v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="parent piece" parent="." instance=ExtResource("1_rijgl")]

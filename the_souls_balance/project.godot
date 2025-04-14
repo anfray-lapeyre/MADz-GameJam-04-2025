@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="The_souls_balance"
+run/main_scene="res://Scenes/Levels/map_test_max.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/2D/icon.svg"
 
 [dotnet]
 

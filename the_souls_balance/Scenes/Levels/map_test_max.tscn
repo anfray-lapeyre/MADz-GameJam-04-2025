@@ -8,7 +8,9 @@ size = Vector2(652, 119)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="Ground" type="RigidBody2D" parent="."]
+position = Vector2(3, 235)
+freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(-3, 49.5)
@@ -20,6 +22,7 @@ scale = Vector2(5.07813, 1)
 texture = ExtResource("1_fau7e")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5, 50)
 
 [node name="parent piece" parent="." instance=ExtResource("1_rijgl")]
 position = Vector2(-2, -264)
@@ -29,3 +32,12 @@ position = Vector2(-57, -496)
 
 [node name="parent piece3" parent="." instance=ExtResource("1_rijgl")]
 position = Vector2(14, -708)
+
+[node name="parent piece4" parent="." instance=ExtResource("1_rijgl")]
+position = Vector2(-51, -955)
+
+[node name="parent piece5" parent="." instance=ExtResource("1_rijgl")]
+position = Vector2(-106, -1187)
+
+[node name="parent piece6" parent="." instance=ExtResource("1_rijgl")]
+position = Vector2(-35, -1399)

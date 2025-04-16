@@ -1,10 +1,11 @@
 extends RigidBody2D
 
-@export var ex_fall_speed: float = 100.0 # Falling speed when player is in control
+@export var ex_fall_speed: float = 200.0 # Falling speed when player is in control
 @export var ex_horizontal_distance: float = 50 # horizontal distance when pressing Q and D
 @export_range(0.0, 1.0) var ex_smoothiness_of_transition := 0.5 # Smoothness of the horizontal movement
 @export var ex_gravity: float = 1.0 # How strong is the gravity when you don't controle the experience anymore
 @export var ex_time_before_release_control: float = 0.0
+signal sig_control_lost
 
 var target_position: Vector2
 var is_controlled: bool = true
@@ -41,5 +42,6 @@ func _release_control(): #function to make the player loose control of the piece
 	await get_tree().create_timer(ex_time_before_release_control).timeout
 	is_controlled = false
 	freeze = false
+	sig_control_lost.emit() #send a signal to game level
 	gravity_scale = ex_gravity
 	print ("release control")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://6quqp1owskw2"]
 
-[ext_resource type="Script" path="res://Scripts/NodeScripts/scr_obj_experience.gd" id="1_4lwnh"]
+[ext_resource type="Script" uid="uid://timyimdp8xdv" path="res://Scripts/NodeScripts/scr_obj_experience.gd" id="1_4lwnh"]
 [ext_resource type="Texture2D" uid="uid://dp7igmvsk0mcr" path="res://Assets/2D/icon.svg" id="2_m44ve"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wlxw7"]

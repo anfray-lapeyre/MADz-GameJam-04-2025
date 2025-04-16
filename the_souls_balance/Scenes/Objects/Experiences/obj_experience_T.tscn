@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://lm6bbsji7bgp"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_6cc8r"]
+[ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/T_T_Anger.png" id="2_4vrwp"]
+[ext_resource type="Shader" uid="uid://fasmiiqn230t" path="res://Assets/Shader/sh_experience.tres" id="2_bixk5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hai1y"]
+shader = ExtResource("2_bixk5")
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_bixk5"]
+points = PackedVector2Array(-179.5, -58.5, 175.5, -58.5, 175.5, 61.5, 60.5, 61.5, 60.5, 177.5, -57.5, 177.5, -57.5, 61.5, -179.5, 61.5)
+
+[node name="obj_experience" instance=ExtResource("1_6cc8r")]
+
+[node name="experience_sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_hai1y")
+position = Vector2(-4, 0)
+texture = ExtResource("2_4vrwp")
+
+[node name="experience_collider" parent="." index="1"]
+position = Vector2(-4, -61)
+shape = SubResource("ConvexPolygonShape2D_bixk5")
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(-60, 135)

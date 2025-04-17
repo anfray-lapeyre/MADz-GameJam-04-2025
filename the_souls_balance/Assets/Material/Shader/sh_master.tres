@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=21 format=3 uid="uid://fasmiiqn230t"]
 
-[ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/T_T_Anger.png" id="1_ipskn"]
-[ext_resource type="Texture2D" uid="uid://b3lw8v61t677b" path="res://Assets/2D/Background/t_antiquepaper.jpg" id="2_cu0jj"]
+[ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/T_T_Anger.png" id="1_521kc"]
+[ext_resource type="Texture2D" uid="uid://b3lw8v61t677b" path="res://Assets/2D/Background/t_antiquepaper.jpg" id="2_v05l7"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_q0gme"]
 default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0.5, 0.5, 0.5)]
@@ -44,7 +44,7 @@ function = 31
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_q0gme"]
 expanded_output_ports = [0]
 source = 2
-texture = ExtResource("1_ipskn")
+texture = ExtResource("1_521kc")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_15j37"]
@@ -57,7 +57,7 @@ input_name = "screen_uv"
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_um488"]
 expanded_output_ports = [0]
-texture = ExtResource("2_cu0jj")
+texture = ExtResource("2_v05l7")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_v7vxr"]
@@ -182,7 +182,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-220.513, -90.0916)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(2100, 160)

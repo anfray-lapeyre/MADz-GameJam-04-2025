@@ -5,6 +5,7 @@
 
 [node name="obj_experience" type="RigidBody2D"]
 script = ExtResource("1_717cv")
+ex_fall_speed = 1000.0
 
 [node name="experience_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_7giel")
@@ -13,6 +14,13 @@ texture = ExtResource("1_7giel")
 position = Vector2(9.53674e-07, 0.999997)
 scale = Vector2(3.9375, 4)
 polygon = PackedVector2Array(15.4921, 15.25, -15.4921, 15.25, -15.4921, -15.5, 15.4921, -15.5)
+
+[node name="light_beam" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.121)
+show_behind_parent = true
+position = Vector2(-0.500005, -1)
+scale = Vector2(0.945312, 90.875)
+texture = ExtResource("1_7giel")
 
 [node name="detect_area" type="Area2D" parent="."]
 

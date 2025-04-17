@@ -6,24 +6,24 @@
 [ext_resource type="Texture2D" uid="uid://dp7igmvsk0mcr" path="res://Assets/2D/icon.svg" id="4_04g2o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02pa6"]
-size = Vector2(729, 123)
+size = Vector2(2126.5, 123)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kl2sp")
-ex_experience_list = Array[PackedScene]([ExtResource("2_obd1m"), ExtResource("3_sailx"), ExtResource("2_obd1m"), ExtResource("2_obd1m"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx")])
-ex_spawn_position = Vector2(600, -500)
+ex_experience_list = Array[PackedScene]([ExtResource("2_obd1m"), ExtResource("3_sailx"), ExtResource("2_obd1m"), ExtResource("2_obd1m"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx"), ExtResource("3_sailx")])
+ex_spawn_position = Vector2(600, -3000)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="ground" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(655, 474.5)
+[node name="gound_collision" type="CollisionShape2D" parent="ground"]
+position = Vector2(709.25, 481.5)
 shape = SubResource("RectangleShape2D_02pa6")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(653.5, 476)
-scale = Vector2(5.82031, 1)
+[node name="ground_sprite" type="Sprite2D" parent="ground"]
+position = Vector2(713.5, 483)
+scale = Vector2(16.6484, 1)
 texture = ExtResource("4_04g2o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(630, 131)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(643, -791)
+zoom = Vector2(0.2, 0.2)

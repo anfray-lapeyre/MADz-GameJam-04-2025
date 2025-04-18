@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dutmn56llcgu6"]
 
-[ext_resource type="Texture2D" uid="uid://dp7igmvsk0mcr" path="res://Assets/2D/icon.svg" id="1_fau7e"]
-[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_rijgl"]
+[ext_resource type="Texture2D" uid="uid://c87kcd46vwqpm" path="res://Assets/2D/Background/t_game_balance.png" id="1_b2ru4"]
+[ext_resource type="Texture2D" uid="uid://bxjnspyqmdeo4" path="res://Assets/Capture.JPG" id="2_y8f3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix5m4"]
 size = Vector2(652, 119)
@@ -17,27 +17,18 @@ position = Vector2(-3, 49.5)
 shape = SubResource("RectangleShape2D_ix5m4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
-position = Vector2(-4, 55)
-scale = Vector2(5.07813, 1)
-texture = ExtResource("1_fau7e")
+position = Vector2(-4, 120)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_b2ru4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-5, 50)
 
-[node name="parent piece" parent="." instance=ExtResource("1_rijgl")]
-position = Vector2(-2, -264)
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(-5, 50)
 
-[node name="parent piece2" parent="." instance=ExtResource("1_rijgl")]
-position = Vector2(-57, -496)
-
-[node name="parent piece3" parent="." instance=ExtResource("1_rijgl")]
-position = Vector2(14, -708)
-
-[node name="parent piece4" parent="." instance=ExtResource("1_rijgl")]
-position = Vector2(-51, -955)
-
-[node name="parent piece5" parent="." instance=ExtResource("1_rijgl")]
-position = Vector2(-106, -1187)
-
-[node name="parent piece6" parent="." instance=ExtResource("1_rijgl")]
-position = Vector2(-35, -1399)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(190, 50.5)
+scale = Vector2(0.917065, 0.94058)
+texture = ExtResource("2_y8f3v")

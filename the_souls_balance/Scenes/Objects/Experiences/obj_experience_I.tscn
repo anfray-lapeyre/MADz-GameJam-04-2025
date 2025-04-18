@@ -12,4 +12,5 @@ texture = ExtResource("2_vixjp")
 polygon = PackedVector2Array(60.9524, 15.25, -60.6984, 15.25, -60.6984, -15, 60.9524, -15)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(-42, 44)
 polygon = PackedVector2Array(-171, -16, -171, -1.44361, 308, -1.44361, 308, -16)

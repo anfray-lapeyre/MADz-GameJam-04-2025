@@ -41,6 +41,7 @@ ex_spawn_position = Vector2(600, -2500)
 [node name="Background" type="Node2D" parent="."]
 z_index = -1000
 z_as_relative = false
+scale = Vector2(0.640002, 0.640002)
 
 [node name="BackgroundPattern" type="Sprite2D" parent="Background"]
 position = Vector2(642.503, -390)
@@ -72,6 +73,7 @@ scale = Vector2(2.00636, 2.12295)
 texture = ExtResource("13_nwbo4")
 
 [node name="ground" type="StaticBody2D" parent="."]
+scale = Vector2(0.640002, 0.640002)
 
 [node name="ground_sprite" type="Sprite2D" parent="ground"]
 material = ExtResource("8_j4c5q")
@@ -85,10 +87,12 @@ scale = Vector2(1.5, 1.5)
 polygon = PackedVector2Array(545, 293, 545, 338, 887, 338, 887, 290, 876, 290, 874, 326, 784.301, 326.286, 560, 327, 558, 293)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(643, -390)
-zoom = Vector2(0.3, 0.3)
+position = Vector2(409, -256)
+scale = Vector2(0.640002, 0.640002)
+zoom = Vector2(0.47, 0.47)
 
 [node name="Cartouche" type="Node2D" parent="."]
+scale = Vector2(0.640002, 0.640002)
 
 [node name="CartoucheBackground" type="Sprite2D" parent="Cartouche"]
 material = ExtResource("8_j4c5q")

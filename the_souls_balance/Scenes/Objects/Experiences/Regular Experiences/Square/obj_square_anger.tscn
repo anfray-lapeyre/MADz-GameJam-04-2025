@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://qx7bfvdxddf1"]
+[gd_scene load_steps=7 format=3 uid="uid://csvwci44smh26"]
 
-[ext_resource type="Texture2D" uid="uid://dp7igmvsk0mcr" path="res://Assets/2D/icon.svg" id="1_7giel"]
 [ext_resource type="Script" uid="uid://timyimdp8xdv" path="res://Scripts/NodeScripts/scr_obj_experience.gd" id="1_717cv"]
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="2_p0tda"]
 [ext_resource type="Shader" uid="uid://fasmiiqn230t" path="res://Assets/Material/Shader/sh_master.tres" id="3_3ox72"]
+[ext_resource type="Texture2D" uid="uid://dj0bt2fxpq100" path="res://Assets/2D/Experiences/T_Square_Anger.png" id="3_xbl1p"]
 [ext_resource type="Texture2D" uid="uid://bdvf78gprw5ar" path="res://Assets/2D/t_highlight.png" id="4_p0tda"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ox72"]
@@ -16,8 +16,9 @@ ex_move_repeat_delay = 0.05
 
 [node name="experience_sprite" type="Sprite2D" parent="."]
 material = ExtResource("2_p0tda")
-scale = Vector2(0.63, 0.63)
-texture = ExtResource("1_7giel")
+position = Vector2(-1.90735e-06, 0.324137)
+scale = Vector2(0.321569, 0.32687)
+texture = ExtResource("3_xbl1p")
 
 [node name="experience_collider" type="CollisionPolygon2D" parent="."]
 position = Vector2(9.53674e-07, 0.999997)

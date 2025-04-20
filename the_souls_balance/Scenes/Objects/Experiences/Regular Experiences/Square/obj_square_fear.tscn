@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bskuia3oxvodi"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/Regular Experiences/Square/obj_square_anger.tscn" id="1_swikq"]
+[ext_resource type="Texture2D" uid="uid://c76p8o7msaohi" path="res://Assets/2D/Experiences/T_Square_Fear.png" id="2_1un3u"]
+
+[node name="obj_experience" instance=ExtResource("1_swikq")]
+
+[node name="experience_sprite" parent="." index="0"]
+texture = ExtResource("2_1un3u")

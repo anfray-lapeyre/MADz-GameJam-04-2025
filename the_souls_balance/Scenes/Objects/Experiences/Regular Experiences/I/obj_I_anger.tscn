@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx8wb4wil2yc0"]
+
+[ext_resource type="PackedScene" uid="uid://13phhq7nxcqs" path="res://Scenes/Objects/Experiences/Regular Experiences/I/obj_I_Joy.tscn" id="1_eli4d"]
+[ext_resource type="Texture2D" uid="uid://cmmy00347ioep" path="res://Assets/2D/Experiences/T_I_Anger.png" id="2_38f06"]
+
+[node name="obj_experience" instance=ExtResource("1_eli4d")]
+
+[node name="experience_sprite" parent="." index="0"]
+texture = ExtResource("2_38f06")

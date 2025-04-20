@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cukbicjlry3gx"]
+
+[ext_resource type="PackedScene" uid="uid://qx7bfvdxddf1" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_afbdi"]
+[ext_resource type="Texture2D" uid="uid://cmkr8m625k8qr" path="res://Assets/2D/Experiences/T_Seagull_Sadness.png" id="2_18ja0"]
+
+[node name="obj_experience" instance=ExtResource("1_afbdi")]
+
+[node name="experience_sprite" parent="." index="0"]
+scale = Vector2(0.320312, 0.320312)
+texture = ExtResource("2_18ja0")
+
+[node name="experience_collider" parent="." index="1"]
+polygon = PackedVector2Array(-3.84391e-07, 15.0794, -15.7195, -0.396824, -15.7195, -15.0794, -14.5103, -10.3175, -12.898, -7.93651, -10.0766, -5.15873, -7.25514, -3.1746, -3.62757, -1.5873, -3.84391e-07, -1.19047, 4.03063, -1.5873, 7.25514, -2.77778, 9.67352, -4.36508, 11.6888, -6.34921, 13.3011, -8.73016, 14.5103, -11.1111, 14.9133, -13.0952, 15.3164, -15.0794, 15.3164, -0.396824)
+
+[node name="light_beam" parent="." index="2"]
+position = Vector2(-1, 3)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+polygon = PackedVector2Array(6.34921, -16.0397, 6.34921, -8.9746, 68.254, -1.52759, 128.571, -8.9746, 128.571, -16.0397, 126.984, -15.085, 125.397, -14.1302, 120.635, -12.9845, 114.286, -11.8388, 106.349, -10.8841, 96.8254, -10.1203, 84.127, -9.54745, 68.254, -9.3565, 53.9683, -9.54745, 39.6825, -10.3112, 28.5714, -11.266, 17.4603, -12.6026, 11.1111, -13.7483)

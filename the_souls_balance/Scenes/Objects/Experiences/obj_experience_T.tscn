@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://lm6bbsji7bgp"]
 
-[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/Regular Experiences/Square/obj_square_anger.tscn" id="1_6cc8r"]
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_6cc8r"]
 [ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/T_T_Anger.png" id="2_4vrwp"]
 
 [node name="obj_experience" instance=ExtResource("1_6cc8r")]
@@ -11,8 +11,8 @@ texture = ExtResource("2_4vrwp")
 
 [node name="experience_collider" parent="." index="1"]
 position = Vector2(-4, -38)
-polygon = PackedVector2Array(23.3777, 15.0794, 8.06126, 15.0794, 8.06126, 30.5556, -7.6582, 30.5556, -7.6582, 15.0794, -22.9746, 15.0794, -22.9746, -0.396826, 23.3777, -0.396826)
+polygon = PackedVector2Array(45.7143, 15.5, 15.4921, 15.5, 15.4921, 45.5, -14.9841, 45.5, -15.1872, 15.3335, -45.7143, 15.25, -45.7143, -15, 45.7143, -15)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
 position = Vector2(-45, 76)
-polygon = PackedVector2Array(34.9206, -14.5121, 34.9206, -7.06511, 96.8254, -7.06511, 96.8254, -14.5121, 157.143, -14.5121, 157.143, -21.9591, -25.3968, -21.9591, -25.3968, -14.5121)
+polygon = PackedVector2Array(5, -14.5564, 6, -1.90735e-06, 126, -1.90735e-06, 126, -14.4361, 245, -14.4361, 245, -29.1128, -115, -29.1128, -115, -14.5564)

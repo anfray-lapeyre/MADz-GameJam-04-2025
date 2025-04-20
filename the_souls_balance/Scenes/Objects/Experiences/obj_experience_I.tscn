@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://13phhq7nxcqs"]
 
-[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/Regular Experiences/Square/obj_square_anger.tscn" id="1_xi4mb"]
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_xi4mb"]
 [ext_resource type="Texture2D" uid="uid://cx6l7s3viob10" path="res://Assets/2D/Experiences/T_I_Joy.png" id="2_vixjp"]
 
 [node name="obj_experience" instance=ExtResource("1_xi4mb")]
@@ -9,8 +9,8 @@
 texture = ExtResource("2_vixjp")
 
 [node name="experience_collider" parent="." index="1"]
-polygon = PackedVector2Array(31.0359, 7.53968, -31.0359, 7.53968, -31.0359, -8.33333, 31.0359, -8.33333)
+polygon = PackedVector2Array(60.9524, 15.25, -60.6984, 15.25, -60.6984, -15, 60.9524, -15)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
 position = Vector2(-42, 44)
-polygon = PackedVector2Array(-55.5556, -12.2207, -55.5556, -4.58278, 188.889, -4.58278, 188.889, -12.2207)
+polygon = PackedVector2Array(-171, -16, -171, -1.44361, 308, -1.44361, 308, -16)

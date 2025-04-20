@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://4gvcppv27kdy"]
 
-[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/Regular Experiences/Square/obj_square_anger.tscn" id="1_kxqt7"]
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_kxqt7"]
 [ext_resource type="Texture2D" uid="uid://c5u3b3tnby0m3" path="res://Assets/2D/Experiences/T_Shield_Sadness.png" id="2_nfqp8"]
 
 [node name="obj_experience" instance=ExtResource("1_kxqt7")]
@@ -9,11 +9,8 @@
 texture = ExtResource("2_nfqp8")
 
 [node name="experience_collider" parent="." index="1"]
-position = Vector2(-0.180265, 0.662092)
-scale = Vector2(1.27661, 1.29668)
-polygon = PackedVector2Array(30.4762, -0.499999, 29.7143, 7, 27.4286, 13, 25.3968, 16.5, 22.1301, 19.9954, 19.5556, 22.75, 14.4762, 26, 8.88889, 28.25, 3.04762, 29.75, -2.28571, 30, -7.87302, 28.5, -12.6984, 26.5, -16.7619, 24, -20.8254, 21, -24.381, 17.75, -27.1746, 13.5, -28.6984, 9.75, -29.9683, 5, -30.4762, -0.499999, -30.4762, -30.25, 30.4762, -30.25)
+polygon = PackedVector2Array(30.4762, -0.499999, 29.7143, 7, 27.4286, 13, 25.3968, 16.5, 19.5556, 22.75, 14.4762, 26, 8.88889, 28.25, 3.04762, 29.75, -2.28571, 30, -7.87302, 28.5, -12.6984, 26.5, -16.7619, 24, -20.8254, 21, -24.381, 17.75, -27.1746, 13.5, -28.6984, 9.75, -29.9683, 5, -30.4762, -0.499999, -30.4762, -30.25, 30.4762, -30.25)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
-position = Vector2(-40, 6)
-scale = Vector2(0.322455, 2.68047)
+position = Vector2(-78, 12)
 polygon = PackedVector2Array(4, -16.6015, 4, -2.28571, 6, 0.360902, 11, 2.64662, 17, 4.45113, 28, 6.49624, 42, 8.06015, 56, 9.38346, 74, 10.7068, 93, 11.6692, 115, 12.391, 136, 12.2707, 159, 11.5489, 181, 10.4662, 201, 8.90226, 213, 7.45865, 224, 5.89474, 231, 4.33083, 241, 1.32331, 244, -2.28571, 244, -16.6015)

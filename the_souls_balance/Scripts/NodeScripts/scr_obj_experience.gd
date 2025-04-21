@@ -68,7 +68,6 @@ func _snap_to_step(x: float) -> float:
 
 #Need to separate in two functions because Godot doesn't like to change things while changing physics.
 func _on_area_2d_body_entered(body: Node) -> void:
-	print (body)
 	if body == self_collider:
 		return
 	if is_controlled :
@@ -82,7 +81,6 @@ func _release_control(): #function to make the player loose control of the piece
 	freeze = false
 	sig_control_lost.emit() #send a signal to game level
 	gravity_scale = ex_gravity
-	print ("release control")
 	light_beam.hide()
 	
 func _rotate_piece(direction: int): 

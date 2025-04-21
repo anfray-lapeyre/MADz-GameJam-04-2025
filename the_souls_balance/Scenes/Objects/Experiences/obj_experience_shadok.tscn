@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvwvsklwf5vgl"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_0f83m"]
+[ext_resource type="Texture2D" uid="uid://ban3kto0ddqff" path="res://Assets/2D/Experiences/T_Shadok_Sadness.png" id="2_rx3k5"]
+
+[node name="obj_experience" instance=ExtResource("1_0f83m")]
+
+[node name="experience_sprite" parent="." index="0"]
+texture = ExtResource("2_rx3k5")
+
+[node name="experience_collider" parent="." index="1"]
+polygon = PackedVector2Array(-30.2297, -29.3651, -3.84391e-07, 1.19209e-06, 30.2297, -29.7619, 30.2297, 29.7619, -30.2297, 29.7619)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(0, -24)
+scale = Vector2(3.21873, 3.86438)
+polygon = PackedVector2Array(-30.2297, -29.3651, -3.84391e-07, 1.19209e-06, 30.2297, -29.7619, 30.2297, 29.7619, -30.2297, 29.7619)

@@ -1,36 +1,43 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=24 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_kl2sp"]
 [ext_resource type="PackedScene" uid="uid://13phhq7nxcqs" path="res://Scenes/Objects/Experiences/obj_experience_I.tscn" id="2_utki7"]
 [ext_resource type="PackedScene" uid="uid://c3xbpukd7ufqj" path="res://Scenes/Objects/Experiences/obj_experience_L.tscn" id="3_j4c5q"]
 [ext_resource type="PackedScene" uid="uid://lm6bbsji7bgp" path="res://Scenes/Objects/Experiences/obj_experience_T.tscn" id="3_sailx"]
 [ext_resource type="PackedScene" uid="uid://dob2b6p3jgs5q" path="res://Scenes/Objects/Experiences/obj_experience_LL.tscn" id="4_5sfby"]
+[ext_resource type="PackedScene" uid="uid://capjhpya8pfj7" path="res://Scenes/Objects/Experiences/obj_experience_crest.tscn" id="5_6kjit"]
 [ext_resource type="PackedScene" uid="uid://4gvcppv27kdy" path="res://Scenes/Objects/Experiences/obj_experience_Shield.tscn" id="5_hxrrn"]
+[ext_resource type="PackedScene" uid="uid://d3ko2yfjjqu8r" path="res://Scenes/Objects/Experiences/obj_experience_drop.tscn" id="6_dm3sp"]
+[ext_resource type="PackedScene" uid="uid://bclfiilf6ubpt" path="res://Scenes/Objects/Experiences/obj_experience_sauron.tscn" id="7_283ni"]
 [ext_resource type="PackedScene" uid="uid://dpg0i0elo7khq" path="res://Scenes/Objects/Experiences/obj_experience_Z.tscn" id="7_dpqbp"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="8_abolt"]
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="8_j4c5q"]
-[ext_resource type="Texture2D" uid="uid://c87kcd46vwqpm" path="res://Assets/2D/Background/t_game_balance.png" id="9_5sfby"]
 [ext_resource type="Texture2D" uid="uid://b08kehashu6nk" path="res://Assets/2D/Background/T_Anubis.png" id="10_ww3n1"]
 [ext_resource type="Texture2D" uid="uid://bj0vpuy0reeml" path="res://Assets/2D/Background/T_FeatherBalance.png" id="11_f01so"]
+[ext_resource type="PackedScene" uid="uid://s827k74m1463" path="res://Scenes/Objects/Experiences/obj_experience_seagull.tscn" id="11_rfdnn"]
+[ext_resource type="PackedScene" uid="uid://n0wjmwwdtetv" path="res://Scenes/Objects/Experiences/obj_experience_stake.tscn" id="12_4b1gl"]
 [ext_resource type="Texture2D" uid="uid://dinafot2fgjhy" path="res://Assets/2D/Feathers/t_feather_1.png" id="12_x8sei"]
+[ext_resource type="PackedScene" uid="uid://cvwvsklwf5vgl" path="res://Scenes/Objects/Experiences/obj_experience_shadok.tscn" id="13_4ionf"]
 [ext_resource type="Texture2D" uid="uid://bhdl81607gv5" path="res://Assets/2D/Background/t_feather_balance_foreground.png" id="13_nwbo4"]
 [ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="15_aeron"]
+[ext_resource type="Texture2D" uid="uid://bfga8822ogv2m" path="res://Assets/2D/Background/t_balance_head.png" id="15_f01so"]
+[ext_resource type="Texture2D" uid="uid://cfipohdu7rjbr" path="res://Assets/2D/Background/t_balance_foot_thin.png" id="15_ww3n1"]
 [ext_resource type="Texture2D" uid="uid://cbfhiamgwuegv" path="res://Assets/2D/Experiences/T_L_Disgust.png" id="16_cjerr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kl2sp")
-ex_experience_list = Array[PackedScene]([ExtResource("2_utki7"), ExtResource("3_j4c5q"), ExtResource("4_5sfby"), ExtResource("5_hxrrn"), ExtResource("3_sailx"), ExtResource("7_dpqbp"), ExtResource("3_j4c5q"), ExtResource("5_hxrrn"), ExtResource("3_sailx"), ExtResource("2_utki7"), ExtResource("4_5sfby"), ExtResource("3_sailx"), ExtResource("3_j4c5q"), ExtResource("2_utki7"), ExtResource("3_sailx"), ExtResource("7_dpqbp"), ExtResource("2_utki7"), ExtResource("3_j4c5q"), ExtResource("4_5sfby"), ExtResource("3_j4c5q"), ExtResource("2_utki7"), ExtResource("5_hxrrn"), ExtResource("5_hxrrn"), ExtResource("4_5sfby"), ExtResource("7_dpqbp")])
+ex_experience_list = Array[PackedScene]([ExtResource("2_utki7"), ExtResource("3_j4c5q"), ExtResource("4_5sfby"), ExtResource("5_6kjit"), ExtResource("6_dm3sp"), ExtResource("5_6kjit"), ExtResource("7_283ni"), ExtResource("7_283ni"), ExtResource("5_hxrrn"), ExtResource("3_sailx"), ExtResource("7_dpqbp"), ExtResource("11_rfdnn"), ExtResource("3_j4c5q"), ExtResource("5_hxrrn"), ExtResource("12_4b1gl"), ExtResource("13_4ionf"), ExtResource("3_sailx"), ExtResource("2_utki7"), ExtResource("12_4b1gl"), ExtResource("4_5sfby"), ExtResource("13_4ionf"), ExtResource("11_rfdnn"), ExtResource("6_dm3sp"), ExtResource("3_sailx"), ExtResource("3_j4c5q"), ExtResource("2_utki7"), ExtResource("3_sailx"), ExtResource("7_dpqbp"), ExtResource("2_utki7"), ExtResource("3_j4c5q"), ExtResource("4_5sfby"), ExtResource("3_j4c5q"), ExtResource("2_utki7"), ExtResource("5_hxrrn"), ExtResource("5_hxrrn"), ExtResource("4_5sfby"), ExtResource("7_dpqbp")])
 ex_spawn_position = Vector2(600, -2500)
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -1000
 z_as_relative = false
-scale = Vector2(1, 1)
 
 [node name="BackgroundPattern" type="Sprite2D" parent="Background"]
-position = Vector2(642.503, -390)
+position = Vector2(1379, 604)
 scale = Vector2(2.02407, 2.02407)
 texture = ExtResource("8_abolt")
+offset = Vector2(-363.869, -491.09)
 
 [node name="Anubis" type="Sprite2D" parent="Background"]
 material = ExtResource("8_j4c5q")
@@ -56,27 +63,43 @@ position = Vector2(1747.5, -327.75)
 scale = Vector2(2.00636, 2.12295)
 texture = ExtResource("13_nwbo4")
 
-[node name="ground" type="StaticBody2D" parent="."]
-scale = Vector2(1, 1)
-
-[node name="ground_sprite" type="Sprite2D" parent="ground"]
-material = ExtResource("8_j4c5q")
+[node name="ground_container" type="Node2D" parent="."]
 position = Vector2(660, 510)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_5sfby")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground"]
-position = Vector2(-415, -258)
-scale = Vector2(1.5, 1.5)
-polygon = PackedVector2Array(545, 293, 545, 338, 887, 338, 887, 290, 876, 290, 874, 326, 784.301, 326.286, 560, 327, 558, 293)
+[node name="PinJoint2D" type="PinJoint2D" parent="ground_container"]
+position = Vector2(2, -218)
+node_a = NodePath("../ground_bottom_container")
+node_b = NodePath("../ground")
+disable_collision = false
+
+[node name="ground_bottom_container" type="StaticBody2D" parent="ground_container"]
+position = Vector2(0, 18)
+
+[node name="ground_bottom" type="Sprite2D" parent="ground_container/ground_bottom_container"]
+material = ExtResource("8_j4c5q")
+texture = ExtResource("15_ww3n1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_container/ground_bottom_container"]
+polygon = PackedVector2Array(-18, -192, 18.6667, -192, 123.333, 196.667, -125.333, 196.667)
+
+[node name="ground" type="RigidBody2D" parent="ground_container"]
+position = Vector2(2, -218)
+mass = 20.0
+
+[node name="ground_top" type="Sprite2D" parent="ground_container/ground"]
+material = ExtResource("8_j4c5q")
+scale = Vector2(2, 2)
+texture = ExtResource("15_f01so")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ground_container/ground"]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-155, 13, 155, 13, 162, -22, 170, -22, 168, 8, 159, 21, -159, 21, -168, 8, -169, -22, -162, -22)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, -387)
-scale = Vector2(1, 1)
 zoom = Vector2(0.3, 0.3)
 
 [node name="Cartouche" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="CartoucheBackground" type="Sprite2D" parent="Cartouche"]
 material = ExtResource("8_j4c5q")

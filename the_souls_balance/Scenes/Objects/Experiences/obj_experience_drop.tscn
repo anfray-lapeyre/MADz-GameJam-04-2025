@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ko2yfjjqu8r"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_q6lwl"]
+[ext_resource type="Texture2D" uid="uid://buie3bbw6qecn" path="res://Assets/2D/Experiences/T_Drop_Sadness.png" id="2_wadfy"]
+
+[node name="obj_experience" instance=ExtResource("1_q6lwl")]
+
+[node name="experience_sprite" parent="." index="0"]
+texture = ExtResource("2_wadfy")
+
+[node name="experience_collider" parent="." index="1"]
+polygon = PackedVector2Array(-3.84391e-07, -33.3333, 30.6328, -3.1746, 30.2297, 4.76191, 28.6175, 13.0952, 24.1838, 20.2381, 15.7195, 27.7778, 6.44901, 30.9524, -3.84391e-07, 32.1429, -6.85208, 31.3492, -16.1225, 27.381, -23.3777, 21.0317, -28.6175, 12.3016, -30.2297, 3.57143, -29.8267, -3.57143)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(-3.8147e-06, 1.00001)
+scale = Vector2(2.98605, 3.04935)
+polygon = PackedVector2Array(-3.84391e-07, -33.3333, 30.6328, -3.1746, 30.2297, 4.76191, 28.6175, 13.0952, 24.1838, 20.2381, 15.7195, 27.7778, 6.44901, 30.9524, -3.84391e-07, 32.1429, -6.85208, 31.3492, -16.1225, 27.381, -23.3777, 21.0317, -28.6175, 12.3016, -30.2297, 3.57143, -29.8267, -3.57143)

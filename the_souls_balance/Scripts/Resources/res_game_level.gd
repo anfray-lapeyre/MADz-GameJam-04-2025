@@ -48,8 +48,6 @@ func lose_life() -> void: #func when you loose life
 	current_lives -= 1
 	can_lose_life = false
 	print("Vie perdue ! Il en reste : ", current_lives)
-	# Screenshake
-	start_screenshake()
 	# feather display change
 	update_life_display()
 	# Cooldown
@@ -59,37 +57,48 @@ func lose_life() -> void: #func when you loose life
 	if current_lives <= 0:
 		await handle_game_over()
 
-func start_screenshake():
-	var original_pos = position
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", original_pos + Vector2(10, 0), 0.05).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position", original_pos - Vector2(10, 0), 0.05)
-	tween.tween_property(self, "position", original_pos, 0.05)
 	
 func update_life_display():
 	for i in ex_max_lives:
 		var plume = get_node("LifeDisplay").get_node("Feather" + str(i + 1))
-		plume.modulate = Color(1, 1, 1, 1) if i < current_lives else Color(1, 1, 1, 0.2)
+		plume.visible = false
+		# Display of the feather according to the number of lives
+	var lost_lives = ex_max_lives - current_lives
+	if lost_lives < ex_max_lives:
+		var active_plume = get_node("LifeDisplay").get_node("Feather" + str(lost_lives + 1))
+		active_plume.visible = true
 		
 func handle_game_over() -> void:
 	print("GAME OVER")
-	# Revert gravity
-	PhysicsServer2D.area_set_param(get_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY_VECTOR, Vector2.UP)
-	PhysicsServer2D.area_set_param(get_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY, 500) #500 is the gravity strength
-	# Await chaos
-	await get_tree().create_timer(ex_gravity_reverse_duration).timeout
-	# Puts it back together
-	PhysicsServer2D.area_set_param(get_world_2d().space, PhysicsServer2D.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
-	# Reset the level
+	var fade = $ScreenFade
+	
+	# makes the black out "fondu au noir"
+	var tween = get_tree().create_tween()
+	tween.tween_property(fade, "modulate:a", 1.0, 1.0) # noir en 1 seconde
+	await tween.finished
+	
+	fade.visible = true
 	reset_level()
 	# Waits before respawning pieces
 	await get_tree().create_timer(1.5).timeout
 	
+		# makes the light comes back
+	var tween_back = get_tree().create_tween()
+	tween_back.tween_property(fade, "modulate:a", 0.0, 1.0)
+	await tween_back.finished
+	fade.visible = false
+	
 func reset_level():
+	# deletes current piece if it exists
+	if current_experience and is_instance_valid(current_experience):
+		current_experience.queue_free()
+		
 	current_index = 0
 	current_lives = ex_max_lives
 	update_life_display()
+	
 	for child in get_children():
 		if child.name.begins_with("obj_experience"): # ou autre préfixe commun
 			child.queue_free()
+			
 	spawn_next_piece()

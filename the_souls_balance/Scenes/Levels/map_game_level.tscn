@@ -146,4 +146,13 @@ texture = ExtResource("26_4ionf")
 position = Vector2(661, 908)
 shape = SubResource("RectangleShape2D_6kjit")
 
+[node name="ScreenFade" type="ColorRect" parent="."]
+visible = false
+top_level = true
+offset_left = -1375.0
+offset_top = -1511.0
+offset_right = 2703.0
+offset_bottom = 798.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]

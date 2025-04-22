@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Levels/map_game_level.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/2D/icon.svg"
 
+[autoload]
+
+GlbGameManager="*res://Scripts/Global/glb_game_manager.gd"
+
 [display]
 
 window/stretch/mode="viewport"

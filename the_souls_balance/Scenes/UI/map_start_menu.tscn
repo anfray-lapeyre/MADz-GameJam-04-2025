@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://x2pgpcr6n2qg"]
+
+[ext_resource type="Script" uid="uid://n2v7w60j1lcy" path="res://Scripts/NodeScripts/scr_start_menu.gd" id="1_f24nk"]
+[ext_resource type="Texture2D" uid="uid://b3lw8v61t677b" path="res://Assets/2D/Background/t_antiquepaper.jpg" id="1_gcuqm"]
+[ext_resource type="PackedScene" uid="uid://wavy321wdrbp" path="res://Scenes/UI/map_level_selection.tscn" id="2_rq225"]
+[ext_resource type="FontFile" uid="uid://dd5vqpdollu01" path="res://Assets/UI/Fonts/Anubismythicalserif-lxdLy.otf" id="2_x3e32"]
+
+[node name="world" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f24nk")
+ex_level_selection_menu = ExtResource("2_rq225")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 325.5)
+scale = Vector2(0.610735, 0.492658)
+texture = ExtResource("1_gcuqm")
+
+[node name="play_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 208.0
+offset_right = 686.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("2_x3e32")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="controls_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 296.0
+offset_right = 686.0
+offset_bottom = 359.0
+theme_override_fonts/font = ExtResource("2_x3e32")
+theme_override_font_sizes/font_size = 32
+text = "Controls"
+
+[node name="settings_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 384.0
+offset_right = 686.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("2_x3e32")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="controls_button" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="settings_button" to="." method="_on_settings_button_pressed"]

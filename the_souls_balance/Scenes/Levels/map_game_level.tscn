@@ -66,12 +66,6 @@ texture = ExtResource("13_nwbo4")
 [node name="ground_container" type="Node2D" parent="."]
 position = Vector2(660, 510)
 
-[node name="PinJoint2D" type="PinJoint2D" parent="ground_container"]
-position = Vector2(2, -218)
-node_a = NodePath("../ground_bottom_container")
-node_b = NodePath("../ground")
-disable_collision = false
-
 [node name="ground_bottom_container" type="StaticBody2D" parent="ground_container"]
 position = Vector2(0, 18)
 
@@ -88,11 +82,11 @@ mass = 20.0
 
 [node name="ground_top" type="Sprite2D" parent="ground_container/ground"]
 material = ExtResource("8_j4c5q")
-scale = Vector2(2, 2)
+scale = Vector2(3, 2)
 texture = ExtResource("15_f01so")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="ground_container/ground"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 2)
 polygon = PackedVector2Array(-155, 13, 155, 13, 162, -22, 170, -22, 168, 8, 159, 21, -159, 21, -168, 8, -169, -22, -162, -22)
 
 [node name="Camera2D" type="Camera2D" parent="."]

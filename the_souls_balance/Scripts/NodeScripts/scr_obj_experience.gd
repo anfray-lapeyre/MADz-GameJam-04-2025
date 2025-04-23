@@ -103,9 +103,9 @@ func _update_light_beam():
 	# Mettre le beam tout en bas de l’écran (ajuste si besoin)
 	beam.global_position.y = 0  # tu peux ajuster ce Y selon ton niveau
 	# Getting the right width
-	var tex_size: Vector2 = sprite.texture.get_size()
-	var scale: Vector2 = sprite.scale
-	var width: float = tex_size.x * scale.x if int(rotation_degrees) % 180 == 0 else tex_size.y * scale.y
+	var tex_size: Vector2 = (get_polygon_size($experience_collider.polygon)) #Getting the collider size to adapt the beam
+	var beam_scale: Vector2 = $experience_collider.scale*1.2 #Added a 1.2 multiplier to compensate for the coutour of the texture
+	var width: float = tex_size.x * beam_scale.x if int(rotation_degrees) % 180 == 0 else tex_size.y * beam_scale.y
 	# Apply Size
 	light_beam.scale.x = width / light_beam.texture.get_size().x
 	# Gives the right position
@@ -118,3 +118,38 @@ func _update_light_beam():
 	if beam.texture:
 		beam.scale.x = width / beam.texture.get_size().x
 	
+	
+# Returns the bounding extents of a set of 2D points as a Vector4.
+# The returned Vector4 contains: (minX, minY, maxX, maxY)
+func get_pvector_extents(p: PackedVector2Array) -> Vector4:
+	# Initialize min and max values with the first point's coordinates
+	var minX: float = p[0].x
+	var maxX: float = p[0].x 
+	var minY: float = p[0].y 
+	var maxY: float = p[0].y
+
+	# Iterate through all points to find the min and max extents
+	for v in p:
+		if v.x < minX: 
+			minX = v.x
+		if v.x > maxX: 
+			maxX = v.x
+		if v.y < minY: 
+			minY = v.y
+		if v.y > maxY: 
+			maxY = v.y
+
+	# Return the bounds as a Vector4: (minX, minY, maxX, maxY)
+	return Vector4(minX, minY, maxX, maxY)
+
+# Calculates the size of a polygon from its set of 2D points.
+# Returns the width and height as a Vector2.
+func get_polygon_size(p: PackedVector2Array) -> Vector2:
+	# Get the bounding extents of the polygon
+	var v: Vector4 = get_pvector_extents(p)
+
+	# Create a Rect2 from the extents to compute the size
+	var r: Rect2 = Rect2(v.x, v.y, abs(v.z - v.x), abs(v.w - v.y))
+
+	# Return the size (width, height) of the bounding rectangle
+	return r.size

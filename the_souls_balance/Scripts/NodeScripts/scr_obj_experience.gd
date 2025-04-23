@@ -12,6 +12,8 @@ var target_position: Vector2
 var is_controlled: bool = true
 @onready var self_collider : RigidBody2D = $"."
 @onready var light_beam : Sprite2D = $light_beam
+@onready var beam := $light_beam
+@onready var sprite := $experience_sprite
 
 var move_left_timer := 0.0
 var move_right_timer := 0.0
@@ -92,8 +94,6 @@ func _rotate_piece(direction: int):
 	
 	# updates the position of the beam and its size
 func _update_light_beam():
-	var beam := $light_beam
-	var sprite := $experience_sprite
 	if not beam or not sprite or not sprite.texture:
 		return
 	# blocks rotation when experience is rotating

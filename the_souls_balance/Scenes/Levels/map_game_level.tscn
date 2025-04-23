@@ -1,22 +1,31 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=31 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_kl2sp"]
-[ext_resource type="PackedScene" uid="uid://13phhq7nxcqs" path="res://Scenes/Objects/Experiences/obj_experience_I.tscn" id="2_utki7"]
-[ext_resource type="PackedScene" uid="uid://dob2b6p3jgs5q" path="res://Scenes/Objects/Experiences/obj_experience_LL.tscn" id="4_5sfby"]
-[ext_resource type="PackedScene" uid="uid://cvwvsklwf5vgl" path="res://Scenes/Objects/Experiences/obj_experience_shadok.tscn" id="5_nwbo4"]
-[ext_resource type="PackedScene" uid="uid://4gvcppv27kdy" path="res://Scenes/Objects/Experiences/obj_experience_Shield.tscn" id="6_aeron"]
-[ext_resource type="PackedScene" uid="uid://d3ko2yfjjqu8r" path="res://Scenes/Objects/Experiences/obj_experience_drop.tscn" id="6_dm3sp"]
+[ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_uvk6j"]
+[ext_resource type="PackedScene" uid="uid://cm2xhekrqhpio" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_joy.tscn" id="3_ngann"]
+[ext_resource type="PackedScene" uid="uid://bo3gn4328w851" path="res://Scenes/Objects/Experiences/U/obj_experience_U_joy.tscn" id="4_s8815"]
+[ext_resource type="PackedScene" uid="uid://bv4fsfyp8cbs4" path="res://Scenes/Objects/Experiences/L/obj_experience_L_joy.tscn" id="5_lmd76"]
+[ext_resource type="PackedScene" uid="uid://b3qy3kq7lfj6m" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_fear.tscn" id="6_8u6bx"]
+[ext_resource type="PackedScene" uid="uid://dvvpdtkoi5wst" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_anger.tscn" id="7_bvirs"]
 [ext_resource type="PackedScene" uid="uid://wavy321wdrbp" path="res://Scenes/UI/map_level_selection.tscn" id="7_nwbo4"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="8_abolt"]
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="8_j4c5q"]
+[ext_resource type="PackedScene" uid="uid://1am82xfab126" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_anger.tscn" id="8_ovni5"]
+[ext_resource type="PackedScene" uid="uid://d33lmyhym5gx4" path="res://Scenes/Objects/Experiences/T/obj_experience_T_joy.tscn" id="9_kh3ve"]
+[ext_resource type="PackedScene" uid="uid://cbehirg6t8kp0" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_disgust.tscn" id="10_hatd7"]
 [ext_resource type="Texture2D" uid="uid://b08kehashu6nk" path="res://Assets/2D/Background/T_Anubis.png" id="10_ww3n1"]
 [ext_resource type="Texture2D" uid="uid://bj0vpuy0reeml" path="res://Assets/2D/Background/T_FeatherBalance.png" id="11_f01so"]
+[ext_resource type="PackedScene" uid="uid://cq5i8pbsdf4gb" path="res://Scenes/Objects/Experiences/BadActions/obj_experience_shuriken.tscn" id="11_syh0n"]
+[ext_resource type="PackedScene" uid="uid://cypwq7t4mi15m" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_sadness.tscn" id="12_kb0sr"]
 [ext_resource type="Texture2D" uid="uid://dinafot2fgjhy" path="res://Assets/2D/Feathers/t_feather_1.png" id="12_x8sei"]
+[ext_resource type="PackedScene" uid="uid://k8ct2syg2kn5" path="res://Scenes/Objects/Experiences/I/obj_experience_I_sadness.tscn" id="13_av7en"]
 [ext_resource type="Texture2D" uid="uid://bhdl81607gv5" path="res://Assets/2D/Background/t_feather_balance_foreground.png" id="13_nwbo4"]
+[ext_resource type="PackedScene" uid="uid://c560hlelekqvl" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_void_X.tscn" id="14_0peth"]
 [ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="15_aeron"]
 [ext_resource type="Texture2D" uid="uid://bfga8822ogv2m" path="res://Assets/2D/Background/t_balance_head.png" id="15_f01so"]
+[ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="15_fc2wr"]
 [ext_resource type="Texture2D" uid="uid://cfipohdu7rjbr" path="res://Assets/2D/Background/t_balance_foot_thin.png" id="15_ww3n1"]
-[ext_resource type="Texture2D" uid="uid://cbfhiamgwuegv" path="res://Assets/2D/Experiences/T_L_Disgust.png" id="16_cjerr"]
+[ext_resource type="Texture2D" uid="uid://cbfhiamgwuegv" path="res://Assets/2D/Experiences/Deprecated/T_L_Disgust.png" id="16_cjerr"]
 [ext_resource type="Texture2D" uid="uid://ckv2tf4w718r6" path="res://Assets/2D/Feathers/t_feather_2.png" id="24_rfdnn"]
 [ext_resource type="Texture2D" uid="uid://f5i3ntqplyif" path="res://Assets/2D/Feathers/t_feather_3.png" id="25_4b1gl"]
 [ext_resource type="Texture2D" uid="uid://dn5t3dytne5i7" path="res://Assets/2D/Feathers/t_feather_4.png" id="26_4ionf"]
@@ -27,7 +36,7 @@ size = Vector2(8455.5, 439)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kl2sp")
 ex_level_number = 1
-ex_experience_list = Array[PackedScene]([ExtResource("2_utki7"), ExtResource("6_dm3sp"), ExtResource("4_5sfby"), ExtResource("5_nwbo4"), ExtResource("6_aeron")])
+ex_experience_list = Array[PackedScene]([ExtResource("2_uvk6j"), ExtResource("3_ngann"), ExtResource("4_s8815"), ExtResource("5_lmd76"), ExtResource("6_8u6bx"), ExtResource("7_bvirs"), ExtResource("8_ovni5"), ExtResource("9_kh3ve"), ExtResource("10_hatd7"), ExtResource("7_bvirs"), ExtResource("11_syh0n"), ExtResource("12_kb0sr"), ExtResource("13_av7en"), ExtResource("14_0peth"), ExtResource("15_fc2wr")])
 ex_spawn_position = Vector2(600, -2500)
 ex_level_selection = ExtResource("7_nwbo4")
 

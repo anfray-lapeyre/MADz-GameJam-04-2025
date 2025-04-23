@@ -152,39 +152,39 @@ offset_bottom = 798.0
 color = Color(0, 0, 0, 1)
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
-process_mode = 3
 
 [node name="PauseMenu" type="Control" parent="PauseLayer"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1150.0
-offset_bottom = 650.0
+offset_left = -357.0
+offset_top = -726.0
+offset_right = 1868.0
+offset_bottom = 199.0
+
+[node name="Pause" type="Label" parent="PauseLayer/PauseMenu"]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 862.0
+offset_right = 1686.0
+offset_bottom = 1183.0
+text = "PAUSE"
 
 [node name="Resume" type="Button" parent="PauseLayer/PauseMenu"]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 161.0
-offset_right = 807.0
-offset_bottom = 270.0
+offset_left = 833.0
+offset_top = 1111.0
+offset_right = 1188.0
+offset_bottom = 1255.0
 text = "Resume"
-
-[node name="Restart" type="Button" parent="PauseLayer/PauseMenu"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 297.0
-offset_right = 809.0
-offset_bottom = 406.0
-text = "Restart"
 
 [node name="Quit" type="Button" parent="PauseLayer/PauseMenu"]
 layout_mode = 0
-offset_left = 518.0
-offset_top = 425.0
-offset_right = 809.0
-offset_bottom = 553.0
+offset_left = 832.0
+offset_top = 937.0
+offset_right = 1163.0
+offset_bottom = 1054.0
 text = "Quit"
 
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseLayer/PauseMenu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseLayer/PauseMenu/Quit" to="." method="_on_quit_pressed"]

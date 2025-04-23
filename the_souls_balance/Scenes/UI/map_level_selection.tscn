@@ -29,6 +29,7 @@ theme_override_font_sizes/font_size = 32
 text = "Level 1"
 
 [node name="Level_2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 384.0
 offset_top = 128.0
 offset_right = 544.0
@@ -38,6 +39,7 @@ theme_override_font_sizes/font_size = 32
 text = "Level 2"
 
 [node name="Level_3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 632.0
 offset_top = 128.0
 offset_right = 792.0
@@ -47,6 +49,7 @@ theme_override_font_sizes/font_size = 32
 text = "Level 3"
 
 [node name="Level_4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 880.0
 offset_top = 128.0
 offset_right = 1040.0
@@ -66,6 +69,7 @@ theme_override_font_sizes/font_size = 32
 text = "Level 5"
 
 [node name="Level_6" type="Button" parent="."]
+layout_mode = 0
 offset_left = 376.0
 offset_top = 400.0
 offset_right = 536.0
@@ -75,6 +79,7 @@ theme_override_font_sizes/font_size = 32
 text = "Level 6"
 
 [node name="Level_7" type="Button" parent="."]
+layout_mode = 0
 offset_left = 624.0
 offset_top = 400.0
 offset_right = 784.0
@@ -84,6 +89,7 @@ theme_override_font_sizes/font_size = 32
 text = "Level 7"
 
 [node name="Level_8" type="Button" parent="."]
+layout_mode = 0
 offset_left = 872.0
 offset_top = 400.0
 offset_right = 1032.0
@@ -93,6 +99,7 @@ theme_override_font_sizes/font_size = 32
 text = "Level 8"
 
 [node name="Return_button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 24.0
 offset_right = 126.0

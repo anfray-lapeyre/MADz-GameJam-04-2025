@@ -10,6 +10,8 @@ var level_size : int = 0 #To makes sure it spawns the right number of pieces (ch
 @export var ex_gravity_reverse_duration: float = 3.0
 @export var ex_level_selection : PackedScene
 
+@onready var pause_menu = $PauseLayer/PauseMenu
+
 var current_lives: int
 var can_lose_life: bool = true
 var current_index: int = 0 #helps to know at which experience we're at in the list.
@@ -18,6 +20,7 @@ var current_experience: Node = null #references the current experience, to conne
 func _ready() -> void:
 	current_lives = ex_max_lives
 	spawn_next_piece()
+	pause_menu.visible = false
 
 func spawn_next_piece():
 	if current_index >= ex_experience_list.size():
@@ -110,4 +113,29 @@ func handle_victory():
 		GlbGameManager.highest_unlocked_level = this_level + 1
 		GlbGameManager.save_progress()
 	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_packed(ex_level_selection)
+	
+func _unhandled_input(event):
+	if event.is_action_pressed("pause"):
+		if get_tree().paused:
+			_resume_game()
+		else:
+			_pause_game()
+
+func _pause_game():
+	get_tree().paused = true
+	pause_menu.visible = true
+
+func _resume_game():
+	get_tree().paused = false
+	pause_menu.visible = false
+
+func _on_resume_pressed() -> void:
+	_resume_game()
+
+func _on_restart_pressed() -> void:
+	reset_level()
+	_resume_game()
+
+func _on_quit_pressed() -> void:
 	get_tree().change_scene_to_packed(ex_level_selection)

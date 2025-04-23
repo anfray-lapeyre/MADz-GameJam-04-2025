@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bclfiilf6ubpt"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_o4wir"]
+[ext_resource type="Texture2D" uid="uid://b3n0kh7hhjc16" path="res://Assets/2D/Experiences/Deprecated/T_Sauron_Sadness.png" id="2_n37ke"]
+
+[node name="obj_experience" instance=ExtResource("1_o4wir")]
+
+[node name="experience_sprite" parent="." index="0"]
+texture = ExtResource("2_n37ke")
+
+[node name="experience_collider" parent="." index="1"]
+polygon = PackedVector2Array(-30.2297, -25.7936, -23.3777, -12.3016, -15.7195, -5.15873, -4.4337, -2.38095, -3.84391e-07, -1.5873, 4.83676, -1.98413, 15.3164, -5.95238, 23.7807, -12.3016, 30.2297, -25.7936, 30.2297, 29.7619, -30.2297, 29.7619)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(2, -25)
+scale = Vector2(3.19, 3.837)
+polygon = PackedVector2Array(-30.2297, -25.7936, -23.3777, -12.3016, -15.7195, -5.15873, -4.4337, -2.38095, -3.84391e-07, -1.5873, 4.83676, -1.98413, 15.3164, -5.95238, 23.7807, -12.3016, 30.2297, -25.7936, 30.2297, 29.7619, -30.2297, 29.7619)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds48q32suyvle"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_o8mbg"]
+[ext_resource type="Texture2D" uid="uid://bf5qbd1o0cgdh" path="res://Assets/2D/Experiences/Outlines/t_square_outline.png" id="2_nlyyi"]
+
+[node name="obj_experience" instance=ExtResource("1_o8mbg")]
+
+[node name="experience_sprite" parent="." index="0"]
+texture = ExtResource("2_nlyyi")
+
+[node name="experience_collider" parent="." index="1"]
+scale = Vector2(4.50389, 4.57468)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(-99, 108)
+scale = Vector2(1.45468, 12.0923)

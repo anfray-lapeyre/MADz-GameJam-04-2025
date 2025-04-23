@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://13phhq7nxcqs"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_xi4mb"]
+[ext_resource type="Material" uid="uid://diu563xhi1ysf" path="res://Assets/Material/Emotions/m_experience_joy.tres" id="2_hdpfp"]
+[ext_resource type="Texture2D" uid="uid://dau3q5loo4jtb" path="res://Assets/2D/Experiences/Outlines/t_i_outline.png" id="3_dc64g"]
+
+[node name="obj_experience" instance=ExtResource("1_xi4mb")]
+
+[node name="experience_sprite" parent="." index="0"]
+material = ExtResource("2_hdpfp")
+texture = ExtResource("3_dc64g")
+
+[node name="experience_collider" parent="." index="1"]
+polygon = PackedVector2Array(60.9524, 15.25, -60.6984, 15.25, -60.6984, -15, 60.9524, -15)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(-42, 44)
+polygon = PackedVector2Array(-171, -16, -171, -1.44361, 308, -1.44361, 308, -16)

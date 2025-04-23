@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcghsl05wl582"]
+
+[ext_resource type="PackedScene" uid="uid://btom3dmdapll2" path="res://Scenes/Objects/Experiences/Square/obj_experience_square.tscn" id="1_agw36"]
+
+[node name="obj_experience" instance=ExtResource("1_agw36")]

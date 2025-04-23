@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bef3txdcerh0h"]
+
+[ext_resource type="Shader" uid="uid://b26dhg8dlbqwr" path="res://Assets/Material/Shader/sh_experience.tres" id="1_pc73h"]
+[ext_resource type="Texture2D" uid="uid://kuyotgss5lss" path="res://Assets/2D/Experiences/Background/t_selfishness_background.jpg" id="2_pc73h"]
+[ext_resource type="Texture2D" uid="uid://h7n4akyqfssv" path="res://Assets/2D/Experiences/Background/t_cloud_mask.png" id="3_4sfkt"]
+
+[resource]
+shader = ExtResource("1_pc73h")
+shader_parameter/OutlineColor = Color(0.0899, 0.29, 0.153265, 1)
+shader_parameter/NoiseSpeed = 0.05
+shader_parameter/Noise = ExtResource("3_4sfkt")
+shader_parameter/NoiseStrength = 0.02
+shader_parameter/BackgroundScale = Vector2(1.5, 1.5)
+shader_parameter/BackgroundPivot = Vector2(0.5, 0.5)
+shader_parameter/Background = ExtResource("2_pc73h")

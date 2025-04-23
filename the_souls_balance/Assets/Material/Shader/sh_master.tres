@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=21 format=3 uid="uid://fasmiiqn230t"]
 
-[ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/T_T_Anger.png" id="1_521kc"]
+[ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/Deprecated/T_T_Anger.png" id="1_521kc"]
 [ext_resource type="Texture2D" uid="uid://b3lw8v61t677b" path="res://Assets/2D/Background/t_antiquepaper.jpg" id="2_v05l7"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_q0gme"]

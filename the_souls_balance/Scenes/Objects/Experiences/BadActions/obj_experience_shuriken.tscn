@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq5i8pbsdf4gb"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_ultim"]
+[ext_resource type="Texture2D" uid="uid://b78itwuu8iuqk" path="res://Assets/2D/Experiences/Outlines/t_star_outline.png" id="2_2162c"]
+[ext_resource type="Material" uid="uid://bef3txdcerh0h" path="res://Assets/Material/Actions/m_experience_selfishness.tres" id="2_r55dd"]
+
+[node name="obj_experience" instance=ExtResource("1_ultim")]
+
+[node name="experience_sprite" parent="." index="0"]
+material = ExtResource("2_r55dd")
+texture = ExtResource("2_2162c")
+
+[node name="experience_collider" parent="." index="1"]
+polygon = PackedVector2Array(-29.4236, -30.9524, -0.403064, -20.2381, 29.8267, -28.9683, 17.3317, -0.396824, 27.4083, 28.5714, -3.84391e-07, 17.4603, -29.0206, 26.9841, -18.1378, 1.19209e-06)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+polygon = PackedVector2Array(-80.9524, -26.9238, 65.0794, -22.532, 212.698, -27.6876, 179.365, -9.16555, 219.048, 9.7384, 68.254, 4.00993, -84.127, 10.1203, -41.2698, -8.78365)

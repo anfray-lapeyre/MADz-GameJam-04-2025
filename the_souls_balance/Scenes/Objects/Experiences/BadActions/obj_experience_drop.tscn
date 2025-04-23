@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3ko2yfjjqu8r"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_q6lwl"]
+[ext_resource type="Texture2D" uid="uid://dej5ybc7pi33p" path="res://Assets/2D/Experiences/Outlines/t_drop_outline.png" id="2_43oi7"]
+[ext_resource type="Material" uid="uid://dfse8l5c0h5tl" path="res://Assets/Material/Actions/m_experience_betrayal.tres" id="2_u5wk2"]
+
+[node name="obj_experience" instance=ExtResource("1_q6lwl")]
+
+[node name="experience_sprite" parent="." index="0"]
+material = ExtResource("2_u5wk2")
+texture = ExtResource("2_43oi7")
+
+[node name="experience_collider" parent="." index="1"]
+position = Vector2(0, 26)
+scale = Vector2(2.161, 2.44)
+polygon = PackedVector2Array(-3.84391e-07, -54.0984, 29.6159, -1.63934, 29.6159, 9.42623, 25.4512, 20.082, 15.7334, 26.6394, 8.32947, 30.7377, -3.84391e-07, 32.1429, -8.79222, 30.3279, -17.1217, 26.2295, -25.4512, 19.6721, -29.6159, 8.60656, -30.5414, -2.45902)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(-4.54747e-13, 4)
+scale = Vector2(3.26605, 3.99367)
+polygon = PackedVector2Array(-3.84391e-07, -40.5642, 30.6328, -3.1746, 30.2297, 4.76191, 28.6175, 13.0952, 24.1838, 20.2381, 15.7195, 27.7778, 6.44901, 30.9524, -3.84391e-07, 32.1429, -6.85208, 31.3492, -16.1225, 27.381, -23.3777, 21.0317, -28.6175, 12.3016, -30.2297, 3.57143, -29.8267, -3.57143)

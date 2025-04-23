@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bhhchwliao7kr"]
+
+[ext_resource type="Shader" uid="uid://b26dhg8dlbqwr" path="res://Assets/Material/Shader/sh_experience.tres" id="1_fki34"]
+[ext_resource type="Texture2D" uid="uid://cqa5in5sha35y" path="res://Assets/2D/Experiences/Background/t_disgust_background.jpg" id="2_u5c68"]
+
+[resource]
+shader = ExtResource("1_fki34")
+shader_parameter/OutlineColor = Color(0.270588, 0.282353, 0.101961, 1)
+shader_parameter/BackgroundScale = Vector2(0.15, 0.15)
+shader_parameter/BackgroundPivot = Vector2(0.45, 0.45)
+shader_parameter/Background = ExtResource("2_u5c68")

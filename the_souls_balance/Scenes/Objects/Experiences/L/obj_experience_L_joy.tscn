@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv4fsfyp8cbs4"]
+
+[ext_resource type="PackedScene" uid="uid://c3xbpukd7ufqj" path="res://Scenes/Objects/Experiences/L/obj_experience_L.tscn" id="1_a8ecs"]
+
+[node name="obj_experience" instance=ExtResource("1_a8ecs")]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://s827k74m1463"]
+
+[ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_lur46"]
+[ext_resource type="Texture2D" uid="uid://cmkr8m625k8qr" path="res://Assets/2D/Experiences/Deprecated/T_Seagull_Sadness.png" id="2_hf3mq"]
+
+[node name="obj_experience" instance=ExtResource("1_lur46")]
+
+[node name="experience_sprite" parent="." index="0"]
+texture = ExtResource("2_hf3mq")
+
+[node name="experience_collider" parent="." index="1"]
+polygon = PackedVector2Array(-30.2297, -25.7936, -23.3777, -12.3016, -15.7195, -5.15873, -4.4337, -2.38095, -3.84391e-07, -1.5873, 4.83676, -1.98413, 15.3164, -5.95238, 23.7807, -12.3016, 30.2297, -25.7936, 30.2297, -0.396824, -3.84391e-07, 29.3651, -30.2297, 1.19209e-06)
+
+[node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(2, -17)
+scale = Vector2(2.75765, 3.91377)
+polygon = PackedVector2Array(-30.2297, -25.7936, -23.3777, -12.3016, -15.7195, -5.15873, -4.4337, -2.38095, -3.84391e-07, -1.5873, 4.83676, -1.98413, 15.3164, -5.95238, 23.7807, -12.3016, 30.2297, -25.7936, 30.2297, -0.396824, -3.84391e-07, 29.3651, -30.2297, 1.19209e-06)

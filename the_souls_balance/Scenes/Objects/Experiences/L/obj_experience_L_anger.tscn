@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://clfkq2bsiodvp"]
+
+[ext_resource type="PackedScene" uid="uid://c3xbpukd7ufqj" path="res://Scenes/Objects/Experiences/L/obj_experience_L.tscn" id="1_vos0g"]
+[ext_resource type="Material" uid="uid://c415wkdh4hi48" path="res://Assets/Material/Emotions/m_experience_anger.tres" id="2_hjtkx"]
+
+[node name="obj_experience" instance=ExtResource("1_vos0g")]
+
+[node name="experience_sprite" parent="." index="0"]
+material = ExtResource("2_hjtkx")

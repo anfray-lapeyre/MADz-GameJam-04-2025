@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://diu563xhi1ysf"]
+
+[ext_resource type="Shader" uid="uid://b26dhg8dlbqwr" path="res://Assets/Material/Shader/sh_experience.tres" id="1_c1r6s"]
+[ext_resource type="Texture2D" uid="uid://cpqbrmw1jaf5a" path="res://Assets/2D/Experiences/Background/t_joy_background.jpg" id="2_v81ne"]
+
+[resource]
+shader = ExtResource("1_c1r6s")
+shader_parameter/OutlineColor = Color(0.384314, 0.262745, 0, 1)
+shader_parameter/BackgroundScale = Vector2(0.15, 0.15)
+shader_parameter/BackgroundPivot = Vector2(0.45, 0.45)
+shader_parameter/Background = ExtResource("2_v81ne")

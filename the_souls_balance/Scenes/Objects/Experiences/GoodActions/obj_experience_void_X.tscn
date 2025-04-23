@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c560hlelekqvl"]
+[gd_scene load_steps=4 format=3 uid="uid://c560hlelekqvl"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_wixk8"]
 [ext_resource type="Texture2D" uid="uid://c2vssiwq2yrc3" path="res://Assets/2D/Experiences/Outlines/t_cross_outline.png" id="2_j0kj4"]
+[ext_resource type="Material" uid="uid://7bwkywlxtgyk" path="res://Assets/Material/m_void.tres" id="2_l0x8b"]
 
 [node name="obj_experience" instance=ExtResource("1_wixk8")]
 
 [node name="experience_sprite" parent="." index="0"]
+material = ExtResource("2_l0x8b")
 texture = ExtResource("2_j0kj4")
 
 [node name="experience_collider" parent="." index="1"]
+visible = false
 polygon = PackedVector2Array(-41.5155, -13.8889, -14.1072, -13.8889, -14.1072, -41.6667, 14.1072, -41.6667, 14.1072, -13.8889, 42.3216, -13.8889, 42.3216, 11.5079, 13.3011, 11.5079, 13.3011, 41.2698, -12.495, 41.2698, -12.495, 12.6984, -41.5155, 12.6984)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
+visible = false
 polygon = PackedVector2Array(-9.52381, -32.4613, 147.619, -32.4613, 147.619, -18.1402, 260.317, -18.1402, 260.317, 0.763796, 153.968, 0.763796, 153.968, 13.9393, -6.34921, 13.9393, -6.34921, 0.572846, -117.46, 0.572846, -117.46, -18.5221, -9.52381, -18.5221)

@@ -6,7 +6,7 @@
 
 [resource]
 shader = ExtResource("1_hgsla")
-shader_parameter/OutlineColor = Color(0.6, 0.521569, 0.32549, 1)
+shader_parameter/OutlineColor = Color(0.39, 0.33917, 0.2106, 1)
 shader_parameter/NoiseSpeed = -0.01
 shader_parameter/Noise = ExtResource("3_q4frm")
 shader_parameter/NoiseStrength = 0.03

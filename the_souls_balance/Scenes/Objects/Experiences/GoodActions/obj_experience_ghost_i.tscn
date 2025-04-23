@@ -1,16 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb8swfwr3ew8e"]
+[gd_scene load_steps=4 format=3 uid="uid://cb8swfwr3ew8e"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_3pprt"]
+[ext_resource type="Material" uid="uid://d3qvothfcms8i" path="res://Assets/Material/m_ghost.tres" id="2_drvso"]
 [ext_resource type="Texture2D" uid="uid://dau3q5loo4jtb" path="res://Assets/2D/Experiences/Outlines/t_i_outline.png" id="2_tt3o4"]
 
 [node name="obj_experience" instance=ExtResource("1_3pprt")]
+collision_layer = 2
+collision_mask = 2
 
 [node name="experience_sprite" parent="." index="0"]
+material = ExtResource("2_drvso")
 texture = ExtResource("2_tt3o4")
 
 [node name="experience_collider" parent="." index="1"]
+visible = false
 scale = Vector2(9.081, 2.32)
 
+[node name="detect_area" parent="." index="3"]
+collision_layer = 2
+collision_mask = 2
+
 [node name="detect_area_collider" parent="detect_area" index="0"]
+visible = false
 scale = Vector2(0.965214, 5.237)
 polygon = PackedVector2Array(-115, -18.522, 210.316, -18.5221, 210.316, 1.14569, -115, 1.146)

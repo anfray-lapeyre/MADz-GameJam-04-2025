@@ -1,16 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds48q32suyvle"]
+[gd_scene load_steps=6 format=3 uid="uid://ds48q32suyvle"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_o8mbg"]
+[ext_resource type="Shader" uid="uid://cgsklogy7mof2" path="res://Assets/Material/Shader/sh_slime.tres" id="2_00w8l"]
 [ext_resource type="Texture2D" uid="uid://bf5qbd1o0cgdh" path="res://Assets/2D/Experiences/Outlines/t_square_outline.png" id="2_nlyyi"]
+[ext_resource type="Texture2D" uid="uid://b6xa3dkhxf2oc" path="res://Assets/2D/Experiences/Background/t_slime_background.png" id="3_2gy01"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2gy01"]
+shader = ExtResource("2_00w8l")
+shader_parameter/OutlineColor = Color(0.35, 1, 0.523333, 1)
+shader_parameter/NoiseSpeed = 0.1
+shader_parameter/Noise = ExtResource("3_2gy01")
+shader_parameter/NoiseStrength = 0.1
+shader_parameter/BackgroundScale = Vector2(1, 1)
+shader_parameter/BackgroundPivot = Vector2(0.5, 0.5)
+shader_parameter/Background = ExtResource("3_2gy01")
 
 [node name="obj_experience" instance=ExtResource("1_o8mbg")]
 
 [node name="experience_sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_2gy01")
 texture = ExtResource("2_nlyyi")
 
 [node name="experience_collider" parent="." index="1"]
+visible = false
 scale = Vector2(4.50389, 4.57468)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
+visible = false
 position = Vector2(-99, 108)
 scale = Vector2(1.45468, 12.0923)

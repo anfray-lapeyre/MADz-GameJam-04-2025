@@ -16,6 +16,12 @@ var current_fall_speed:float = ex_base_fall_speed #Actual current fall speed, ei
 @export var ex_should_use_raycast_collisions :bool=true
 
 @export var ex_cell_size: float = 32.0 # size of a cell from the grid when moving horizontally (where does the piece stops)
+@export var ex_dash_duration:float=0.3
+@export var ex_dash_cooldown:float=2
+@export var ex_dash_speed:float=4
+@export var ex_is_dash_allowed:bool=true
+var is_dashing :bool=false
+var can_dash:bool=true
 @export var ex_move_repeat_delay: float = 0.1 # Delay for spamming inputs, and gives horizontal speed
 @export var ex_gravity: float = 1.0 # How strong is the gravity when you don't controle the experience anymore
 @export var ex_time_before_release_control: float = 0.0
@@ -47,6 +53,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# If this node is currently under player or AI control
 	if is_controlled:
+		_handle_dash_input(delta) 
 		# Handle movement inputs (horizontal/vertical)
 		_handle_horizontal_input(delta) 
 		_handle_vertical_input(delta)
@@ -76,7 +83,7 @@ func _physics_process(delta: float) -> void:
 
 			# --- Horizontal correction to align with target_position.x ---
 			direction = Vector2.ZERO
-			direction.x = (global_position.x - target_position.x) * -2  # Push toward the target X
+			direction.x = (global_position.x - target_position.x) * (-0.5 if is_dashing else -2)  # Push toward the target X
 
 			hits = trace_custom_polygon($experience_collider, global_position + direction)
 			if hits.size() > 0:
@@ -90,13 +97,20 @@ func _physics_process(delta: float) -> void:
 		# Update any visual effects (like a spotlight or selection beam)
 		_update_light_beam()
 		
-		
-
+func _handle_dash_input(_delta:float)-> void:
+	if Input.is_action_just_pressed("dash"):
+		if can_dash && ex_is_dash_allowed:
+			dash()
+			can_dash=false
+	
+	
+	
 func _handle_horizontal_input(delta: float) -> void: #Makes the grid-like movement
+
 	if Input.is_action_pressed("move_left"):
 		move_left_timer -= delta
 		if !has_moved_left or move_left_timer <= 0.0:
-			target_position.x -= ex_cell_size
+			target_position.x -= ex_cell_size*ex_dash_speed if is_dashing == true else ex_cell_size
 			target_position.x = _snap_to_step(target_position.x)
 			move_left_timer = ex_move_repeat_delay
 			has_moved_left = true
@@ -107,7 +121,7 @@ func _handle_horizontal_input(delta: float) -> void: #Makes the grid-like moveme
 	if Input.is_action_pressed("move_right"):
 		move_right_timer -= delta
 		if !has_moved_right or move_right_timer <= 0.0:
-			target_position.x += ex_cell_size
+			target_position.x += ex_cell_size*ex_dash_speed if is_dashing == true else ex_cell_size
 			target_position.x = _snap_to_step(target_position.x)
 			move_right_timer = ex_move_repeat_delay
 			has_moved_right = true
@@ -144,6 +158,21 @@ func _release_control(): #function to make the player loose control of the piece
 	gravity_scale = ex_gravity
 	_use_power()
 	light_beam.hide()
+	
+func dash()->void:
+	is_dashing=true
+	get_tree().create_timer(ex_dash_duration).connect("timeout",stop_dashing)
+	
+	
+func stop_dashing()->void:
+	is_dashing=false
+	get_tree().create_timer(ex_dash_cooldown).connect("timeout",restore_dash)
+	
+
+func restore_dash()->void:
+	can_dash=true
+	
+	
 	
 func _use_power():
 	await get_tree().create_timer(0.5).timeout

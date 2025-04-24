@@ -1,24 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds48q32suyvle"]
+[gd_scene load_steps=7 format=3 uid="uid://ds48q32suyvle"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_o8mbg"]
-[ext_resource type="Shader" uid="uid://cgsklogy7mof2" path="res://Assets/Material/Shader/sh_slime.tres" id="2_00w8l"]
+[ext_resource type="Material" uid="uid://cuakkqcivenmr" path="res://Assets/Material/m_slime.tres" id="2_00w8l"]
 [ext_resource type="Texture2D" uid="uid://bf5qbd1o0cgdh" path="res://Assets/2D/Experiences/Outlines/t_square_outline.png" id="2_nlyyi"]
-[ext_resource type="Texture2D" uid="uid://b6xa3dkhxf2oc" path="res://Assets/2D/Experiences/Background/t_slime_background.png" id="3_2gy01"]
+[ext_resource type="Material" uid="uid://s4iix8lqbuqg" path="res://Assets/Material/m_slime_preview.tres" id="4_b5nt2"]
+[ext_resource type="Texture2D" uid="uid://dkrutr3314doa" path="res://Assets/2D/Experiences/Background/t_square_mask.png" id="5_pnabs"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2gy01"]
-shader = ExtResource("2_00w8l")
-shader_parameter/OutlineColor = Color(0.35, 1, 0.523333, 1)
-shader_parameter/NoiseSpeed = 0.1
-shader_parameter/Noise = ExtResource("3_2gy01")
-shader_parameter/NoiseStrength = 0.1
-shader_parameter/BackgroundScale = Vector2(1, 1)
-shader_parameter/BackgroundPivot = Vector2(0.5, 0.5)
-shader_parameter/Background = ExtResource("3_2gy01")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00w8l"]
+size = Vector2(350, 350)
 
 [node name="obj_experience" instance=ExtResource("1_o8mbg")]
+power_type = 2
 
 [node name="experience_sprite" parent="." index="0"]
-material = SubResource("ShaderMaterial_2gy01")
+z_index = 3
+material = ExtResource("2_00w8l")
 texture = ExtResource("2_nlyyi")
 
 [node name="experience_collider" parent="." index="1"]
@@ -29,3 +25,18 @@ scale = Vector2(4.50389, 4.57468)
 visible = false
 position = Vector2(-99, 108)
 scale = Vector2(1.45468, 12.0923)
+
+[node name="slime_area" type="Area2D" parent="." index="4"]
+
+[node name="slime_collision" type="CollisionShape2D" parent="slime_area" index="0"]
+shape = SubResource("RectangleShape2D_00w8l")
+
+[node name="Sprite2D" type="Sprite2D" parent="slime_area" index="1"]
+z_index = 1
+material = ExtResource("4_b5nt2")
+scale = Vector2(-1.381, -1.381)
+texture = ExtResource("5_pnabs")
+
+[connection signal="area_entered" from="slime_area" to="." method="_on_slime_area_area_entered"]
+[connection signal="area_exited" from="slime_area" to="." method="_on_slime_area_area_exited"]
+[connection signal="body_entered" from="slime_area" to="." method="_on_slime_area_body_entered"]

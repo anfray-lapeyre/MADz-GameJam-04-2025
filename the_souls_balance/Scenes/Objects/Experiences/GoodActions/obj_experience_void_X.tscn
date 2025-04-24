@@ -1,12 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://c560hlelekqvl"]
+[gd_scene load_steps=10 format=3 uid="uid://c560hlelekqvl"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_wixk8"]
 [ext_resource type="Texture2D" uid="uid://c2vssiwq2yrc3" path="res://Assets/2D/Experiences/Outlines/t_cross_outline.png" id="2_j0kj4"]
 [ext_resource type="Material" uid="uid://7bwkywlxtgyk" path="res://Assets/Material/m_void.tres" id="2_l0x8b"]
+[ext_resource type="Material" uid="uid://vc0nj0l4c6w0" path="res://Assets/Material/m_void_preview.tres" id="4_cjca8"]
+[ext_resource type="Texture2D" uid="uid://c0qlwslbf803e" path="res://Assets/2D/Experiences/Outlines/t_round_outline.png" id="5_b25kh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0x8b"]
+radius = 183.89
+
+[sub_resource type="Animation" id="Animation_cjca8"]
+resource_name = "Rotate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_b25kh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_act2q"]
+_data = {
+&"RESET": SubResource("Animation_b25kh"),
+&"Rotate": SubResource("Animation_cjca8")
+}
 
 [node name="obj_experience" instance=ExtResource("1_wixk8")]
+power_type = 3
 
 [node name="experience_sprite" parent="." index="0"]
+z_index = 1
 material = ExtResource("2_l0x8b")
 texture = ExtResource("2_j0kj4")
 
@@ -17,3 +60,18 @@ polygon = PackedVector2Array(-41.5155, -13.8889, -14.1072, -13.8889, -14.1072, -
 [node name="detect_area_collider" parent="detect_area" index="0"]
 visible = false
 polygon = PackedVector2Array(-9.52381, -32.4613, 147.619, -32.4613, 147.619, -18.1402, 260.317, -18.1402, 260.317, 0.763796, 153.968, 0.763796, 153.968, 13.9393, -6.34921, 13.9393, -6.34921, 0.572846, -117.46, 0.572846, -117.46, -18.5221, -9.52381, -18.5221)
+
+[node name="void_area" type="Area2D" parent="." index="4"]
+
+[node name="void_collision" type="CollisionShape2D" parent="void_area" index="0"]
+shape = SubResource("CircleShape2D_l0x8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="void_area" index="1"]
+material = ExtResource("4_cjca8")
+scale = Vector2(-1.446, -1.446)
+texture = ExtResource("5_b25kh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="void_area/Sprite2D" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_act2q")
+}

@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://o8k4mo5d1hu4"]
+
+[ext_resource type="Shader" uid="uid://dqwbtuwnphyby" path="res://Assets/Material/Shader/sh_ghost.tres" id="1_uo0m6"]
+[ext_resource type="Texture2D" uid="uid://h7n4akyqfssv" path="res://Assets/2D/Experiences/Background/t_cloud_mask.png" id="2_gg6i4"]
+
+[resource]
+shader = ExtResource("1_uo0m6")
+shader_parameter/OutlineColor = Color(1, 1, 1, 0)
+shader_parameter/NoiseSpeed = 0.1
+shader_parameter/Noise = ExtResource("2_gg6i4")
+shader_parameter/NoiseStrength = 0.0
+shader_parameter/BackgroundScale = Vector2(0.01, 0.01)
+shader_parameter/BackgroundPivot = Vector2(0.5, 0.5)
+shader_parameter/Background = ExtResource("2_gg6i4")

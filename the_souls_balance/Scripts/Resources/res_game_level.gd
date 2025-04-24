@@ -156,10 +156,12 @@ func reverse_gravity():
 	for child in get_tree().get_nodes_in_group("Experiences"):
 		# Cast le nœud en RigidBody2D pour accéder à ses propriétés physiques
 		var body := child as RigidBody2D
+		body.freeze=false
 		# Modifie l'échelle de la gravité pour inverser sa direction (vers le haut)
 		body.gravity_scale = -2
 		# Applique une impulsion initiale vers le haut pour donner un effet immédiat
 		body.apply_impulse(Vector2.UP)
+
 
 func _pause_game():
 	get_tree().paused = true

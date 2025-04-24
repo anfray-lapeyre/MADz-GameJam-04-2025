@@ -1,5 +1,14 @@
 extends RigidBody2D
 
+enum PowerType{
+	NONE,
+	GHOST,
+	SLIME,
+	VOID,
+}
+
+@export var power_type : PowerType = PowerType.NONE
+var is_power_in_use :bool = false; #Only used for slime
 @export var ex_base_fall_speed: float = 300.0 # Falling speed when player is in control
 @export var ex_fast_fall_speed: float = 1000.0 #Falling speed when player presses down
 var current_fall_speed:float = ex_base_fall_speed #Actual current fall speed, either base or fast
@@ -9,6 +18,8 @@ var current_fall_speed:float = ex_base_fall_speed #Actual current fall speed, ei
 @export var ex_gravity: float = 1.0 # How strong is the gravity when you don't controle the experience anymore
 @export var ex_time_before_release_control: float = 0.0
 signal sig_control_lost
+
+@export var ex_ghost_material:Material;
 
 var current_rotation_state := 0 # 0, 1, 2, 3 for the 4 directions
 var target_position: Vector2
@@ -94,7 +105,28 @@ func _release_control(): #function to make the player loose control of the piece
 	freeze = false
 	sig_control_lost.emit() #send a signal to game level
 	gravity_scale = ex_gravity
+	_use_power()
 	light_beam.hide()
+	
+func _use_power():
+	await get_tree().create_timer(0.5).timeout
+	match power_type:
+		PowerType.GHOST:
+			for child in $ghost_area.get_overlapping_bodies():
+				if (child).is_in_group("Experiences") && child != self:
+					(child as RigidBody2D).freeze=true
+					for grandchild in child.get_children():
+						if grandchild is Sprite2D:
+							(grandchild as Sprite2D).material = ex_ghost_material
+			queue_free()
+		PowerType.SLIME:
+			is_power_in_use=true;
+			self.linear_damp = 2.0
+		PowerType.VOID:
+			for child in $void_area.get_overlapping_bodies():
+				if (child).is_in_group("Experiences") && child != self:
+					child.queue_free()
+			$void_area.queue_free()
 	
 func _rotate_piece(direction: int): 
 	current_rotation_state = (current_rotation_state + direction) % 4
@@ -164,3 +196,21 @@ func get_polygon_size(p: PackedVector2Array) -> Vector2:
 
 	# Return the size (width, height) of the bounding rectangle
 	return r.size
+
+
+
+
+func _on_slime_area_area_entered(area: Area2D) -> void:
+	if !is_power_in_use:
+		return
+	var body = area.get_parent()
+	if body != self && body is RigidBody2D && body.is_in_group("Experiences"):
+		(body as RigidBody2D).linear_damp=20.0
+		body._on_area_2d_body_entered(self)
+
+
+func _on_slime_area_area_exited(area: Area2D) -> void:
+	var body = area.get_parent()
+	if body != self && body is RigidBody2D && body.is_in_group("Experiences"):
+		(body as RigidBody2D).linear_damp=0.0
+		body._on_area_2d_body_entered(self)

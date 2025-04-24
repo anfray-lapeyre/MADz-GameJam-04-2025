@@ -45,36 +45,51 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# If this node is currently under player or AI control
 	if is_controlled:
+		# Handle movement inputs (horizontal/vertical)
 		_handle_horizontal_input(delta) 
 		_handle_vertical_input(delta)
+
+		# Handle rotation input (left/right)
 		if Input.is_action_just_pressed("rotate_left"):
 			_rotate_piece(-1)
 		elif Input.is_action_just_pressed("rotate_right"):
 			_rotate_piece(1)
-		
-		if ex_should_use_raycast_collisions == true:
-			var direction =Vector2.ZERO #Vector2((global_position.x-target_position.x)*-1,(global_position.y-target_position.y)*-5)
-			direction.y = ex_base_fall_speed * delta*3
-			
-			# allows the free vertical fall
-			var hits := trace_custom_polygon($experience_collider,global_position + direction)
-			if hits.size() > 0:
-				print(hits)
-				if is_controlled :
-					call_deferred("_release_control") #To avoid everything happening all at once and yeeting the experiences
-					return
-					
-			direction = Vector2.ZERO
-			direction.x = (global_position.x-target_position.x)*-2
-			hits = trace_custom_polygon($experience_collider,global_position + direction)
-			if hits.size() > 0:
-				target_position.x=global_position.x
 
-		global_position.y = target_position.y 
+		# If using raycast-based collisions instead of physics
+		if ex_should_use_raycast_collisions == true:
+			
+			# --- Vertical collision detection ---
+			var direction = Vector2.ZERO
+			direction.y = ex_base_fall_speed * delta * 3  # Apply downward movement
+
+			# Trace a vertical movement to detect any upcoming collisions
+			var hits := trace_custom_polygon($experience_collider, global_position + direction)
+			if hits.size() > 0:
+				print(hits)  # Debug info: show hit data
+
+				# If still controlled, relinquish control to simulate a "drop"
+				if is_controlled:
+					call_deferred("_release_control")  # Prevents weird simultaneous behaviors
+					return
+
+			# --- Horizontal correction to align with target_position.x ---
+			direction = Vector2.ZERO
+			direction.x = (global_position.x - target_position.x) * -2  # Push toward the target X
+
+			hits = trace_custom_polygon($experience_collider, global_position + direction)
+			if hits.size() > 0:
+				# Stop horizontal adjustment if blocked by a collision
+				target_position.x = global_position.x
+
+		# Snap object to its target position
+		global_position.y = target_position.y
 		global_position.x = target_position.x
-		
+
+		# Update any visual effects (like a spotlight or selection beam)
 		_update_light_beam()
+		
 		
 
 func _handle_horizontal_input(delta: float) -> void: #Makes the grid-like movement
@@ -237,37 +252,49 @@ func _on_slime_area_area_exited(area: Area2D) -> void:
 		(body as RigidBody2D).linear_damp=0.0
 		body._on_area_2d_body_entered(self)
 
-func trace_custom_polygon(polygon: CollisionPolygon2D, _position: Vector2, _rotation: float = 0.0, _ignore_self=true) -> Array:
+#Raycast-based collision detection from a polygon's edges
+func trace_custom_polygon(polygon: CollisionPolygon2D, _position: Vector2, _rotation: float = 0.0, _ignore_self := true) -> Array:
+	# Return early if the polygon is null
 	if !polygon:
 		return []
 
+	# Get access to the 2D physics world state
 	var space := get_world_2d().direct_space_state
-	var _transform := Transform2D(polygon.global_rotation + _rotation, polygon.global_scale ,polygon.skew,_position)
 
-	# Get polygon points
+	# Build the transform combining the polygon’s own transform with optional rotation and position offset
+	var _transform := Transform2D(
+		polygon.global_rotation + _rotation,  # Combined rotation
+		polygon.global_scale,                 # Use current scale
+		polygon.skew,                         # Preserve any skew
+		_position                             # Custom position override
+	)
+
+	# Retrieve local polygon points (as defined in the editor)
 	var points := polygon.polygon
-	var hit_points := []
+	var hit_points := []  # Will hold the collision data from raycasts
 
-	# Optional exclusion
+	# Optionally exclude this object from the query (e.g., to avoid self-collision)
 	var exclude = [self.get_rid()] if _ignore_self else []
 
-	# For each edge in the polygon, cast a ray
+	# For each edge in the polygon, trace a ray from one vertex to the next
 	for i in points.size():
 		var local_a := points[i]
-		var local_b := points[(i + 1) % points.size()]
+		var local_b := points[(i + 1) % points.size()]  # Wraps around to close the polygon
 
+		# Convert local space points to global positions using the custom transform
 		var global_a := _transform * local_a
 		var global_b := _transform * local_b
 
-		# Set up the query for raycast
+		# Create the raycast query from point A to point B
 		var query := PhysicsRayQueryParameters2D.new()
 		query.from = global_a
 		query.to = global_b
-		query.exclude = exclude
+		query.exclude = exclude  # Exclude self if necessary
 
-		# Perform the ray intersection query
+		# Perform the raycast and get the first collision result (if any)
 		var result = space.intersect_ray(query)
 
+		# If something was hit, store useful information
 		if result:
 			hit_points.append({
 				"position": result.position,
@@ -275,19 +302,21 @@ func trace_custom_polygon(polygon: CollisionPolygon2D, _position: Vector2, _rota
 				"collider": result.collider
 			})
 
+	# Return all collision hits found across polygon edges
 	return hit_points
 	
-	
+#Find the nearest hit from a list of raycasts
 func get_closest_collision(result: Array, origin: Vector2) -> Dictionary:
 	var closest = null
-	var closest_dist := INF
+	var closest_dist := INF  # Start with an infinite distance
 
+	# Iterate over all raycast results to find the nearest point
 	for hit in result:
-		if hit.has("position"):
+		if hit.has("position"):  # Ensure this hit actually contains a position
 			var dist = origin.distance_to(hit.position)
 			if dist < closest_dist:
 				closest = hit
 				closest_dist = dist
-	
-	# If no collision was found, return an empty dictionary instead of null
+
+	# If no valid hit was found, return an empty dictionary
 	return closest if closest != null else {}

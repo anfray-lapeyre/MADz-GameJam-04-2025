@@ -64,12 +64,12 @@ func lose_life() -> void: #func when you loose life
 
 func update_life_display():
 	for i in ex_max_lives:
-		var plume = get_node("LifeDisplay").get_node("Feather" + str(i + 1))
+		var plume = %LifeDisplay.get_node("Feather" + str(i + 1))
 		plume.visible = false
 		# Display of the feather according to the number of lives
 	var lost_lives = ex_max_lives - current_lives
 	if lost_lives < ex_max_lives:
-		var active_plume = get_node("LifeDisplay").get_node("Feather" + str(lost_lives + 1))
+		var active_plume = %LifeDisplay.get_node("Feather" + str(lost_lives + 1))
 		active_plume.visible = true
 
 func handle_game_over() -> void:

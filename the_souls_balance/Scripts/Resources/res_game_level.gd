@@ -48,6 +48,7 @@ func _on_dead_zone_body_entered(body: Node2D) -> void: #connects with dead zone
 		return
 	if can_lose_life:
 		lose_life()
+		current_experience.queue_free()
 
 func lose_life() -> void: #func when you loose life
 	current_lives -= 1

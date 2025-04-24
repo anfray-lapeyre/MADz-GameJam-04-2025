@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dn5t3dytne5i7" path="res://Assets/2D/Feathers/t_feather_4.png" id="26_4ionf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kjit"]
-size = Vector2(8455.5, 439)
+size = Vector2(8455.5, 279.5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uvk6j"]
 distance = -1040.0
@@ -152,7 +152,7 @@ texture = ExtResource("16_cjerr")
 [node name="Dead_zone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dead_zone"]
-position = Vector2(661, 908)
+position = Vector2(661, 987.75)
 shape = SubResource("RectangleShape2D_6kjit")
 
 [node name="ScreenFade" type="ColorRect" parent="."]

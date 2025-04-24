@@ -14,4 +14,6 @@ texture = ExtResource("3_8dk31")
 polygon = PackedVector2Array(-15.4921, 29.5, -45.2064, 29.5, -45.2064, -29.75, 45.4603, -29.75, 45.4603, -0.249999, -15.4921, -0.249999)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
+position = Vector2(-44, 41)
+scale = Vector2(0.58, 4.821)
 polygon = PackedVector2Array(-110, -23.0977, -110, 5.41353, 7, 5.41353, 7, -8.90226, 247, -8.90226, 247, -23.0977)

@@ -18,13 +18,11 @@ material = ExtResource("2_00w8l")
 texture = ExtResource("2_nlyyi")
 
 [node name="experience_collider" parent="." index="1"]
-visible = false
 scale = Vector2(4.50389, 4.57468)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
-visible = false
-position = Vector2(-99, 108)
-scale = Vector2(1.45468, 12.0923)
+position = Vector2(-69, 87)
+scale = Vector2(1.025, 9.528)
 
 [node name="slime_area" type="Area2D" parent="." index="4"]
 

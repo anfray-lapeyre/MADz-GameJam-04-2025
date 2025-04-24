@@ -16,5 +16,6 @@ position = Vector2(-4, -38)
 polygon = PackedVector2Array(45.7143, 15.5, 15.4921, 15.5, 15.4921, 45.5, -14.9841, 45.5, -15.1872, 15.3335, -45.7143, 15.25, -45.7143, -15, 45.7143, -15)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
-position = Vector2(-45, 76)
+position = Vector2(-41, 67)
+scale = Vector2(0.555, 4.614)
 polygon = PackedVector2Array(5, -14.5564, 6, -1.90735e-06, 126, -1.90735e-06, 126, -14.4361, 245, -14.4361, 245, -29.1128, -115, -29.1128, -115, -14.5564)

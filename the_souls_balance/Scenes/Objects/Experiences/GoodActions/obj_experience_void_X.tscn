@@ -9,21 +9,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0x8b"]
 radius = 183.89
 
-[sub_resource type="Animation" id="Animation_cjca8"]
-resource_name = "Rotate"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
 [sub_resource type="Animation" id="Animation_b25kh"]
 length = 0.001
 tracks/0/type = "value"
@@ -37,6 +22,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cjca8"]
+resource_name = "Rotate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_act2q"]
@@ -58,7 +58,8 @@ visible = false
 polygon = PackedVector2Array(-41.5155, -13.8889, -14.1072, -13.8889, -14.1072, -41.6667, 14.1072, -41.6667, 14.1072, -13.8889, 42.3216, -13.8889, 42.3216, 11.5079, 13.3011, 11.5079, 13.3011, 41.2698, -12.495, 41.2698, -12.495, 12.6984, -41.5155, 12.6984)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
-visible = false
+position = Vector2(-33, 44)
+scale = Vector2(0.475, 4.699)
 polygon = PackedVector2Array(-9.52381, -32.4613, 147.619, -32.4613, 147.619, -18.1402, 260.317, -18.1402, 260.317, 0.763796, 153.968, 0.763796, 153.968, 13.9393, -6.34921, 13.9393, -6.34921, 0.572846, -117.46, 0.572846, -117.46, -18.5221, -9.52381, -18.5221)
 
 [node name="void_area" type="Area2D" parent="." index="4"]

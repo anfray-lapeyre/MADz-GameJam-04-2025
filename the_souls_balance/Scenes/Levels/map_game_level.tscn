@@ -772,6 +772,26 @@ collision_mask = 3
 position = Vector2(22, 27)
 shape = SubResource("WorldBoundaryShape2D_uvk6j")
 
+[node name="obj_experience" parent="." instance=ExtResource("8_ovni5")]
+position = Vector2(436, 233)
+ex_should_use_raycast_collisions = true
+
+[node name="obj_experience2" parent="." instance=ExtResource("8_ovni5")]
+position = Vector2(599, 233)
+ex_should_use_raycast_collisions = true
+
+[node name="obj_experience3" parent="." instance=ExtResource("8_ovni5")]
+position = Vector2(511, 66)
+ex_should_use_raycast_collisions = true
+
+[node name="obj_experience4" parent="." instance=ExtResource("8_ovni5")]
+position = Vector2(511, -113)
+ex_should_use_raycast_collisions = true
+
+[node name="obj_experience5" parent="." instance=ExtResource("8_ovni5")]
+position = Vector2(520, -297)
+ex_should_use_raycast_collisions = true
+
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Restart" to="." method="_on_restart_pressed"]

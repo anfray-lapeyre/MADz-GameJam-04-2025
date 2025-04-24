@@ -57,7 +57,7 @@ var experience_keywords = {
 	
 	
 	"obj_circle" : "Cowardice",
-	"obj_experience_shuriken" : "Egoism",
+	"obj_experience_shuriken" : "Selfishness",
 	"obj_experience_drop" : "Betrayal",
 	"obj_experience_ghost_i" : "Self Sacrifice",
 	"obj_experience_slime_square" : "Kindness",
@@ -73,7 +73,6 @@ var level_size : int = 0 #To makes sure it spawns the right number of pieces (ch
 @export var ex_hurt_cooldown_time: float = 1.5
 @export var ex_gravity_reverse_duration: float = 3.0
 @export var ex_level_selection : PackedScene
-
 @onready var pause_menu = $PauseLayer/PauseMenu
 
 var current_lives: int
@@ -110,6 +109,8 @@ func _on_piece_lost_control(piece: Node) -> void: #Disconnects the signal after 
 	_piece = piece
 	piece.sig_control_lost.disconnect(_on_piece_lost_control)
 	current_spawn_timer.start()
+	if current_spawn_timer.is_connected("timeout",call_spawn_piece_and_check_victory):
+		current_spawn_timer.disconnect("timeout",call_spawn_piece_and_check_victory)
 	current_spawn_timer.connect("timeout",call_spawn_piece_and_check_victory)
 
 func call_spawn_piece_and_check_victory() -> void:
@@ -126,7 +127,6 @@ func _on_dead_zone_body_entered(body: Node2D) -> void: #connects with dead zone
 	body.queue_free()
 	if can_lose_life:
 		lose_life()
-		current_experience.queue_free()
 
 func lose_life() -> void: #func when you loose life
 	current_lives -= 1
@@ -221,7 +221,7 @@ func reverse_gravity():
 	for child in get_tree().get_nodes_in_group("Experiences"):
 		# Cast le nœud en RigidBody2D pour accéder à ses propriétés physiques
 		var body := child as RigidBody2D
-		body.freeze=false
+		body.set_deferred("freeze",false)
 		# Modifie l'échelle de la gravité pour inverser sa direction (vers le haut)
 		body.gravity_scale = -2
 		# Applique une impulsion initiale vers le haut pour donner un effet immédiat

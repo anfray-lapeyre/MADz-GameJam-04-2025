@@ -13,6 +13,8 @@ var is_power_in_use :bool = false; #Only used for slime
 @export var ex_fast_fall_speed: float = 1000.0 #Falling speed when player presses down
 var current_fall_speed:float = ex_base_fall_speed #Actual current fall speed, either base or fast
 
+@export var ex_should_use_raycast_collisions :bool=true
+
 @export var ex_cell_size: float = 32.0 # size of a cell from the grid when moving horizontally (where does the piece stops)
 @export var ex_move_repeat_delay: float = 0.1 # Delay for spamming inputs, and gives horizontal speed
 @export var ex_gravity: float = 1.0 # How strong is the gravity when you don't controle the experience anymore
@@ -40,6 +42,8 @@ func _ready() -> void:
 	freeze = true
 	_update_light_beam()
 
+
+
 func _physics_process(delta: float) -> void:
 	if is_controlled:
 		_handle_horizontal_input(delta) 
@@ -48,8 +52,26 @@ func _physics_process(delta: float) -> void:
 			_rotate_piece(-1)
 		elif Input.is_action_just_pressed("rotate_right"):
 			_rotate_piece(1)
-		# allows the free vertical fall
-		global_position.y += current_fall_speed * delta
+		
+		if ex_should_use_raycast_collisions == true:
+			var direction =Vector2.ZERO #Vector2((global_position.x-target_position.x)*-1,(global_position.y-target_position.y)*-5)
+			direction.y = ex_base_fall_speed * delta*3
+			
+			# allows the free vertical fall
+			var hits := trace_custom_polygon($experience_collider,global_position + direction)
+			if hits.size() > 0:
+				print(hits)
+				if is_controlled :
+					call_deferred("_release_control") #To avoid everything happening all at once and yeeting the experiences
+					return
+					
+			direction = Vector2.ZERO
+			direction.x = (global_position.x-target_position.x)*-2
+			hits = trace_custom_polygon($experience_collider,global_position + direction)
+			if hits.size() > 0:
+				target_position.x=global_position.x
+
+		global_position.y = target_position.y 
 		global_position.x = target_position.x
 		
 		_update_light_beam()
@@ -79,12 +101,12 @@ func _handle_horizontal_input(delta: float) -> void: #Makes the grid-like moveme
 			has_moved_right = false
 
 #Handle the input to go down faster
-func _handle_vertical_input(detla:float) -> void:
+func _handle_vertical_input(_delta:float) -> void:
 	if Input.is_action_pressed("move_down"):
 		current_fall_speed = ex_fast_fall_speed
 	else:
 		current_fall_speed = ex_base_fall_speed
-		
+	target_position.y +=current_fall_speed * _delta
 		
 # function to align exp on the grid
 func _snap_to_step(x: float) -> float:
@@ -214,3 +236,58 @@ func _on_slime_area_area_exited(area: Area2D) -> void:
 	if body != self && body is RigidBody2D && body.is_in_group("Experiences"):
 		(body as RigidBody2D).linear_damp=0.0
 		body._on_area_2d_body_entered(self)
+
+func trace_custom_polygon(polygon: CollisionPolygon2D, _position: Vector2, _rotation: float = 0.0, _ignore_self=true) -> Array:
+	if !polygon:
+		return []
+
+	var space := get_world_2d().direct_space_state
+	var _transform := Transform2D(polygon.global_rotation + _rotation, polygon.global_scale ,polygon.skew,_position)
+
+	# Get polygon points
+	var points := polygon.polygon
+	var hit_points := []
+
+	# Optional exclusion
+	var exclude = [self.get_rid()] if _ignore_self else []
+
+	# For each edge in the polygon, cast a ray
+	for i in points.size():
+		var local_a := points[i]
+		var local_b := points[(i + 1) % points.size()]
+
+		var global_a := _transform * local_a
+		var global_b := _transform * local_b
+
+		# Set up the query for raycast
+		var query := PhysicsRayQueryParameters2D.new()
+		query.from = global_a
+		query.to = global_b
+		query.exclude = exclude
+
+		# Perform the ray intersection query
+		var result = space.intersect_ray(query)
+
+		if result:
+			hit_points.append({
+				"position": result.position,
+				"normal": result.normal,
+				"collider": result.collider
+			})
+
+	return hit_points
+	
+	
+func get_closest_collision(result: Array, origin: Vector2) -> Dictionary:
+	var closest = null
+	var closest_dist := INF
+
+	for hit in result:
+		if hit.has("position"):
+			var dist = origin.distance_to(hit.position)
+			if dist < closest_dist:
+				closest = hit
+				closest_dist = dist
+	
+	# If no collision was found, return an empty dictionary instead of null
+	return closest if closest != null else {}

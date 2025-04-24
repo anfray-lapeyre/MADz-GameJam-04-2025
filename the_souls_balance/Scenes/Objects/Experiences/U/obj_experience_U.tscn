@@ -15,4 +15,4 @@ polygon = PackedVector2Array(-41.5155, -26.9841, 42.3216, -26.9841, 42.3216, 26.
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
 scale = Vector2(1, 1)
-polygon = PackedVector2Array(-75, -130, 163, -130, 163, 39, 65, 39, 64, -36, 21, -36, 21, 40, -74, 40)
+polygon = PackedVector2Array(-60, -112, 145, -114, 145, 22, 86, 20, 90, -55, 0, -55, 2, 20, -60, 21)

@@ -1,5 +1,69 @@
 extends Node2D
 
+var experience_keywords = {
+	"obj_experience_T_anger": "Family",
+	"obj_experience_T_disgust": "Family",
+	"obj_experience_T_fear": "Family",
+	"obj_experience_T_joy": "Family",
+	"obj_experience_T_sadness": "Family",
+	
+	"obj_experience_square_anger": "Daily Life",
+	"obj_experience_square_disgust": "Daily Life",
+	"obj_experience_square_fear": "Daily Life",
+	"obj_experience_square_joy": "Daily Life",
+	"obj_experience_square_sadness": "Daily Life",
+	
+	"obj_experience_LL_anger": "Love",
+	"obj_experience_LL_disgust": "Love",
+	"obj_experience_LL_fear": "Love",
+	"obj_experience_LL_joy": "Love",
+	"obj_experience_LL_sadness": "Love",
+	
+	"obj_experience_Z_anger": "Learning",
+	"obj_experience_Z_disgust": "Learning",
+	"obj_experience_Z_fear": "Learning",
+	"obj_experience_Z_joy": "Learning",
+	"obj_experience_Z_sadness": "Learning",
+	
+	"obj_experience_ZZ_anger" : "Work",
+	"obj_experience_ZZ_disgust" : "Work",
+	"obj_experience_ZZ_fear" : "Work",
+	"obj_experience_ZZ_joy" : "Work",
+	"obj_experience_ZZ_sadness" : "Work",
+	
+	"obj_experience_L_anger" : "Health",
+	"obj_experience_L_disgust" : "Health",
+	"obj_experience_L_fear" : "Health",
+	"obj_experience_L_joy" : "Health",
+	"obj_experience_L_sadness" : "Health",
+	
+	"obj_experience_U_anger" : "Surprise",
+	"obj_experience_U_disgust" : "Surprise",
+	"obj_experience_U_fear" : "Surprise",
+	"obj_experience_U_joy" : "Surprise",
+	"obj_experience_U_sadness" : "Surprise",
+	
+	"obj_experience_I_anger" : "Creativity",
+	"obj_experience_I_disgust" : "Creativity",
+	"obj_experience_I_fear" : "Creativity",
+	"obj_experience_I_joy" : "Creativity",
+	"obj_experience_I_sadness" : "Creativity",
+	
+	"obj_experience_X_anger" : "Social",
+	"obj_experience_X_disgust" : "Social",
+	"obj_experience_X_fear" : "Social",
+	"obj_experience_X_joy" : "Social",
+	"obj_experience_X_sadness" : "Social",
+	
+	
+	"obj_circle" : "Cowardice",
+	"obj_experience_shuriken" : "Egoism",
+	"obj_experience_drop" : "Betrayal",
+	"obj_experience_ghost_i" : "Self Sacrifice",
+	"obj_experience_slime_square" : "Kindness",
+	"obj_experience_void_X" : "Shelter"
+}
+
 var level_size : int = 0 #To makes sure it spawns the right number of pieces (changes in ready function later)
 @export var ex_level_number: int
 @export var ex_experience_list: Array[PackedScene] #List of experience to spawn (keeps the order)
@@ -38,7 +102,7 @@ func spawn_next_piece():
 		# connects the signal to this experience
 	if current_experience.has_signal("sig_control_lost"):
 		current_experience.sig_control_lost.connect(_on_piece_lost_control.bind(current_experience))
-
+	update_next_piece_preview()
 #Variable used in the 2 next functions, because we can't pass a parameter in a connection
 var _piece : Node;
 
@@ -127,6 +191,7 @@ func reset_level():
 	for child in get_tree().get_nodes_in_group("Experiences"):
 		child.queue_free()
 	spawn_next_piece()
+	update_next_piece_preview()
 
 func handle_victory():
 	print("VICTORY")
@@ -180,3 +245,28 @@ func _on_restart_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().change_scene_to_packed(ex_level_selection)
+
+func update_next_piece_preview():
+	if current_index >= ex_experience_list.size():
+		$Cartouche/ExperiencePreview.texture = null
+		$Cartouche/ExperienceLabel.text = ""
+		return
+
+	var next_scene = ex_experience_list[current_index]
+	var next_instance = next_scene.instantiate()
+	var sprite = next_instance.get_node_or_null("experience_sprite")
+
+	# Ajout du label
+	var scene_name = next_scene.resource_path.get_file().get_basename()
+	if experience_keywords.has(scene_name):
+		$Cartouche/ExperienceLabel.text = experience_keywords[scene_name]
+	else:
+		$Cartouche/ExperienceLabel.text = ""
+
+	if sprite and sprite is Sprite2D:
+		$Cartouche/ExperiencePreview.texture = sprite.texture
+		$Cartouche/ExperiencePreview.material = sprite.material
+	else:
+		print("'experience_sprite' cannot be found")
+
+	next_instance.queue_free()

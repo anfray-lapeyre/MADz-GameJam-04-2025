@@ -33,5 +33,5 @@ func _on_return_button_pressed() -> void:
 func _ready():
 	GlbGameManager.load_progress()
 	for i in range(1, ex_total_levels + 1):
-		var button = $LevelButtons.get_node("Level" + str(i))
+		var button = get_node("Level_" + str(i))
 		button.disabled = i > GlbGameManager.highest_unlocked_level

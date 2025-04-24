@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=39 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_kl2sp"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_uvk6j"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://ckv2tf4w718r6" path="res://Assets/2D/Feathers/t_feather_2.png" id="24_rfdnn"]
 [ext_resource type="Texture2D" uid="uid://f5i3ntqplyif" path="res://Assets/2D/Feathers/t_feather_3.png" id="25_4b1gl"]
 [ext_resource type="Texture2D" uid="uid://dn5t3dytne5i7" path="res://Assets/2D/Feathers/t_feather_4.png" id="26_4ionf"]
+[ext_resource type="FontFile" uid="uid://dd5vqpdollu01" path="res://Assets/UI/Fonts/Anubismythicalserif-lxdLy.otf" id="30_ngann"]
 
 [sub_resource type="Animation" id="Animation_8u6bx"]
 resource_name = "HealthLost0"
@@ -697,9 +698,19 @@ texture = ExtResource("15_aeron")
 
 [node name="ExperiencePreview" type="Sprite2D" parent="Cartouche"]
 material = ExtResource("8_j4c5q")
-position = Vector2(-867, -1250)
+position = Vector2(-854, -1282)
 scale = Vector2(0.556863, 0.556863)
 texture = ExtResource("16_cjerr")
+
+[node name="ExperienceLabel" type="Label" parent="Cartouche"]
+offset_left = -1117.0
+offset_top = -1190.0
+offset_right = -588.0
+offset_bottom = -1092.0
+theme_override_fonts/font = ExtResource("30_ngann")
+theme_override_font_sizes/font_size = 64
+text = "Test"
+horizontal_alignment = 1
 
 [node name="Dead_zone" type="Area2D" parent="."]
 collision_layer = 3

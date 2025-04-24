@@ -65,6 +65,34 @@ position = Vector2(1749, 292)
 scale = Vector2(2.01219, 2.01219)
 texture = ExtResource("11_f01so")
 
+[node name="LifeDisplay" type="Node2D" parent="Background"]
+unique_name_in_owner = true
+
+[node name="Feather1" type="Sprite2D" parent="Background/LifeDisplay"]
+material = ExtResource("8_j4c5q")
+position = Vector2(1816, -407)
+scale = Vector2(1.97531, 1.97531)
+texture = ExtResource("12_x8sei")
+
+[node name="Feather2" type="Sprite2D" parent="Background/LifeDisplay"]
+visible = false
+position = Vector2(1786, -423)
+scale = Vector2(1.85938, 1.85938)
+texture = ExtResource("24_rfdnn")
+
+[node name="Feather3" type="Sprite2D" parent="Background/LifeDisplay"]
+visible = false
+position = Vector2(1748, -418)
+scale = Vector2(1.71827, 1.71827)
+texture = ExtResource("25_4b1gl")
+
+[node name="Feather4" type="Sprite2D" parent="Background/LifeDisplay"]
+visible = false
+position = Vector2(1784, -420)
+rotation = -0.361762
+scale = Vector2(1.48889, 1.48889)
+texture = ExtResource("26_4ionf")
+
 [node name="ForegroundBalance" type="Sprite2D" parent="Background"]
 material = ExtResource("8_j4c5q")
 position = Vector2(1747.5, -327.75)
@@ -120,33 +148,6 @@ material = ExtResource("8_j4c5q")
 position = Vector2(-867, -1250)
 scale = Vector2(0.556863, 0.556863)
 texture = ExtResource("16_cjerr")
-
-[node name="LifeDisplay" type="Node2D" parent="."]
-
-[node name="Feather1" type="Sprite2D" parent="LifeDisplay"]
-material = ExtResource("8_j4c5q")
-position = Vector2(1816, -407)
-scale = Vector2(1.97531, 1.97531)
-texture = ExtResource("12_x8sei")
-
-[node name="Feather2" type="Sprite2D" parent="LifeDisplay"]
-visible = false
-position = Vector2(1786, -423)
-scale = Vector2(1.85938, 1.85938)
-texture = ExtResource("24_rfdnn")
-
-[node name="Feather3" type="Sprite2D" parent="LifeDisplay"]
-visible = false
-position = Vector2(1748, -418)
-scale = Vector2(1.71827, 1.71827)
-texture = ExtResource("25_4b1gl")
-
-[node name="Feather4" type="Sprite2D" parent="LifeDisplay"]
-visible = false
-position = Vector2(1784, -420)
-rotation = -0.361762
-scale = Vector2(1.48889, 1.48889)
-texture = ExtResource("26_4ionf")
 
 [node name="Dead_zone" type="Area2D" parent="."]
 

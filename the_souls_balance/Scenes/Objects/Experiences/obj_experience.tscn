@@ -9,9 +9,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ox72"]
 shader = ExtResource("3_3ox72")
 
-[node name="obj_experience" type="RigidBody2D"]
+[node name="obj_experience" type="RigidBody2D" groups=["Experiences"]]
 script = ExtResource("1_717cv")
-ex_fall_speed = 500.0
 ex_cell_size = 16.0
 ex_move_repeat_delay = 0.05
 

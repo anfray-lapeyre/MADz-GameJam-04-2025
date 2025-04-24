@@ -1,6 +1,9 @@
 extends RigidBody2D
 
-@export var ex_fall_speed: float = 200.0 # Falling speed when player is in control
+@export var ex_base_fall_speed: float = 300.0 # Falling speed when player is in control
+@export var ex_fast_fall_speed: float = 1000.0 #Falling speed when player presses down
+var current_fall_speed:float = ex_base_fall_speed #Actual current fall speed, either base or fast
+
 @export var ex_cell_size: float = 32.0 # size of a cell from the grid when moving horizontally (where does the piece stops)
 @export var ex_move_repeat_delay: float = 0.1 # Delay for spamming inputs, and gives horizontal speed
 @export var ex_gravity: float = 1.0 # How strong is the gravity when you don't controle the experience anymore
@@ -29,13 +32,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_controlled:
 		_handle_horizontal_input(delta) 
-		
+		_handle_vertical_input(delta)
 		if Input.is_action_just_pressed("rotate_left"):
 			_rotate_piece(-1)
 		elif Input.is_action_just_pressed("rotate_right"):
 			_rotate_piece(1)
 		# allows the free vertical fall
-		global_position.y += ex_fall_speed * delta
+		global_position.y += current_fall_speed * delta
 		global_position.x = target_position.x
 		
 		_update_light_beam()
@@ -63,7 +66,15 @@ func _handle_horizontal_input(delta: float) -> void: #Makes the grid-like moveme
 	else:
 			move_right_timer = 0.0
 			has_moved_right = false
-			
+
+#Handle the input to go down faster
+func _handle_vertical_input(detla:float) -> void:
+	if Input.is_action_pressed("move_down"):
+		current_fall_speed = ex_fast_fall_speed
+	else:
+		current_fall_speed = ex_base_fall_speed
+		
+		
 # function to align exp on the grid
 func _snap_to_step(x: float) -> float:
 	return round(x / ex_cell_size) * ex_cell_size

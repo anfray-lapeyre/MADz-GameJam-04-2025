@@ -20,34 +20,12 @@ texture = ExtResource("1_gcuqm")
 
 [node name="play_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 208.0
-offset_right = 686.0
-offset_bottom = 271.0
+offset_left = 352.0
+offset_top = 216.0
+offset_right = 792.0
+offset_bottom = 418.0
 theme_override_fonts/font = ExtResource("2_x3e32")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 128
 text = "Play"
 
-[node name="controls_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 472.0
-offset_top = 296.0
-offset_right = 686.0
-offset_bottom = 359.0
-theme_override_fonts/font = ExtResource("2_x3e32")
-theme_override_font_sizes/font_size = 32
-text = "Controls"
-
-[node name="settings_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 472.0
-offset_top = 384.0
-offset_right = 686.0
-offset_bottom = 447.0
-theme_override_fonts/font = ExtResource("2_x3e32")
-theme_override_font_sizes/font_size = 32
-text = "Settings"
-
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="controls_button" to="." method="_on_controls_button_pressed"]
-[connection signal="pressed" from="settings_button" to="." method="_on_settings_button_pressed"]

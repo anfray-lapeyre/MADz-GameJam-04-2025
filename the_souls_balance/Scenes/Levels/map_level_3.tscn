@@ -30,3 +30,6 @@
 [node name="Node2D" instance=ExtResource("1_pqoms")]
 ex_level_number = 3
 ex_experience_list = Array[PackedScene]([ExtResource("2_y6j40"), ExtResource("3_i8x3t"), ExtResource("4_nx5ao"), ExtResource("5_3lbxd"), ExtResource("6_ibn4p"), ExtResource("7_ytogd"), ExtResource("6_ibn4p"), ExtResource("8_ms2y5"), ExtResource("9_htqgb"), ExtResource("10_2j70u"), ExtResource("11_1l8dq"), ExtResource("12_p34mv"), ExtResource("13_72evo"), ExtResource("14_d1gyb"), ExtResource("15_ixvbf"), ExtResource("6_ibn4p"), ExtResource("16_5choe"), ExtResource("17_th3ox"), ExtResource("17_th3ox"), ExtResource("18_w3ew4"), ExtResource("19_4h44y"), ExtResource("18_w3ew4"), ExtResource("20_f1enc"), ExtResource("17_th3ox"), ExtResource("12_p34mv"), ExtResource("21_ln8tc"), ExtResource("22_mio7l"), ExtResource("22_mio7l"), ExtResource("7_ytogd"), ExtResource("12_p34mv"), ExtResource("17_th3ox"), ExtResource("23_e0rw0"), ExtResource("17_th3ox"), ExtResource("24_vx2wc"), ExtResource("25_opp1c"), ExtResource("26_npme2"), ExtResource("17_th3ox")])
+
+[node name="PauseLayer" parent="." index="6"]
+visible = true

@@ -12,7 +12,9 @@ shader_parameter/Color = Color(1, 1, 1, 1)
 
 [node name="obj_experience" type="RigidBody2D" groups=["Experiences"]]
 script = ExtResource("1_717cv")
+ex_should_use_raycast_collisions = false
 ex_cell_size = 16.0
+ex_is_dash_allowed = false
 ex_move_repeat_delay = 0.05
 
 [node name="experience_sprite" type="Sprite2D" parent="."]

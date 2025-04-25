@@ -751,7 +751,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="PauseMenu" type="Control" parent="PauseLayer"]
 process_mode = 3
@@ -785,6 +784,24 @@ offset_right = 809.0
 offset_bottom = 553.0
 text = "Quit"
 
+[node name="music_slider" type="HSlider" parent="PauseLayer/PauseMenu"]
+layout_mode = 0
+offset_left = 908.0
+offset_top = 486.0
+offset_right = 1053.0
+offset_bottom = 502.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="sfx_slider" type="HSlider" parent="PauseLayer/PauseMenu"]
+layout_mode = 0
+offset_left = 907.0
+offset_top = 425.0
+offset_right = 1052.0
+offset_bottom = 475.0
+min_value = -60.0
+max_value = 0.0
+
 [node name="RealGround" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
@@ -802,3 +819,6 @@ unique_name_in_owner = true
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseLayer/PauseMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="PauseLayer/PauseMenu/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="PauseLayer/PauseMenu/sfx_slider" to="." method="_on_sfx_slider_value_changed"]

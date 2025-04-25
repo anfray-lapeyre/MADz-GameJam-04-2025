@@ -31,3 +31,6 @@
 [node name="Node2D" instance=ExtResource("1_rm00p")]
 ex_level_number = 5
 ex_experience_list = Array[PackedScene]([ExtResource("2_wwetb"), ExtResource("3_ejwyu"), ExtResource("4_bxpry"), ExtResource("5_vy2da"), ExtResource("6_dfx3l"), ExtResource("7_dyblx"), ExtResource("4_bxpry"), ExtResource("8_rwda0"), ExtResource("9_xfqdl"), ExtResource("10_rn8wi"), ExtResource("9_xfqdl"), ExtResource("11_sabp3"), ExtResource("7_dyblx"), ExtResource("12_cmt0q"), ExtResource("13_wxne1"), ExtResource("14_moad4"), ExtResource("15_p6xif"), ExtResource("16_grkyo"), ExtResource("17_b07b5"), ExtResource("15_p6xif"), ExtResource("5_vy2da"), ExtResource("18_180n5"), ExtResource("16_grkyo"), ExtResource("19_dv184"), ExtResource("20_ot24d"), ExtResource("16_grkyo"), ExtResource("10_rn8wi"), ExtResource("21_b5svy"), ExtResource("22_vqvo3"), ExtResource("11_sabp3"), ExtResource("17_b07b5"), ExtResource("23_52wfa"), ExtResource("23_52wfa"), ExtResource("16_grkyo"), ExtResource("19_dv184"), ExtResource("12_cmt0q"), ExtResource("24_12bte"), ExtResource("18_180n5"), ExtResource("25_lmbfk"), ExtResource("26_35ohg"), ExtResource("27_uql48"), ExtResource("24_12bte"), ExtResource("26_35ohg")])
+
+[node name="PauseLayer" parent="." index="6"]
+visible = true

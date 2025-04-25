@@ -282,3 +282,9 @@ func update_next_piece_preview():
 		print("'experience_sprite' cannot be found")
 
 	next_instance.queue_free()
+
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value)

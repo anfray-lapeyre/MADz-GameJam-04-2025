@@ -15,9 +15,14 @@ run/main_scene="uid://x2pgpcr6n2qg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/2D/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ms73555nans7"
+
 [autoload]
 
 GlbGameManager="*res://Scripts/Global/glb_game_manager.gd"
+GlbAudioPlayer="*res://Scripts/Global/glb_audio_player.gd"
 
 [display]
 

@@ -259,13 +259,13 @@ func update_next_piece_preview():
 	# Ajout du label
 	var scene_name = next_scene.resource_path.get_file().get_basename()
 	if experience_keywords.has(scene_name):
-		$Panel/Cartouche/ExperienceLabel.text = experience_keywords[scene_name]
+		$Cartouche/ExperienceLabel.text = experience_keywords[scene_name]
 	else:
-		$Panel/Cartouche/ExperienceLabel.text = ""
+		$Cartouche/ExperienceLabel.text = ""
 
 	if sprite and sprite is Sprite2D:
-		$Panel/Cartouche/ExperiencePreview.texture = sprite.texture
-		$Panel/Cartouche/ExperiencePreview.material = sprite.material
+		$Cartouche/ExperiencePreview.texture = sprite.texture
+		$Cartouche/ExperiencePreview.material = sprite.material
 	else:
 		print("'experience_sprite' cannot be found")
 

@@ -755,6 +755,7 @@ visible = false
 
 [node name="PauseMenu" type="Control" parent="PauseLayer"]
 process_mode = 3
+z_index = 4096
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
@@ -794,9 +795,11 @@ shape = SubResource("WorldBoundaryShape2D_uvk6j")
 
 [node name="LifeLostAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+bus = &"SFX"
 
 [node name="VoiceOverPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]

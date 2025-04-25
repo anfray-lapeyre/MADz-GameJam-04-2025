@@ -103,7 +103,7 @@ func spawn_next_piece():
 	current_experience.global_position = ex_spawn_position
 	add_child(current_experience)
 	
-	if ex_voice_over_list[current_index] != null:
+	if ex_voice_over_list.size() >current_index:
 		voice_over_player.stream= ex_voice_over_list[current_index]
 		voice_over_player.play()
 		

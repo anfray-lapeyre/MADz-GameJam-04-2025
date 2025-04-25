@@ -1,36 +1,36 @@
 [gd_scene load_steps=40 format=3 uid="uid://b2l2ujykasaw6"]
 
-[ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_kl2sp"]
-[ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_uvk6j"]
-[ext_resource type="PackedScene" uid="uid://cm2xhekrqhpio" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_joy.tscn" id="3_ngann"]
-[ext_resource type="PackedScene" uid="uid://bo3gn4328w851" path="res://Scenes/Objects/Experiences/U/obj_experience_U_joy.tscn" id="4_s8815"]
-[ext_resource type="PackedScene" uid="uid://bv4fsfyp8cbs4" path="res://Scenes/Objects/Experiences/L/obj_experience_L_joy.tscn" id="5_lmd76"]
-[ext_resource type="PackedScene" uid="uid://b3qy3kq7lfj6m" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_fear.tscn" id="6_8u6bx"]
-[ext_resource type="PackedScene" uid="uid://dvvpdtkoi5wst" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_anger.tscn" id="7_bvirs"]
-[ext_resource type="PackedScene" uid="uid://wavy321wdrbp" path="res://Scenes/UI/map_level_selection.tscn" id="7_nwbo4"]
-[ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="8_abolt"]
-[ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="8_j4c5q"]
-[ext_resource type="PackedScene" uid="uid://1am82xfab126" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_anger.tscn" id="8_ovni5"]
-[ext_resource type="PackedScene" uid="uid://d33lmyhym5gx4" path="res://Scenes/Objects/Experiences/T/obj_experience_T_joy.tscn" id="9_kh3ve"]
-[ext_resource type="PackedScene" uid="uid://cbehirg6t8kp0" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_disgust.tscn" id="10_hatd7"]
-[ext_resource type="Texture2D" uid="uid://b08kehashu6nk" path="res://Assets/2D/Background/T_Anubis.png" id="10_ww3n1"]
-[ext_resource type="Texture2D" uid="uid://bj0vpuy0reeml" path="res://Assets/2D/Background/T_FeatherBalance.png" id="11_f01so"]
-[ext_resource type="PackedScene" uid="uid://cq5i8pbsdf4gb" path="res://Scenes/Objects/Experiences/BadActions/obj_experience_shuriken.tscn" id="11_syh0n"]
-[ext_resource type="PackedScene" uid="uid://cypwq7t4mi15m" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_sadness.tscn" id="12_kb0sr"]
-[ext_resource type="Texture2D" uid="uid://dinafot2fgjhy" path="res://Assets/2D/Feathers/t_feather_1.png" id="12_x8sei"]
-[ext_resource type="PackedScene" uid="uid://k8ct2syg2kn5" path="res://Scenes/Objects/Experiences/I/obj_experience_I_sadness.tscn" id="13_av7en"]
-[ext_resource type="Texture2D" uid="uid://bhdl81607gv5" path="res://Assets/2D/Background/t_feather_balance_foreground.png" id="13_nwbo4"]
-[ext_resource type="PackedScene" uid="uid://c560hlelekqvl" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_void_X.tscn" id="14_0peth"]
-[ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="15_aeron"]
-[ext_resource type="Texture2D" uid="uid://bfga8822ogv2m" path="res://Assets/2D/Background/t_balance_head.png" id="15_f01so"]
-[ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="15_fc2wr"]
-[ext_resource type="Texture2D" uid="uid://cfipohdu7rjbr" path="res://Assets/2D/Background/t_balance_foot_thin.png" id="15_ww3n1"]
-[ext_resource type="Texture2D" uid="uid://cbfhiamgwuegv" path="res://Assets/2D/Experiences/Deprecated/T_L_Disgust.png" id="16_cjerr"]
-[ext_resource type="Texture2D" uid="uid://ckv2tf4w718r6" path="res://Assets/2D/Feathers/t_feather_2.png" id="24_rfdnn"]
-[ext_resource type="Texture2D" uid="uid://f5i3ntqplyif" path="res://Assets/2D/Feathers/t_feather_3.png" id="25_4b1gl"]
-[ext_resource type="Texture2D" uid="uid://dn5t3dytne5i7" path="res://Assets/2D/Feathers/t_feather_4.png" id="26_4ionf"]
-[ext_resource type="FontFile" uid="uid://dd5vqpdollu01" path="res://Assets/UI/Fonts/Anubismythicalserif-lxdLy.otf" id="30_ngann"]
-[ext_resource type="Material" uid="uid://b2jp3sq8knkg" path="res://Assets/Material/m_experience_font.tres" id="30_s8815"]
+[ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
+[ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
+[ext_resource type="PackedScene" uid="uid://cm2xhekrqhpio" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_joy.tscn" id="3_x444r"]
+[ext_resource type="PackedScene" uid="uid://bo3gn4328w851" path="res://Scenes/Objects/Experiences/U/obj_experience_U_joy.tscn" id="4_s8e4x"]
+[ext_resource type="PackedScene" uid="uid://bv4fsfyp8cbs4" path="res://Scenes/Objects/Experiences/L/obj_experience_L_joy.tscn" id="5_o2uor"]
+[ext_resource type="PackedScene" uid="uid://b3qy3kq7lfj6m" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_fear.tscn" id="6_e43iy"]
+[ext_resource type="PackedScene" uid="uid://dvvpdtkoi5wst" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_anger.tscn" id="7_eooqe"]
+[ext_resource type="PackedScene" uid="uid://1am82xfab126" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_anger.tscn" id="8_bpqlv"]
+[ext_resource type="PackedScene" uid="uid://d33lmyhym5gx4" path="res://Scenes/Objects/Experiences/T/obj_experience_T_joy.tscn" id="9_keecn"]
+[ext_resource type="PackedScene" uid="uid://cbehirg6t8kp0" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_disgust.tscn" id="10_uoc55"]
+[ext_resource type="PackedScene" uid="uid://cq5i8pbsdf4gb" path="res://Scenes/Objects/Experiences/BadActions/obj_experience_shuriken.tscn" id="11_54ykf"]
+[ext_resource type="PackedScene" uid="uid://cypwq7t4mi15m" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_sadness.tscn" id="12_yafmf"]
+[ext_resource type="PackedScene" uid="uid://k8ct2syg2kn5" path="res://Scenes/Objects/Experiences/I/obj_experience_I_sadness.tscn" id="13_aro3v"]
+[ext_resource type="PackedScene" uid="uid://c560hlelekqvl" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_void_X.tscn" id="14_lnl3e"]
+[ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="15_qig3e"]
+[ext_resource type="PackedScene" uid="uid://wavy321wdrbp" path="res://Scenes/UI/map_level_selection.tscn" id="16_l0hnf"]
+[ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="17_rpu5o"]
+[ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="18_i1g0q"]
+[ext_resource type="Texture2D" uid="uid://b08kehashu6nk" path="res://Assets/2D/Background/T_Anubis.png" id="19_mas5p"]
+[ext_resource type="Texture2D" uid="uid://bj0vpuy0reeml" path="res://Assets/2D/Background/T_FeatherBalance.png" id="20_hcfv1"]
+[ext_resource type="Texture2D" uid="uid://dinafot2fgjhy" path="res://Assets/2D/Feathers/t_feather_1.png" id="21_6j74n"]
+[ext_resource type="Texture2D" uid="uid://ckv2tf4w718r6" path="res://Assets/2D/Feathers/t_feather_2.png" id="22_qyiap"]
+[ext_resource type="Texture2D" uid="uid://f5i3ntqplyif" path="res://Assets/2D/Feathers/t_feather_3.png" id="23_qdma6"]
+[ext_resource type="Texture2D" uid="uid://dn5t3dytne5i7" path="res://Assets/2D/Feathers/t_feather_4.png" id="24_f6tp1"]
+[ext_resource type="Texture2D" uid="uid://bhdl81607gv5" path="res://Assets/2D/Background/t_feather_balance_foreground.png" id="25_4qdm5"]
+[ext_resource type="Texture2D" uid="uid://cfipohdu7rjbr" path="res://Assets/2D/Background/t_balance_foot_thin.png" id="26_fh7uh"]
+[ext_resource type="Texture2D" uid="uid://bfga8822ogv2m" path="res://Assets/2D/Background/t_balance_head.png" id="27_eu0xy"]
+[ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="28_vpwou"]
+[ext_resource type="Texture2D" uid="uid://cbfhiamgwuegv" path="res://Assets/2D/Experiences/Deprecated/T_L_Disgust.png" id="29_s1a05"]
+[ext_resource type="Material" uid="uid://b2jp3sq8knkg" path="res://Assets/Material/m_experience_font.tres" id="30_hd7h6"]
+[ext_resource type="FontFile" uid="uid://dd5vqpdollu01" path="res://Assets/UI/Fonts/Anubismythicalserif-lxdLy.otf" id="31_ktc1p"]
 
 [sub_resource type="Animation" id="Animation_8u6bx"]
 resource_name = "HealthLost0"
@@ -581,64 +581,64 @@ size = Vector2(8455.5, 279.5)
 distance = -1040.0
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_kl2sp")
+script = ExtResource("1_ikkrf")
 ex_level_number = 1
-ex_experience_list = Array[PackedScene]([ExtResource("2_uvk6j"), ExtResource("3_ngann"), ExtResource("4_s8815"), ExtResource("5_lmd76"), ExtResource("6_8u6bx"), ExtResource("7_bvirs"), ExtResource("8_ovni5"), ExtResource("9_kh3ve"), ExtResource("10_hatd7"), ExtResource("7_bvirs"), ExtResource("11_syh0n"), ExtResource("12_kb0sr"), ExtResource("13_av7en"), ExtResource("14_0peth"), ExtResource("15_fc2wr")])
+ex_experience_list = Array[PackedScene]([ExtResource("2_dahxx"), ExtResource("3_x444r"), ExtResource("4_s8e4x"), ExtResource("5_o2uor"), ExtResource("6_e43iy"), ExtResource("7_eooqe"), ExtResource("8_bpqlv"), ExtResource("9_keecn"), ExtResource("10_uoc55"), ExtResource("7_eooqe"), ExtResource("11_54ykf"), ExtResource("12_yafmf"), ExtResource("13_aro3v"), ExtResource("14_lnl3e"), ExtResource("15_qig3e")])
 ex_spawn_position = Vector2(600, -2500)
-ex_level_selection = ExtResource("7_nwbo4")
+ex_level_selection = ExtResource("16_l0hnf")
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -1000
 z_as_relative = false
 
 [node name="BackgroundPattern" type="Sprite2D" parent="Background"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(1379, 604)
 scale = Vector2(2.02407, 2.02407)
-texture = ExtResource("8_abolt")
+texture = ExtResource("18_i1g0q")
 offset = Vector2(-363.869, -491.09)
 
 [node name="Anubis" type="Sprite2D" parent="Background"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(-494, -288)
 scale = Vector2(1.99757, 1.99757)
-texture = ExtResource("10_ww3n1")
+texture = ExtResource("19_mas5p")
 
 [node name="BackgroundBalance" type="Sprite2D" parent="Background"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(1749, 292)
 scale = Vector2(2.01219, 2.01219)
-texture = ExtResource("11_f01so")
+texture = ExtResource("20_hcfv1")
 
 [node name="LifeDisplay" type="Node2D" parent="Background"]
 unique_name_in_owner = true
 
 [node name="Feather1" type="Sprite2D" parent="Background/LifeDisplay"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(1816, -407)
 scale = Vector2(1.97531, 1.97531)
-texture = ExtResource("12_x8sei")
+texture = ExtResource("21_6j74n")
 
 [node name="Feather2" type="Sprite2D" parent="Background/LifeDisplay"]
 visible = false
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(1786, -485)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("24_rfdnn")
+texture = ExtResource("22_qyiap")
 
 [node name="Feather3" type="Sprite2D" parent="Background/LifeDisplay"]
 visible = false
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(1850, -451)
 scale = Vector2(1.97531, 1.97531)
-texture = ExtResource("25_4b1gl")
+texture = ExtResource("23_qdma6")
 
 [node name="Feather4" type="Sprite2D" parent="Background/LifeDisplay"]
 visible = false
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(1687, -422)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("26_4ionf")
+texture = ExtResource("24_f6tp1")
 
 [node name="FeatherAnimationPlayer" type="AnimationPlayer" parent="Background/LifeDisplay"]
 libraries = {
@@ -646,10 +646,10 @@ libraries = {
 }
 
 [node name="ForegroundBalance" type="Sprite2D" parent="Background"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(1747.5, -327.75)
 scale = Vector2(2.00636, 2.12295)
-texture = ExtResource("13_nwbo4")
+texture = ExtResource("25_4qdm5")
 
 [node name="ground_container" type="Node2D" parent="."]
 position = Vector2(660, 510)
@@ -664,10 +664,10 @@ disable_collision = false
 position = Vector2(-1, 25)
 
 [node name="ground_bottom" type="Sprite2D" parent="ground_container/ground_bottom_container"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(0, -10)
 scale = Vector2(0.965, 0.965)
-texture = ExtResource("15_ww3n1")
+texture = ExtResource("26_fh7uh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_container/ground_bottom_container"]
 polygon = PackedVector2Array(-18, -185, 18.667, -185, 123.333, 196.667, -125.333, 196.667)
@@ -679,10 +679,10 @@ collision_mask = 3
 mass = 20.0
 
 [node name="ground_top" type="Sprite2D" parent="ground_container/ground"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(3.05176e-05, 2)
 scale = Vector2(1.363, 1.368)
-texture = ExtResource("15_f01so")
+texture = ExtResource("27_eu0xy")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="ground_container/ground"]
 scale = Vector2(2, 2)
@@ -695,24 +695,24 @@ zoom = Vector2(0.3, 0.3)
 [node name="Cartouche" type="Node2D" parent="."]
 
 [node name="CartoucheBackground" type="Sprite2D" parent="Cartouche"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(-853, -1250.5)
 scale = Vector2(1.69141, 1.69141)
-texture = ExtResource("15_aeron")
+texture = ExtResource("28_vpwou")
 
 [node name="ExperiencePreview" type="Sprite2D" parent="Cartouche"]
-material = ExtResource("8_j4c5q")
+material = ExtResource("17_rpu5o")
 position = Vector2(-854, -1282)
 scale = Vector2(0.556863, 0.556863)
-texture = ExtResource("16_cjerr")
+texture = ExtResource("29_s1a05")
 
 [node name="ExperienceLabel" type="Label" parent="Cartouche"]
-material = ExtResource("30_s8815")
+material = ExtResource("30_hd7h6")
 offset_left = -1117.0
 offset_top = -1190.0
 offset_right = -588.0
 offset_bottom = -1092.0
-theme_override_fonts/font = ExtResource("30_ngann")
+theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 64
 text = "Test"
 horizontal_alignment = 1
@@ -776,6 +776,12 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RealGround"]
 position = Vector2(22, 27)
 shape = SubResource("WorldBoundaryShape2D_uvk6j")
+
+[node name="LifeLostAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[node name="VoiceOverPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]

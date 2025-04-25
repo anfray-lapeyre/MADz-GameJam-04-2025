@@ -75,7 +75,6 @@ var level_size : int = 0 #To makes sure it spawns the right number of pieces (ch
 @export var ex_max_lives: int = 3
 @export var ex_hurt_cooldown_time: float = 1.5
 @export var ex_gravity_reverse_duration: float = 3.0
-@export var ex_level_selection : PackedScene
 @onready var pause_menu = $PauseLayer/PauseMenu
 @onready var sfx_player= %LifeLostAudioPlayer
 @onready var voice_over_player = %VoiceOverPlayer
@@ -218,7 +217,7 @@ func handle_victory():
 		GlbGameManager.highest_unlocked_level = this_level + 1
 		GlbGameManager.save_progress()
 	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_packed(ex_level_selection)
+	get_tree().change_scene_to_file("res://Scenes/UI/map_level_selection.tscn")
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
@@ -257,7 +256,7 @@ func _on_restart_pressed() -> void:
 	_resume_game()
 
 func _on_quit_pressed() -> void:
-	get_tree().change_scene_to_packed(ex_level_selection)
+	get_tree().change_scene_to_file("res://Scenes/UI/map_level_selection.tscn")
 
 func update_next_piece_preview():
 	if current_index >= ex_experience_list.size():

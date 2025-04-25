@@ -67,6 +67,9 @@ var experience_keywords = {
 var level_size : int = 0 #To makes sure it spawns the right number of pieces (changes in ready function later)
 @export var ex_level_number: int
 @export var ex_experience_list: Array[PackedScene] #List of experience to spawn (keeps the order)
+@export var ex_voice_over_list: Array[AudioStream] #List of voice overs for each experience
+@export var ex_life_lost_sfx_list: Array[AudioStream] #List of life lost SFX
+
 @export var ex_spawn_position = Vector2(300,-100)
 @export var ex_spawn_delay: float = 2.0
 @export var ex_max_lives: int = 3
@@ -74,6 +77,8 @@ var level_size : int = 0 #To makes sure it spawns the right number of pieces (ch
 @export var ex_gravity_reverse_duration: float = 3.0
 @export var ex_level_selection : PackedScene
 @onready var pause_menu = $PauseLayer/PauseMenu
+@onready var sfx_player= %LifeLostAudioPlayer
+@onready var voice_over_player = %VoiceOverPlayer
 
 var current_lives: int
 var can_lose_life: bool = true
@@ -97,6 +102,11 @@ func spawn_next_piece():
 	current_experience = scene.instantiate()
 	current_experience.global_position = ex_spawn_position
 	add_child(current_experience)
+	
+	if ex_voice_over_list[current_index] != null:
+		voice_over_player.stream= ex_voice_over_list[current_index]
+		voice_over_player.play()
+		
 	current_index += 1 #moves to the next experience in the array
 		# connects the signal to this experience
 	if current_experience.has_signal("sig_control_lost"):
@@ -131,6 +141,9 @@ func _on_dead_zone_body_entered(body: Node2D) -> void: #connects with dead zone
 func lose_life() -> void: #func when you loose life
 	current_lives -= 1
 	can_lose_life = false
+	sfx_player.stream= ex_life_lost_sfx_list[randi() % ex_life_lost_sfx_list.size()]
+	sfx_player.play()
+	
 	print("Vie perdue ! Il en reste : ", current_lives)
 	# feather display change
 	update_life_display()

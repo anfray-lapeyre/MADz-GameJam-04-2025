@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://btbah4k837ywh"]
+
+[ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="1_udnwv"]
+[ext_resource type="Texture2D" uid="uid://cfipohdu7rjbr" path="res://Assets/2D/Background/t_balance_foot_thin.png" id="2_4rjjb"]
+[ext_resource type="Texture2D" uid="uid://bfga8822ogv2m" path="res://Assets/2D/Background/t_balance_head.png" id="3_iy0lr"]
+
+[node name="ground_container" type="Node2D"]
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(2, -218)
+node_a = NodePath("../ground_bottom_container")
+node_b = NodePath("../ground")
+disable_collision = false
+
+[node name="ground_bottom_container" type="StaticBody2D" parent="."]
+position = Vector2(-1, 25)
+
+[node name="ground_bottom" type="Sprite2D" parent="ground_bottom_container"]
+material = ExtResource("1_udnwv")
+position = Vector2(0, -10)
+scale = Vector2(0.965, 0.965)
+texture = ExtResource("2_4rjjb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_bottom_container"]
+polygon = PackedVector2Array(-18, -175, 18.667, -175, 123.333, 196.667, -125.333, 196.667)
+
+[node name="ground" type="RigidBody2D" parent="."]
+position = Vector2(2, -208)
+collision_layer = 3
+collision_mask = 3
+mass = 20.0
+
+[node name="ground_top" type="Sprite2D" parent="ground"]
+material = ExtResource("1_udnwv")
+position = Vector2(3.05176e-05, 2)
+scale = Vector2(1.363, 1.368)
+texture = ExtResource("3_iy0lr")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ground"]
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-155, 13, 155, 13, 162, -22, 170, -22, 168, 8, 159, 26, -159, 26, -168, 8, -169, -22, -162, -22)

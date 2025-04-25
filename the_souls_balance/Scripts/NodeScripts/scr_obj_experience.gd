@@ -69,11 +69,11 @@ func _physics_process(delta: float) -> void:
 			
 			# --- Vertical collision detection ---
 			var direction = Vector2.ZERO
-			direction.y = ex_base_fall_speed * delta * 2  # Apply downward movement
+			direction.y = current_fall_speed * delta * 2  # Apply downward movement
 
 			# Trace a vertical movement to detect any upcoming collisions
 			var hits := trace_custom_polygon($experience_collider, global_position + direction)
-			if hits.size() > 0:
+			if hits.size() > 0 && power_type != PowerType.GHOST:
 				print(hits)  # Debug info: show hit data
 
 				# If still controlled, relinquish control to simulate a "drop"

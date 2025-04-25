@@ -68,6 +68,7 @@ var level_size : int = 0 #To makes sure it spawns the right number of pieces (ch
 @export var ex_level_number: int
 @export var ex_experience_list: Array[PackedScene] #List of experience to spawn (keeps the order)
 @export var ex_voice_over_list: Array[AudioStream] #List of voice overs for each experience
+@export var ex_subtitle_list: Array[String] #List of life lost SFX
 @export var ex_life_lost_sfx_list: Array[AudioStream] #List of life lost SFX
 
 @export var ex_spawn_position = Vector2(300,-100)
@@ -84,6 +85,10 @@ var can_lose_life: bool = true
 var current_index: int = 0 #helps to know at which experience we're at in the list.
 var current_experience: Node = null #references the current experience, to connect signals.
 var current_spawn_timer := Timer.new()
+var balance_scene = preload("res://Scenes/Objects/ground_container.tscn")
+@onready var base_balance_transform:Transform2D=$ground_container.transform
+@onready var current_balance := $ground_container
+@onready var subtitle_label := %VoiceOverLabel
 
 func _ready() -> void:
 	add_child(current_spawn_timer)
@@ -105,7 +110,17 @@ func spawn_next_piece():
 	if ex_voice_over_list.size() >current_index:
 		voice_over_player.stream= ex_voice_over_list[current_index]
 		voice_over_player.play()
-		
+	if ex_subtitle_list.size() >current_index:
+		subtitle_label.text= ex_subtitle_list[current_index]
+		subtitle_label.rotation_degrees = randf_range(-9, 9.0)
+		subtitle_label.scale=Vector2.ONE*1.2
+		var tween = get_tree().create_tween()
+		tween.tween_property(subtitle_label, "modulate:a", 1, 0.5)
+		tween.set_parallel(true)
+		tween.tween_property(subtitle_label, "scale", Vector2.ONE, 0.5).set_ease(Tween.EASE_IN)
+
+
+	
 	current_index += 1 #moves to the next experience in the array
 		# connects the signal to this experience
 	if current_experience.has_signal("sig_control_lost"):
@@ -114,10 +129,13 @@ func spawn_next_piece():
 #Variable used in the 2 next functions, because we can't pass a parameter in a connection
 var _piece : Node;
 
+
 func _on_piece_lost_control(piece: Node) -> void: #Disconnects the signal after it's send so two pieces don't spawn at the same time
 	_piece = piece
 	piece.sig_control_lost.disconnect(_on_piece_lost_control)
 	current_spawn_timer.start()
+	var tween = get_tree().create_tween()
+	tween.tween_property(subtitle_label, "modulate:a", 0, 0.5) # noir en 1 seconde
 	if current_spawn_timer.is_connected("timeout",call_spawn_piece_and_check_victory):
 		current_spawn_timer.disconnect("timeout",call_spawn_piece_and_check_victory)
 	current_spawn_timer.connect("timeout",call_spawn_piece_and_check_victory)
@@ -140,15 +158,16 @@ func _on_dead_zone_body_entered(body: Node2D) -> void: #connects with dead zone
 func lose_life() -> void: #func when you loose life
 	current_lives -= 1
 	can_lose_life = false
-	#sfx_player.stream= ex_life_lost_sfx_list[randi() % ex_life_lost_sfx_list.size()]
-	#sfx_player.play()
+	if ex_life_lost_sfx_list.size() >0:
+		sfx_player.stream= ex_life_lost_sfx_list[randi() % ex_life_lost_sfx_list.size()]
+		sfx_player.play()
 	
 	print("Vie perdue ! Il en reste : ", current_lives)
 	# feather display change
 	update_life_display()
 		#Game over
 	if current_lives <= 0:
-		if current_spawn_timer:
+		if current_spawn_timer.is_connected("timeout",call_spawn_piece_and_check_victory):
 			current_spawn_timer.disconnect("timeout",call_spawn_piece_and_check_victory)
 		await handle_game_over()
 		return
@@ -172,6 +191,8 @@ func update_life_display():
 func handle_game_over() -> void:
 	print("GAME OVER")
 	reverse_gravity()
+	if current_spawn_timer.is_connected("timeout",call_spawn_piece_and_check_victory):
+		current_spawn_timer.disconnect("timeout",call_spawn_piece_and_check_victory)
 	await get_tree().create_timer(1.0).timeout
 	var fade = $ScreenFade
 	# makes the black out "fondu au noir"
@@ -199,11 +220,23 @@ func reset_level():
 		current_experience.queue_free()
 	current_index = 0
 	current_lives = ex_max_lives
+	
+	current_balance.queue_free()
+
+	current_balance = balance_scene.instantiate()
+	self.add_child(current_balance)
+	current_balance.transform = base_balance_transform
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(subtitle_label, "modulate:a", 0, 0.5) # noir en 1 seconde
+	
 	update_life_display()
 	for child in get_tree().get_nodes_in_group("Experiences"):
 		child.queue_free()
 	spawn_next_piece()
 	update_next_piece_preview()
+	
+
 
 func handle_victory():
 	print("VICTORY")

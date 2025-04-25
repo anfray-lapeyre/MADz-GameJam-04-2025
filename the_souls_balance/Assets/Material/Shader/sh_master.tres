@@ -194,7 +194,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(391.968, -212.598)
 mode = 1
 flags/light_only = false
 preview_params/Color = "Color(1, 1, 1, 1)"

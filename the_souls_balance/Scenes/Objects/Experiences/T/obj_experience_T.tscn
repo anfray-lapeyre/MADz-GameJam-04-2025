@@ -8,12 +8,18 @@
 
 [node name="experience_sprite" parent="." index="0"]
 material = ExtResource("2_wb4lh")
-position = Vector2(-4, 0)
+position = Vector2(-3.53253, 25)
 texture = ExtResource("3_es43g")
 
 [node name="experience_collider" parent="." index="1"]
-position = Vector2(-4, -38)
+position = Vector2(-3.53253, -13)
 polygon = PackedVector2Array(45.7143, 15.5, 15.4921, 15.5, 15.4921, 45.5, -14.9841, 45.5, -15.1872, 15.3335, -45.7143, 15.25, -45.7143, -15, 45.7143, -15)
+
+[node name="light_beam" parent="." index="2"]
+position = Vector2(-0.0325367, 24)
+
+[node name="detect_area" parent="." index="3"]
+position = Vector2(0.467468, 25)
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
 position = Vector2(-41, 67)

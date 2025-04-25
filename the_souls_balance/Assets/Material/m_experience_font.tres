@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b2jp3sq8knkg"]
+
+[ext_resource type="Shader" uid="uid://fasmiiqn230t" path="res://Assets/Material/Shader/sh_master.tres" id="1_qfv6b"]
+
+[resource]
+shader = ExtResource("1_qfv6b")
+shader_parameter/Color = Color(0.73, 0.432647, 0.0438, 1)

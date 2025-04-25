@@ -8,6 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ox72"]
 shader = ExtResource("3_3ox72")
+shader_parameter/Color = Color(1, 1, 1, 1)
 
 [node name="obj_experience" type="RigidBody2D" groups=["Experiences"]]
 script = ExtResource("1_717cv")

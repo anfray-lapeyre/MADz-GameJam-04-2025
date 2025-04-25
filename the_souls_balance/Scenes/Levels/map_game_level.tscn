@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=40 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_kl2sp"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_uvk6j"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://f5i3ntqplyif" path="res://Assets/2D/Feathers/t_feather_3.png" id="25_4b1gl"]
 [ext_resource type="Texture2D" uid="uid://dn5t3dytne5i7" path="res://Assets/2D/Feathers/t_feather_4.png" id="26_4ionf"]
 [ext_resource type="FontFile" uid="uid://dd5vqpdollu01" path="res://Assets/UI/Fonts/Anubismythicalserif-lxdLy.otf" id="30_ngann"]
+[ext_resource type="Material" uid="uid://b2jp3sq8knkg" path="res://Assets/Material/m_experience_font.tres" id="30_s8815"]
 
 [sub_resource type="Animation" id="Animation_8u6bx"]
 resource_name = "HealthLost0"
@@ -660,24 +661,27 @@ node_b = NodePath("../ground")
 disable_collision = false
 
 [node name="ground_bottom_container" type="StaticBody2D" parent="ground_container"]
-position = Vector2(0, 18)
+position = Vector2(-1, 25)
 
 [node name="ground_bottom" type="Sprite2D" parent="ground_container/ground_bottom_container"]
 material = ExtResource("8_j4c5q")
+position = Vector2(0, -10)
+scale = Vector2(0.965, 0.965)
 texture = ExtResource("15_ww3n1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_container/ground_bottom_container"]
-polygon = PackedVector2Array(-18, -192, 18.6667, -192, 123.333, 196.667, -125.333, 196.667)
+polygon = PackedVector2Array(-18, -185, 18.667, -185, 123.333, 196.667, -125.333, 196.667)
 
 [node name="ground" type="RigidBody2D" parent="ground_container"]
-position = Vector2(2, -218)
+position = Vector2(2, -208)
 collision_layer = 3
 collision_mask = 3
 mass = 20.0
 
 [node name="ground_top" type="Sprite2D" parent="ground_container/ground"]
 material = ExtResource("8_j4c5q")
-scale = Vector2(2, 2)
+position = Vector2(3.05176e-05, 2)
+scale = Vector2(1.363, 1.368)
 texture = ExtResource("15_f01so")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="ground_container/ground"]
@@ -703,6 +707,7 @@ scale = Vector2(0.556863, 0.556863)
 texture = ExtResource("16_cjerr")
 
 [node name="ExperienceLabel" type="Label" parent="Cartouche"]
+material = ExtResource("30_s8815")
 offset_left = -1117.0
 offset_top = -1190.0
 offset_right = -588.0

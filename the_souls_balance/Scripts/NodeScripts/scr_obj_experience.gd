@@ -69,7 +69,7 @@ func _physics_process(delta: float) -> void:
 			
 			# --- Vertical collision detection ---
 			var direction = Vector2.ZERO
-			direction.y = ex_base_fall_speed * delta * 3  # Apply downward movement
+			direction.y = ex_base_fall_speed * delta * 2  # Apply downward movement
 
 			# Trace a vertical movement to detect any upcoming collisions
 			var hits := trace_custom_polygon($experience_collider, global_position + direction)
@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 
 			# --- Horizontal correction to align with target_position.x ---
 			direction = Vector2.ZERO
-			direction.x = (global_position.x - target_position.x) * (-0.5 if is_dashing else -2)  # Push toward the target X
+			direction.x = (global_position.x - target_position.x) * (-0.25 if is_dashing else -1)  # Push toward the target X
 
 			hits = trace_custom_polygon($experience_collider, global_position + direction)
 			if hits.size() > 0:

@@ -61,7 +61,7 @@ var experience_keywords = {
 	"obj_experience_drop" : "Betrayal",
 	"obj_experience_ghost_i" : "Self Sacrifice",
 	"obj_experience_slime_square" : "Kindness",
-	"obj_experience_void_X" : "Shelter"
+	"obj_experience_void_X" : "Care"
 }
 
 var level_size : int = 0 #To makes sure it spawns the right number of pieces (changes in ready function later)

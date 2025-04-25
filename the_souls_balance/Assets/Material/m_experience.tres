@@ -4,3 +4,4 @@
 
 [resource]
 shader = ExtResource("1_d6jda")
+shader_parameter/Color = Color(1, 1, 1, 1)

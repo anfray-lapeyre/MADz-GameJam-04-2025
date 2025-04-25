@@ -140,8 +140,8 @@ func _on_dead_zone_body_entered(body: Node2D) -> void: #connects with dead zone
 func lose_life() -> void: #func when you loose life
 	current_lives -= 1
 	can_lose_life = false
-	sfx_player.stream= ex_life_lost_sfx_list[randi() % ex_life_lost_sfx_list.size()]
-	sfx_player.play()
+	#sfx_player.stream= ex_life_lost_sfx_list[randi() % ex_life_lost_sfx_list.size()]
+	#sfx_player.play()
 	
 	print("Vie perdue ! Il en reste : ", current_lives)
 	# feather display change

@@ -3,9 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://b2l2ujykasaw6" path="res://Scenes/Levels/map_onboarding.tscn" id="1_3mqyk"]
 
 [node name="Node2D" instance=ExtResource("1_3mqyk")]
-
-[node name="LifeLostAudioPlayer" parent="." index="8"]
-bus = &"SFX"
-
-[node name="VoiceOverPlayer" parent="." index="9"]
-bus = &"SFX"
+ex_level_number = 6

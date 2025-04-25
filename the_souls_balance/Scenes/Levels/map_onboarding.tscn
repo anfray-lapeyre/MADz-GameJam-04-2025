@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=41 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -13,8 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://cq5i8pbsdf4gb" path="res://Scenes/Objects/Experiences/BadActions/obj_experience_shuriken.tscn" id="11_54ykf"]
 [ext_resource type="PackedScene" uid="uid://cypwq7t4mi15m" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_sadness.tscn" id="12_yafmf"]
 [ext_resource type="PackedScene" uid="uid://k8ct2syg2kn5" path="res://Scenes/Objects/Experiences/I/obj_experience_I_sadness.tscn" id="13_aro3v"]
+[ext_resource type="PackedScene" uid="uid://duxclgmfhejnf" path="res://Scenes/Objects/Experiences/X/obj_experience_X_sadness.tscn" id="14_dahxx"]
 [ext_resource type="PackedScene" uid="uid://c560hlelekqvl" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_void_X.tscn" id="14_lnl3e"]
 [ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="15_qig3e"]
+[ext_resource type="PackedScene" uid="uid://ddshynk8kgm3j" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_disgust.tscn" id="16_x444r"]
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="17_rpu5o"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="18_i1g0q"]
 [ext_resource type="Texture2D" uid="uid://b08kehashu6nk" path="res://Assets/2D/Background/T_Anubis.png" id="19_mas5p"]
@@ -582,7 +584,7 @@ distance = -1040.0
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ikkrf")
 ex_level_number = 1
-ex_experience_list = Array[PackedScene]([ExtResource("2_dahxx"), ExtResource("3_x444r"), ExtResource("4_s8e4x"), ExtResource("5_o2uor"), ExtResource("6_e43iy"), ExtResource("7_eooqe"), ExtResource("8_bpqlv"), ExtResource("9_keecn"), ExtResource("10_uoc55"), ExtResource("7_eooqe"), ExtResource("11_54ykf"), ExtResource("12_yafmf"), ExtResource("13_aro3v"), ExtResource("14_lnl3e"), ExtResource("15_qig3e")])
+ex_experience_list = Array[PackedScene]([ExtResource("2_dahxx"), ExtResource("3_x444r"), ExtResource("4_s8e4x"), ExtResource("5_o2uor"), ExtResource("6_e43iy"), ExtResource("7_eooqe"), ExtResource("8_bpqlv"), ExtResource("9_keecn"), ExtResource("10_uoc55"), ExtResource("7_eooqe"), ExtResource("8_bpqlv"), ExtResource("11_54ykf"), ExtResource("12_yafmf"), ExtResource("13_aro3v"), ExtResource("14_dahxx"), ExtResource("14_lnl3e"), ExtResource("16_x444r"), ExtResource("14_dahxx"), ExtResource("15_qig3e")])
 ex_spawn_position = Vector2(600, -2500)
 
 [node name="Background" type="Node2D" parent="."]

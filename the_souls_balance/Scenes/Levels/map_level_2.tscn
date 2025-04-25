@@ -1,9 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://csgpfushyev08"]
+[gd_scene load_steps=24 format=3 uid="uid://csgpfushyev08"]
 
 [ext_resource type="PackedScene" uid="uid://b2l2ujykasaw6" path="res://Scenes/Levels/map_onboarding.tscn" id="1_y4itm"]
+[ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_3kevv"]
+[ext_resource type="PackedScene" uid="uid://bo3gn4328w851" path="res://Scenes/Objects/Experiences/U/obj_experience_U_joy.tscn" id="3_6bayl"]
+[ext_resource type="PackedScene" uid="uid://g8ofgfj35wfm" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_joy.tscn" id="4_1k8ju"]
+[ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="5_spsvw"]
+[ext_resource type="PackedScene" uid="uid://cb8swfwr3ew8e" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_ghost_i.tscn" id="6_p8ecf"]
+[ext_resource type="PackedScene" uid="uid://c84grtsncp66o" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_anger.tscn" id="7_eo8q7"]
+[ext_resource type="PackedScene" uid="uid://duxclgmfhejnf" path="res://Scenes/Objects/Experiences/X/obj_experience_X_sadness.tscn" id="8_lx23k"]
+[ext_resource type="PackedScene" uid="uid://88t36kiwbupf" path="res://Scenes/Objects/Experiences/U/obj_experience_U_anger.tscn" id="9_nlyxs"]
+[ext_resource type="PackedScene" uid="uid://b6j6mljc46bpt" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_fear.tscn" id="10_afksv"]
+[ext_resource type="PackedScene" uid="uid://cm2xhekrqhpio" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_joy.tscn" id="11_i52wu"]
+[ext_resource type="PackedScene" uid="uid://d3ko2yfjjqu8r" path="res://Scenes/Objects/Experiences/BadActions/obj_experience_drop.tscn" id="12_jnp7e"]
+[ext_resource type="PackedScene" uid="uid://sdxeqt2fok8o" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_sadness.tscn" id="13_bmfuw"]
+[ext_resource type="PackedScene" uid="uid://cbehirg6t8kp0" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_disgust.tscn" id="14_evxp2"]
+[ext_resource type="PackedScene" uid="uid://hi6vyg8nicig" path="res://Scenes/Objects/Experiences/T/obj_experience_T_fear.tscn" id="15_aelfe"]
+[ext_resource type="PackedScene" uid="uid://bv4fsfyp8cbs4" path="res://Scenes/Objects/Experiences/L/obj_experience_L_joy.tscn" id="16_o71gp"]
+[ext_resource type="PackedScene" uid="uid://3wwc8y2pvc53" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_disgust.tscn" id="17_aiffa"]
+[ext_resource type="PackedScene" uid="uid://ds48q32suyvle" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_slime_square.tscn" id="18_kc6bu"]
+[ext_resource type="PackedScene" uid="uid://dvvpdtkoi5wst" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_anger.tscn" id="19_n46af"]
+[ext_resource type="PackedScene" uid="uid://clqkmxwovkn4j" path="res://Scenes/Objects/Experiences/U/obj_experience_U_fear.tscn" id="20_1uwdj"]
+[ext_resource type="PackedScene" uid="uid://dupbphq7l3xrd" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_fear.tscn" id="21_fglfn"]
+[ext_resource type="PackedScene" uid="uid://cdni26wir2bt3" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_sadness.tscn" id="22_qheca"]
+[ext_resource type="PackedScene" uid="uid://d33lmyhym5gx4" path="res://Scenes/Objects/Experiences/T/obj_experience_T_joy.tscn" id="23_4yvg2"]
 
 [node name="Node2D" instance=ExtResource("1_y4itm")]
 ex_level_number = 2
+ex_experience_list = Array[PackedScene]([ExtResource("2_3kevv"), ExtResource("3_6bayl"), ExtResource("4_1k8ju"), ExtResource("5_spsvw"), ExtResource("6_p8ecf"), ExtResource("7_eo8q7"), ExtResource("8_lx23k"), ExtResource("9_nlyxs"), ExtResource("10_afksv"), ExtResource("11_i52wu"), ExtResource("12_jnp7e"), ExtResource("13_bmfuw"), ExtResource("14_evxp2"), ExtResource("4_1k8ju"), ExtResource("15_aelfe"), ExtResource("5_spsvw"), ExtResource("15_aelfe"), ExtResource("8_lx23k"), ExtResource("7_eo8q7"), ExtResource("16_o71gp"), ExtResource("17_aiffa"), ExtResource("18_kc6bu"), ExtResource("7_eo8q7"), ExtResource("19_n46af"), ExtResource("20_1uwdj"), ExtResource("21_fglfn"), ExtResource("22_qheca"), ExtResource("13_bmfuw"), ExtResource("23_4yvg2")])
 
 [node name="PauseLayer" parent="." index="6"]
 visible = true

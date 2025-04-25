@@ -13,11 +13,11 @@ var experience_keywords = {
 	"obj_experience_square_joy": "Daily Life",
 	"obj_experience_square_sadness": "Daily Life",
 	
-	"obj_experience_LL_anger": "Love",
-	"obj_experience_LL_disgust": "Love",
-	"obj_experience_LL_fear": "Love",
-	"obj_experience_LL_joy": "Love",
-	"obj_experience_LL_sadness": "Love",
+	"obj_experience_LL_anger": "Health",
+	"obj_experience_LL_disgust": "Health",
+	"obj_experience_LL_fear": "Health",
+	"obj_experience_LL_joy": "Health",
+	"obj_experience_LL_sadness": "Health",
 	
 	"obj_experience_Z_anger": "Learning",
 	"obj_experience_Z_disgust": "Learning",
@@ -31,11 +31,11 @@ var experience_keywords = {
 	"obj_experience_ZZ_joy" : "Work",
 	"obj_experience_ZZ_sadness" : "Work",
 	
-	"obj_experience_L_anger" : "Health",
-	"obj_experience_L_disgust" : "Health",
-	"obj_experience_L_fear" : "Health",
-	"obj_experience_L_joy" : "Health",
-	"obj_experience_L_sadness" : "Health",
+	"obj_experience_L_anger" : "Love",
+	"obj_experience_L_disgust" : "Love",
+	"obj_experience_L_fear" : "Love",
+	"obj_experience_L_joy" : "Love",
+	"obj_experience_L_sadness" : "Love",
 	
 	"obj_experience_U_anger" : "Surprise",
 	"obj_experience_U_disgust" : "Surprise",

@@ -610,6 +610,20 @@ position = Vector2(1749, 292)
 scale = Vector2(2.01219, 2.01219)
 texture = ExtResource("20_hcfv1")
 
+[node name="VoiceOverLabel" type="Label" parent="Background"]
+unique_name_in_owner = true
+material = ExtResource("30_hd7h6")
+offset_left = 1461.0
+offset_top = -1064.0
+offset_right = 2016.0
+offset_bottom = -865.0
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 64
+text = "Ceci est un phrase
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="LifeDisplay" type="Node2D" parent="Background"]
 unique_name_in_owner = true
 
@@ -716,6 +730,7 @@ theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 64
 text = "Test"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Dead_zone" type="Area2D" parent="."]
 collision_layer = 3

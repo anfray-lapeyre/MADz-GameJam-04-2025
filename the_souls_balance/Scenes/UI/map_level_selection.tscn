@@ -1,15 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://wavy321wdrbp"]
+[gd_scene load_steps=4 format=3 uid="uid://wavy321wdrbp"]
 
 [ext_resource type="Script" uid="uid://bsc6lnr4kcrqo" path="res://Scripts/NodeScripts/scr_level_selection.gd" id="1_j1j1t"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="1_soba2"]
-[ext_resource type="PackedScene" uid="uid://bhriw78r2eypq" path="res://Scenes/Levels/map_onboarding_level.tscn" id="2_0o6nl"]
 [ext_resource type="FontFile" uid="uid://dd5vqpdollu01" path="res://Assets/UI/Fonts/Anubismythicalserif-lxdLy.otf" id="2_yqybe"]
-[ext_resource type="PackedScene" uid="uid://bpy2ophuitlr0" path="res://Scenes/Levels/map_level_2.tscn" id="3_7lxqi"]
-[ext_resource type="PackedScene" uid="uid://b8h86t24hbagi" path="res://Scenes/Levels/map_level_3.tscn" id="4_7lxqi"]
-[ext_resource type="PackedScene" uid="uid://bs3w3a7ltl0jo" path="res://Scenes/Levels/map_level_4.tscn" id="5_ei1x0"]
-[ext_resource type="PackedScene" uid="uid://x2pgpcr6n2qg" path="res://Scenes/UI/map_start_menu.tscn" id="6_e2ee3"]
-[ext_resource type="PackedScene" uid="uid://wbkqtjla5v4i" path="res://Scenes/Levels/map_level_5.tscn" id="6_httek"]
-[ext_resource type="PackedScene" uid="uid://c3aiwy0p2wxqw" path="res://Scenes/Levels/map_level_6.tscn" id="7_x2v41"]
 
 [node name="world" type="Control"]
 layout_mode = 3
@@ -20,13 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j1j1t")
 ex_total_levels = 6
-ex_level_1 = ExtResource("2_0o6nl")
-ex_level_2 = ExtResource("3_7lxqi")
-ex_level_3 = ExtResource("4_7lxqi")
-ex_level_4 = ExtResource("5_ei1x0")
-ex_level_5 = ExtResource("6_httek")
-ex_level_6 = ExtResource("7_x2v41")
-ex_start_menu = ExtResource("6_e2ee3")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 328)

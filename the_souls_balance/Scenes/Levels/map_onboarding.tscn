@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=39 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://k8ct2syg2kn5" path="res://Scenes/Objects/Experiences/I/obj_experience_I_sadness.tscn" id="13_aro3v"]
 [ext_resource type="PackedScene" uid="uid://c560hlelekqvl" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_void_X.tscn" id="14_lnl3e"]
 [ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="15_qig3e"]
-[ext_resource type="PackedScene" uid="uid://wavy321wdrbp" path="res://Scenes/UI/map_level_selection.tscn" id="16_l0hnf"]
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="17_rpu5o"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="18_i1g0q"]
 [ext_resource type="Texture2D" uid="uid://b08kehashu6nk" path="res://Assets/2D/Background/T_Anubis.png" id="19_mas5p"]
@@ -585,7 +584,6 @@ script = ExtResource("1_ikkrf")
 ex_level_number = 1
 ex_experience_list = Array[PackedScene]([ExtResource("2_dahxx"), ExtResource("3_x444r"), ExtResource("4_s8e4x"), ExtResource("5_o2uor"), ExtResource("6_e43iy"), ExtResource("7_eooqe"), ExtResource("8_bpqlv"), ExtResource("9_keecn"), ExtResource("10_uoc55"), ExtResource("7_eooqe"), ExtResource("11_54ykf"), ExtResource("12_yafmf"), ExtResource("13_aro3v"), ExtResource("14_lnl3e"), ExtResource("15_qig3e")])
 ex_spawn_position = Vector2(600, -2500)
-ex_level_selection = ExtResource("16_l0hnf")
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -1000
@@ -795,11 +793,9 @@ shape = SubResource("WorldBoundaryShape2D_uvk6j")
 
 [node name="LifeLostAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-bus = &"SFX"
 
 [node name="VoiceOverPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-bus = &"SFX"
 
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=18 format=3 uid="uid://bhriw78r2eypq"]
+
+[ext_resource type="PackedScene" uid="uid://b2l2ujykasaw6" path="res://Scenes/Levels/map_game_level.tscn" id="1_c27ir"]
+[ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_jv543"]
+[ext_resource type="PackedScene" uid="uid://cm2xhekrqhpio" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_joy.tscn" id="3_axq7q"]
+[ext_resource type="PackedScene" uid="uid://bo3gn4328w851" path="res://Scenes/Objects/Experiences/U/obj_experience_U_joy.tscn" id="4_jdbrd"]
+[ext_resource type="PackedScene" uid="uid://bv4fsfyp8cbs4" path="res://Scenes/Objects/Experiences/L/obj_experience_L_joy.tscn" id="5_f4y6h"]
+[ext_resource type="PackedScene" uid="uid://b3qy3kq7lfj6m" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_fear.tscn" id="6_a7ja7"]
+[ext_resource type="PackedScene" uid="uid://dvvpdtkoi5wst" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_anger.tscn" id="7_h1wvg"]
+[ext_resource type="PackedScene" uid="uid://1am82xfab126" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_anger.tscn" id="8_dryaf"]
+[ext_resource type="PackedScene" uid="uid://d33lmyhym5gx4" path="res://Scenes/Objects/Experiences/T/obj_experience_T_joy.tscn" id="9_cvadb"]
+[ext_resource type="PackedScene" uid="uid://cbehirg6t8kp0" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_disgust.tscn" id="10_imwgn"]
+[ext_resource type="PackedScene" uid="uid://cq5i8pbsdf4gb" path="res://Scenes/Objects/Experiences/BadActions/obj_experience_shuriken.tscn" id="11_qqst7"]
+[ext_resource type="PackedScene" uid="uid://cypwq7t4mi15m" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_sadness.tscn" id="12_v05hs"]
+[ext_resource type="PackedScene" uid="uid://k8ct2syg2kn5" path="res://Scenes/Objects/Experiences/I/obj_experience_I_sadness.tscn" id="13_dm2h4"]
+[ext_resource type="PackedScene" uid="uid://duxclgmfhejnf" path="res://Scenes/Objects/Experiences/X/obj_experience_X_sadness.tscn" id="14_8lxs1"]
+[ext_resource type="PackedScene" uid="uid://c560hlelekqvl" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_void_X.tscn" id="15_5ftba"]
+[ext_resource type="PackedScene" uid="uid://ddshynk8kgm3j" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_disgust.tscn" id="16_uhaha"]
+[ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="17_5xabd"]
+
+[node name="Node2D" instance=ExtResource("1_c27ir")]
+ex_experience_list = Array[PackedScene]([ExtResource("2_jv543"), ExtResource("3_axq7q"), ExtResource("4_jdbrd"), ExtResource("5_f4y6h"), ExtResource("6_a7ja7"), ExtResource("7_h1wvg"), ExtResource("8_dryaf"), ExtResource("9_cvadb"), ExtResource("10_imwgn"), ExtResource("7_h1wvg"), ExtResource("8_dryaf"), ExtResource("11_qqst7"), ExtResource("12_v05hs"), ExtResource("13_dm2h4"), ExtResource("14_8lxs1"), ExtResource("15_5ftba"), ExtResource("16_uhaha"), ExtResource("14_8lxs1"), ExtResource("17_5xabd")])

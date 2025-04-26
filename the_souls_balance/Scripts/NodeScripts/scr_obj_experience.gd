@@ -182,6 +182,7 @@ func _use_power():
 					for grandchild in child.get_children():
 						if grandchild is Sprite2D:
 							(grandchild as Sprite2D).material = ex_ghost_material
+			$experience_sprite.material = ex_ghost_material
 			self.freeze=true
 			$effect_area.queue_free()
 		PowerType.SLIME:

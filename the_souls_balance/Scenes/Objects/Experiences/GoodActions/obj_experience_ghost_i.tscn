@@ -1,45 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb8swfwr3ew8e"]
+[gd_scene load_steps=9 format=3 uid="uid://cb8swfwr3ew8e"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_3pprt"]
 [ext_resource type="Material" uid="uid://d3qvothfcms8i" path="res://Assets/Material/m_ghost.tres" id="2_drvso"]
 [ext_resource type="Texture2D" uid="uid://dau3q5loo4jtb" path="res://Assets/2D/Experiences/Outlines/t_i_outline.png" id="2_tt3o4"]
+[ext_resource type="Material" uid="uid://7bwkywlxtgyk" path="res://Assets/Material/m_void.tres" id="3_8r6pa"]
 [ext_resource type="Material" uid="uid://vc0nj0l4c6w0" path="res://Assets/Material/m_void_preview.tres" id="4_ec214"]
-[ext_resource type="Texture2D" uid="uid://ceivk22tes4tp" path="res://Assets/2D/Experiences/Background/t_i_mask.png" id="5_ec214"]
+[ext_resource type="Material" uid="uid://id4sndy6400o" path="res://Assets/Material/m_void_halo.tres" id="5_3hlxj"]
+[ext_resource type="Texture2D" uid="uid://dm11remw171h1" path="res://Assets/2D/Experiences/Background/t_I_outline.png" id="6_gx23l"]
+[ext_resource type="Texture2D" uid="uid://c56ny8tmjixih" path="res://Assets/2D/Experiences/Background/t_i_mask_white.png" id="8_8r6pa"]
 
 [node name="obj_experience" instance=ExtResource("1_3pprt")]
-collision_layer = 2
-collision_mask = 2
-power_type = 1
+power_type = 3
 ex_ghost_material = ExtResource("2_drvso")
 
 [node name="experience_sprite" parent="." index="0"]
 z_index = 5
-material = ExtResource("2_drvso")
+material = ExtResource("3_8r6pa")
 texture = ExtResource("2_tt3o4")
+
+[node name="Sprite2D" type="Sprite2D" parent="experience_sprite" index="0"]
+z_index = -1
+material = ExtResource("5_3hlxj")
+scale = Vector2(3.00719, 0.899057)
+texture = ExtResource("6_gx23l")
 
 [node name="experience_collider" parent="." index="1"]
 visible = false
 scale = Vector2(9.081, 2.32)
-
-[node name="detect_area" parent="." index="3"]
-collision_layer = 2
-collision_mask = 2
 
 [node name="detect_area_collider" parent="detect_area" index="0"]
 position = Vector2(-49, 43)
 scale = Vector2(1.055, 4.924)
 polygon = PackedVector2Array(-115, -18.522, 210.316, -18.5221, 210.316, 1.14569, -115, 1.146)
 
-[node name="ghost_area" type="Area2D" parent="." index="4"]
+[node name="effect_area" type="Area2D" parent="." index="4"]
 
-[node name="ghost_area_collider" type="CollisionPolygon2D" parent="ghost_area" index="0"]
+[node name="effect_collision" type="CollisionPolygon2D" parent="effect_area" index="0"]
 visible = false
 z_index = 4
 scale = Vector2(0.48, 1)
 polygon = PackedVector2Array(-1000, -100, -1000, 100, 1000, 100, 1000, -100)
 
-[node name="Sprite2D" type="Sprite2D" parent="ghost_area" index="1"]
+[node name="Sprite2D" type="Sprite2D" parent="effect_area" index="1"]
+modulate = Color(1, 1, 1, 0.509804)
 z_index = 4
 material = ExtResource("4_ec214")
 scale = Vector2(2.015, 1.49)
-texture = ExtResource("5_ec214")
+texture = ExtResource("8_8r6pa")

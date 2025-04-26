@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=51 format=3 uid="uid://dqwbtuwnphyby"]
+[gd_resource type="VisualShader" load_steps=53 format=3 uid="uid://dqwbtuwnphyby"]
 
 [ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/Deprecated/T_T_Anger.png" id="1_gcup5"]
 [ext_resource type="Texture2D" uid="uid://h7n4akyqfssv" path="res://Assets/2D/Experiences/Background/t_cloud_mask.png" id="2_y1n50"]
@@ -172,8 +172,15 @@ function = 31
 default_input_values = [0, 0.0, 1, 0.4]
 operator = 2
 
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_gcup5"]
+expanded_output_ports = [0]
+input_name = "color"
+
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_innnw"]
 input_name = "screen_uv"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_yc5oh"]
+operator = 2
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_um488"]
 expanded_output_ports = [0]
@@ -431,13 +438,23 @@ void fragment() {
 	float n_out50p0 = n_out34p0 * n_out57p0;
 
 
+// Input:59
+	vec4 n_out59p0 = COLOR;
+	float n_out59p4 = n_out59p0.a;
+
+
+// FloatOp:60
+	float n_out60p0 = n_out50p0 * n_out59p4;
+
+
 // Output:0
 	COLOR.rgb = n_out19p0;
-	COLOR.a = n_out50p0;
+	COLOR.a = n_out60p0;
 
 
 }
 "
+graph_offset = Vector2(594.63, -223.083)
 mode = 1
 flags/light_only = false
 preview_params/BackgroundPivot = "Vector2(0.45, 0.45)"
@@ -542,4 +559,8 @@ nodes/fragment/57/node = SubResource("VisualShaderNodeFloatOp_1d86v")
 nodes/fragment/57/position = Vector2(1140, -300)
 nodes/fragment/58/node = SubResource("VisualShaderNodeFloatOp_02yq6")
 nodes/fragment/58/position = Vector2(900, -240)
-nodes/fragment/connections = PackedInt32Array(6, 0, 7, 0, 7, 1, 8, 0, 7, 2, 8, 1, 7, 3, 8, 2, 5, 0, 9, 0, 8, 0, 9, 1, 5, 0, 11, 0, 12, 0, 10, 1, 9, 0, 10, 0, 10, 0, 11, 2, 16, 0, 15, 1, 11, 0, 14, 0, 8, 0, 20, 0, 20, 0, 14, 1, 18, 0, 19, 1, 16, 0, 18, 0, 12, 0, 21, 0, 21, 0, 11, 1, 11, 0, 19, 0, 14, 0, 15, 0, 15, 0, 19, 2, 22, 0, 24, 2, 27, 0, 26, 0, 26, 0, 30, 0, 28, 0, 30, 1, 30, 0, 32, 0, 26, 0, 33, 0, 33, 0, 31, 1, 24, 0, 31, 0, 31, 0, 32, 1, 32, 1, 5, 0, 32, 2, 5, 1, 32, 3, 5, 2, 19, 0, 0, 0, 26, 4, 34, 0, 35, 0, 24, 0, 37, 0, 35, 2, 39, 0, 40, 0, 41, 0, 42, 0, 40, 0, 38, 0, 43, 0, 38, 2, 42, 0, 40, 2, 36, 0, 35, 1, 25, 0, 44, 0, 44, 0, 35, 0, 38, 1, 45, 0, 45, 0, 44, 1, 47, 0, 42, 1, 46, 0, 48, 0, 48, 0, 45, 3, 46, 0, 45, 4, 34, 0, 50, 0, 50, 0, 0, 1, 38, 1, 53, 0, 26, 1, 54, 0, 26, 1, 55, 0, 53, 0, 56, 0, 56, 0, 54, 1, 54, 0, 57, 0, 57, 0, 50, 1, 58, 0, 57, 1, 55, 0, 58, 0)
+nodes/fragment/59/node = SubResource("VisualShaderNodeInput_gcup5")
+nodes/fragment/59/position = Vector2(1300, 80)
+nodes/fragment/60/node = SubResource("VisualShaderNodeFloatOp_yc5oh")
+nodes/fragment/60/position = Vector2(1720, -40)
+nodes/fragment/connections = PackedInt32Array(6, 0, 7, 0, 7, 1, 8, 0, 7, 2, 8, 1, 7, 3, 8, 2, 5, 0, 9, 0, 8, 0, 9, 1, 5, 0, 11, 0, 12, 0, 10, 1, 9, 0, 10, 0, 10, 0, 11, 2, 16, 0, 15, 1, 11, 0, 14, 0, 8, 0, 20, 0, 20, 0, 14, 1, 18, 0, 19, 1, 16, 0, 18, 0, 12, 0, 21, 0, 21, 0, 11, 1, 11, 0, 19, 0, 14, 0, 15, 0, 15, 0, 19, 2, 22, 0, 24, 2, 27, 0, 26, 0, 26, 0, 30, 0, 28, 0, 30, 1, 30, 0, 32, 0, 26, 0, 33, 0, 33, 0, 31, 1, 24, 0, 31, 0, 31, 0, 32, 1, 32, 1, 5, 0, 32, 2, 5, 1, 32, 3, 5, 2, 19, 0, 0, 0, 26, 4, 34, 0, 35, 0, 24, 0, 37, 0, 35, 2, 39, 0, 40, 0, 41, 0, 42, 0, 40, 0, 38, 0, 43, 0, 38, 2, 42, 0, 40, 2, 36, 0, 35, 1, 25, 0, 44, 0, 44, 0, 35, 0, 38, 1, 45, 0, 45, 0, 44, 1, 47, 0, 42, 1, 46, 0, 48, 0, 48, 0, 45, 3, 46, 0, 45, 4, 34, 0, 50, 0, 38, 1, 53, 0, 26, 1, 54, 0, 26, 1, 55, 0, 53, 0, 56, 0, 56, 0, 54, 1, 54, 0, 57, 0, 57, 0, 50, 1, 58, 0, 57, 1, 55, 0, 58, 0, 50, 0, 60, 0, 60, 0, 0, 1, 59, 4, 60, 1)

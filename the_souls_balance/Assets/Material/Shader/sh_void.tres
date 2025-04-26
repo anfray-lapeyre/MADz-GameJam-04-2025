@@ -573,7 +573,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1193.92, -79.8266)
+graph_offset = Vector2(-236.316, -95.6534)
 mode = 1
 flags/light_only = false
 preview_params/BackgroundPivot = "Vector2(0.45, 0.45)"
@@ -583,7 +583,6 @@ preview_params/tex_frg_7 = "Resource(\"res://Assets/2D/Experiences/Outlines/t_cr
 preview_params/Noise = "Resource(\"res://Assets/2D/Experiences/Background/t_cloud_mask.png\")"
 preview_params/NoiseSpeed = "-0.1"
 preview_params/NoiseStrength = "0.0"
-preview_params/Halo = "Resource(\"res://Assets/2D/Experiences/Background/t_refuge_halo.png\")"
 nodes/fragment/0/position = Vector2(2100, 160)
 nodes/fragment/5/node = SubResource("VisualShaderNodeVectorCompose_6wedl")
 nodes/fragment/5/position = Vector2(-240, 40)

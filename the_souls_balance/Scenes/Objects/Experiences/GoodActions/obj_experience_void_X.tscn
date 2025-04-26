@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://c560hlelekqvl"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_wixk8"]
+[ext_resource type="Material" uid="uid://d3qvothfcms8i" path="res://Assets/Material/m_ghost.tres" id="2_cjca8"]
 [ext_resource type="Texture2D" uid="uid://c2vssiwq2yrc3" path="res://Assets/2D/Experiences/Outlines/t_cross_outline.png" id="2_j0kj4"]
-[ext_resource type="Material" uid="uid://7bwkywlxtgyk" path="res://Assets/Material/m_void.tres" id="2_l0x8b"]
 [ext_resource type="Material" uid="uid://vc0nj0l4c6w0" path="res://Assets/Material/m_void_preview.tres" id="4_cjca8"]
 [ext_resource type="Texture2D" uid="uid://c0qlwslbf803e" path="res://Assets/2D/Experiences/Outlines/t_round_outline.png" id="5_b25kh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0x8b"]
-radius = 183.89
+radius = 222.05
 
 [sub_resource type="Animation" id="Animation_b25kh"]
 length = 0.001
@@ -46,11 +46,12 @@ _data = {
 }
 
 [node name="obj_experience" instance=ExtResource("1_wixk8")]
-power_type = 3
+power_type = 1
+ex_ghost_material = ExtResource("2_cjca8")
 
 [node name="experience_sprite" parent="." index="0"]
 z_index = 1
-material = ExtResource("2_l0x8b")
+material = ExtResource("2_cjca8")
 texture = ExtResource("2_j0kj4")
 
 [node name="experience_collider" parent="." index="1"]
@@ -62,17 +63,17 @@ position = Vector2(-33, 44)
 scale = Vector2(0.475, 4.699)
 polygon = PackedVector2Array(-9.52381, -32.4613, 147.619, -32.4613, 147.619, -18.1402, 260.317, -18.1402, 260.317, 0.763796, 153.968, 0.763796, 153.968, 13.9393, -6.34921, 13.9393, -6.34921, 0.572846, -117.46, 0.572846, -117.46, -18.5221, -9.52381, -18.5221)
 
-[node name="void_area" type="Area2D" parent="." index="4"]
+[node name="effect_area" type="Area2D" parent="." index="4"]
 
-[node name="void_collision" type="CollisionShape2D" parent="void_area" index="0"]
+[node name="effect_collision" type="CollisionShape2D" parent="effect_area" index="0"]
 shape = SubResource("CircleShape2D_l0x8b")
 
-[node name="Sprite2D" type="Sprite2D" parent="void_area" index="1"]
+[node name="Sprite2D" type="Sprite2D" parent="effect_area" index="1"]
 material = ExtResource("4_cjca8")
-scale = Vector2(-1.446, -1.446)
+scale = Vector2(-1.80522, -1.80522)
 texture = ExtResource("5_b25kh")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="void_area/Sprite2D" index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="effect_area/Sprite2D" index="0"]
 libraries = {
 &"": SubResource("AnimationLibrary_act2q")
 }

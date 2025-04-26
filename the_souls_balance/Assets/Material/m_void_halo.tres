@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://id4sndy6400o"]
+
+[ext_resource type="Shader" uid="uid://bdp1nab4fqoli" path="res://Assets/Material/Shader/sh_void_halo.tres" id="1_egqof"]
+[ext_resource type="Texture2D" uid="uid://dm11remw171h1" path="res://Assets/2D/Experiences/Background/t_I_outline.png" id="2_bxme3"]
+
+[resource]
+shader = ExtResource("1_egqof")
+shader_parameter/OutlineColor = Color(0.999476, 0.870991, 0.671613, 1)
+shader_parameter/Halo = ExtResource("2_bxme3")

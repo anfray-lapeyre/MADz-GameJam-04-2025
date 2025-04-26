@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=90 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -61,13 +61,15 @@
 [ext_resource type="Texture2D" uid="uid://b2o5cdp8prtbk" path="res://Assets/2D/Background/t_input.png" id="59_hd7h6"]
 [ext_resource type="Texture2D" uid="uid://c2vssiwq2yrc3" path="res://Assets/2D/Experiences/Outlines/t_cross_outline.png" id="60_61it5"]
 [ext_resource type="Material" uid="uid://cuakkqcivenmr" path="res://Assets/Material/m_slime.tres" id="61_5sv16"]
+[ext_resource type="Material" uid="uid://vc0nj0l4c6w0" path="res://Assets/Material/m_void_preview.tres" id="61_6hve2"]
+[ext_resource type="Texture2D" uid="uid://c0qlwslbf803e" path="res://Assets/2D/Experiences/Outlines/t_round_outline.png" id="62_4axif"]
 [ext_resource type="Texture2D" uid="uid://bf5qbd1o0cgdh" path="res://Assets/2D/Experiences/Outlines/t_square_outline.png" id="62_6hve2"]
 [ext_resource type="Material" uid="uid://s4iix8lqbuqg" path="res://Assets/Material/m_slime_preview.tres" id="63_4axif"]
 [ext_resource type="Texture2D" uid="uid://dkrutr3314doa" path="res://Assets/2D/Experiences/Background/t_square_mask.png" id="64_riete"]
 [ext_resource type="Material" uid="uid://d3qvothfcms8i" path="res://Assets/Material/m_ghost.tres" id="65_5ssdb"]
+[ext_resource type="Material" uid="uid://id4sndy6400o" path="res://Assets/Material/m_void_halo.tres" id="66_60jp4"]
 [ext_resource type="Texture2D" uid="uid://dau3q5loo4jtb" path="res://Assets/2D/Experiences/Outlines/t_i_outline.png" id="66_b33gi"]
-[ext_resource type="Material" uid="uid://o8k4mo5d1hu4" path="res://Assets/Material/m_ghost_preview.tres" id="67_20dlx"]
-[ext_resource type="Texture2D" uid="uid://ceivk22tes4tp" path="res://Assets/2D/Experiences/Background/t_i_mask.png" id="68_qytck"]
+[ext_resource type="Texture2D" uid="uid://dm11remw171h1" path="res://Assets/2D/Experiences/Background/t_I_outline.png" id="67_ada61"]
 
 [sub_resource type="Animation" id="Animation_8u6bx"]
 resource_name = "HealthLost0"
@@ -1076,10 +1078,15 @@ position = Vector2(-264, -472)
 
 [node name="PowerContainers" type="Sprite2D" parent="PauseLayer/PauseMenu/SpecialPieces"]
 z_index = 999
-material = ExtResource("59_ada61")
+material = ExtResource("65_5ssdb")
 position = Vector2(672, 560)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("60_61it5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers"]
+material = ExtResource("61_6hve2")
+scale = Vector2(1.92708, 1.92708)
+texture = ExtResource("62_4axif")
 
 [node name="Sprite2D" type="Sprite2D" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers"]
 z_index = -1
@@ -1087,6 +1094,14 @@ material = ExtResource("17_rpu5o")
 position = Vector2(16.6667, 120.833)
 scale = Vector2(1.64806, 1.31385)
 texture = ExtResource("58_s1a05")
+
+[node name="ColorRect" type="ColorRect" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers"]
+material = ExtResource("17_rpu5o")
+offset_left = -280.0
+offset_top = 247.0
+offset_right = 327.0
+offset_bottom = 367.0
+color = Color(0.933333, 0.741176, 0.345098, 1)
 
 [node name="PowerLabel" type="Label" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers"]
 material = ExtResource("30_hd7h6")
@@ -1102,7 +1117,7 @@ theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 80
 text = "Care
 
-Remove all pieces in the area."
+Freeze all pieces in place."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -1146,10 +1161,17 @@ autowrap_mode = 2
 
 [node name="PowerContainers3" type="Sprite2D" parent="PauseLayer/PauseMenu/SpecialPieces"]
 z_index = 10
-material = ExtResource("65_5ssdb")
+material = ExtResource("59_ada61")
 position = Vector2(994, 560)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("66_b33gi")
+
+[node name="Sprite2D3" type="Sprite2D" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers3"]
+z_index = -1
+material = ExtResource("66_60jp4")
+position = Vector2(0, -6.10352e-05)
+scale = Vector2(2.26563, 1.77083)
+texture = ExtResource("67_ada61")
 
 [node name="PowerLabel" type="Label" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers3"]
 material = ExtResource("30_hd7h6")
@@ -1165,16 +1187,9 @@ theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 80
 text = "Self Sacrifice
 
-Freeze all pieces in place."
+Remove all pieces in the area."
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers3"]
-z_index = -1
-material = ExtResource("67_20dlx")
-position = Vector2(-13.3345, 0)
-scale = Vector2(1.835, 2.4)
-texture = ExtResource("68_qytck")
 
 [node name="Sprite2D2" type="Sprite2D" parent="PauseLayer/PauseMenu/SpecialPieces/PowerContainers3"]
 z_index = -2

@@ -24,17 +24,17 @@ scale = Vector2(4.50389, 4.57468)
 position = Vector2(-69, 87)
 scale = Vector2(1.025, 9.528)
 
-[node name="slime_area" type="Area2D" parent="." index="4"]
+[node name="effect_area" type="Area2D" parent="." index="4"]
 
-[node name="slime_collision" type="CollisionShape2D" parent="slime_area" index="0"]
+[node name="efffect_collision" type="CollisionShape2D" parent="effect_area" index="0"]
 shape = SubResource("RectangleShape2D_00w8l")
 
-[node name="Sprite2D" type="Sprite2D" parent="slime_area" index="1"]
+[node name="Sprite2D" type="Sprite2D" parent="effect_area" index="1"]
 z_index = 1
 material = ExtResource("4_b5nt2")
 scale = Vector2(-1.381, -1.381)
 texture = ExtResource("5_pnabs")
 
-[connection signal="area_entered" from="slime_area" to="." method="_on_slime_area_area_entered"]
-[connection signal="area_exited" from="slime_area" to="." method="_on_slime_area_area_exited"]
-[connection signal="body_entered" from="slime_area" to="." method="_on_slime_area_body_entered"]
+[connection signal="area_entered" from="effect_area" to="." method="_on_slime_area_area_entered"]
+[connection signal="area_exited" from="effect_area" to="." method="_on_slime_area_area_exited"]
+[connection signal="body_entered" from="effect_area" to="." method="_on_slime_area_body_entered"]

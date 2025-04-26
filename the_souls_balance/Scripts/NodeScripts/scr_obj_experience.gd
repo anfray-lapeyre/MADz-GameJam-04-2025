@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 
 			# Trace a vertical movement to detect any upcoming collisions
 			var hits := trace_custom_polygon($experience_collider, global_position + direction)
-			if hits.size() > 0 && power_type != PowerType.GHOST:
+			if hits.size() > 0:
 				# If still controlled, relinquish control to simulate a "drop"
 				if is_controlled:
 					call_deferred("_release_control")  # Prevents weird simultaneous behaviors
@@ -176,7 +176,7 @@ func _use_power():
 	await get_tree().create_timer(0.5).timeout
 	match power_type:
 		PowerType.GHOST:
-			for child in $ghost_area.get_overlapping_bodies():
+			for child in $effect_area.get_overlapping_bodies():
 				if (child).is_in_group("Experiences") && child != self:
 					(child as RigidBody2D).freeze=true
 					for grandchild in child.get_children():
@@ -187,7 +187,7 @@ func _use_power():
 			is_power_in_use=true;
 			self.linear_damp = 2.0
 		PowerType.VOID:
-			for child in $void_area.get_overlapping_bodies():
+			for child in $effect_area.get_overlapping_bodies():
 				if (child).is_in_group("Experiences") && child != self:
 					child.queue_free()
 			queue_free()

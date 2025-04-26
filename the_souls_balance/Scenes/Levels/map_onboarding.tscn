@@ -1224,6 +1224,7 @@ offset_top = -543.0
 offset_right = 536.0
 offset_bottom = -411.0
 scale = Vector2(2.28305, 2.02869)
+theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 96
 text = "The soul now rests"
 

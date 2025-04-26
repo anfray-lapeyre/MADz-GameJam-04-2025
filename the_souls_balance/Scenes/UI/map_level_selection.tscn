@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://wavy321wdrbp"]
+[gd_scene load_steps=35 format=3 uid="uid://wavy321wdrbp"]
 
 [ext_resource type="Script" uid="uid://bsc6lnr4kcrqo" path="res://Scripts/NodeScripts/scr_level_selection.gd" id="1_j1j1t"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="1_soba2"]
@@ -20,6 +20,7 @@
 [ext_resource type="Material" uid="uid://7bwkywlxtgyk" path="res://Assets/Material/m_void.tres" id="18_wplfo"]
 [ext_resource type="Texture2D" uid="uid://c2vssiwq2yrc3" path="res://Assets/2D/Experiences/Outlines/t_cross_outline.png" id="19_sc7vt"]
 [ext_resource type="Material" uid="uid://cuakkqcivenmr" path="res://Assets/Material/m_slime.tres" id="20_4bt1f"]
+[ext_resource type="Texture2D" uid="uid://blnikxy6d7cwk" path="res://Assets/2D/Background/t_frame.png" id="20_sc7vt"]
 [ext_resource type="Texture2D" uid="uid://bf5qbd1o0cgdh" path="res://Assets/2D/Experiences/Outlines/t_square_outline.png" id="21_7p7mm"]
 [ext_resource type="Material" uid="uid://s4iix8lqbuqg" path="res://Assets/Material/m_slime_preview.tres" id="22_klwk7"]
 [ext_resource type="Texture2D" uid="uid://dkrutr3314doa" path="res://Assets/2D/Experiences/Background/t_square_mask.png" id="23_la5jx"]
@@ -352,13 +353,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="PowerContainers" type="Sprite2D" parent="."]
+[node name="SpecialPieces" type="Node2D" parent="."]
+
+[node name="PowerContainers" type="Sprite2D" parent="SpecialPieces"]
+z_index = 10
 material = ExtResource("18_wplfo")
 position = Vector2(664, 560)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("19_sc7vt")
 
-[node name="PowerLabel" type="Label" parent="PowerContainers"]
+[node name="PowerLabel" type="Label" parent="SpecialPieces/PowerContainers"]
 material = ExtResource("17_tvwu7")
 anchors_preset = -1
 anchor_right = 1.0
@@ -376,14 +380,21 @@ Freeze all pieces in place."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="PowerContainers2" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="SpecialPieces/PowerContainers"]
+z_index = -1
+material = ExtResource("11_h4fdd")
+position = Vector2(16.6667, 166.667)
+scale = Vector2(1.64806, 1.1948)
+texture = ExtResource("20_sc7vt")
+
+[node name="PowerContainers2" type="Sprite2D" parent="SpecialPieces"]
 z_index = 10
 material = ExtResource("20_4bt1f")
 position = Vector2(824, 560)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("21_7p7mm")
 
-[node name="PowerLabel2" type="Label" parent="PowerContainers2"]
+[node name="PowerLabel2" type="Label" parent="SpecialPieces/PowerContainers2"]
 material = ExtResource("17_tvwu7")
 anchors_preset = -1
 anchor_right = 1.0
@@ -399,13 +410,13 @@ text = "Special Pieces"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="PowerContainers2"]
+[node name="Sprite2D" type="Sprite2D" parent="SpecialPieces/PowerContainers2"]
 z_index = -1
 material = ExtResource("22_klwk7")
 scale = Vector2(1.9, 1.9)
 texture = ExtResource("23_la5jx")
 
-[node name="PowerLabel" type="Label" parent="PowerContainers2"]
+[node name="PowerLabel" type="Label" parent="SpecialPieces/PowerContainers2"]
 material = ExtResource("17_tvwu7")
 anchors_preset = -1
 anchor_right = 1.0
@@ -423,14 +434,21 @@ Strengthen and bind falling pieces."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="PowerContainers3" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="SpecialPieces/PowerContainers2"]
+z_index = -2
+material = ExtResource("11_h4fdd")
+position = Vector2(-3.33339, 163.333)
+scale = Vector2(1.69059, 1.20346)
+texture = ExtResource("20_sc7vt")
+
+[node name="PowerContainers3" type="Sprite2D" parent="SpecialPieces"]
 z_index = 10
 material = ExtResource("24_gygjs")
-position = Vector2(994, 560)
+position = Vector2(984, 560)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("25_ym6m2")
 
-[node name="PowerLabel" type="Label" parent="PowerContainers3"]
+[node name="PowerLabel" type="Label" parent="SpecialPieces/PowerContainers3"]
 material = ExtResource("17_tvwu7")
 anchors_preset = -1
 anchor_right = 1.0
@@ -448,12 +466,19 @@ Remove all pieces in the area."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="PowerContainers3"]
+[node name="Sprite2D" type="Sprite2D" parent="SpecialPieces/PowerContainers3"]
 z_index = -1
 material = ExtResource("26_0k8rd")
 position = Vector2(-13.3345, 0)
 scale = Vector2(1.835, 2.4)
 texture = ExtResource("27_i3o3u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SpecialPieces/PowerContainers3"]
+z_index = -2
+material = ExtResource("11_h4fdd")
+position = Vector2(-3.33339, 160)
+scale = Vector2(1.73312, 1.21212)
+texture = ExtResource("20_sc7vt")
 
 [connection signal="pressed" from="return" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]

@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=68 format=3 uid="uid://blm3ydj364akd"]
+[gd_resource type="VisualShader" load_steps=70 format=3 uid="uid://blm3ydj364akd"]
 
 [ext_resource type="Texture2D" uid="uid://5jk7qm3583q7" path="res://Assets/2D/Experiences/Deprecated/T_T_Anger.png" id="1_5rv7b"]
 [ext_resource type="Texture2D" uid="uid://h7n4akyqfssv" path="res://Assets/2D/Experiences/Background/t_cloud_mask.png" id="2_tpkak"]
@@ -250,6 +250,14 @@ function = 31
 default_input_values = [0, 0.0, 1, 1.2]
 operator = 2
 
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_5rv7b"]
+parameter_name = "HaloStrength"
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_tpkak"]
+output_port_for_preview = 0
+operator = 2
+
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_v7vxr"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_1lewi"]
@@ -270,6 +278,7 @@ uniform sampler2D tex_frg_7 : source_color;
 uniform sampler2D curve_frg_65 : repeat_disable;
 uniform sampler2D Halo : source_color, hint_default_transparent, filter_linear, repeat_disable;
 uniform sampler2D curve_frg_66 : repeat_disable;
+uniform float HaloStrength;
 
 
 
@@ -562,8 +571,16 @@ void fragment() {
 	float n_out60p0 = n_out50p1 * n_out62p0;
 
 
+// FloatParameter:74
+	float n_out74p0 = HaloStrength;
+
+
+// FloatOp:75
+	float n_out75p0 = n_out60p0 * n_out74p0;
+
+
 // FloatOp:52
-	float n_out52p0 = n_out34p0 + n_out60p0;
+	float n_out52p0 = n_out34p0 + n_out75p0;
 
 
 // Output:0
@@ -573,7 +590,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-236.316, -95.6534)
+graph_offset = Vector2(116.573, -533.464)
 mode = 1
 flags/light_only = false
 preview_params/BackgroundPivot = "Vector2(0.45, 0.45)"
@@ -583,6 +600,7 @@ preview_params/tex_frg_7 = "Resource(\"res://Assets/2D/Experiences/Outlines/t_cr
 preview_params/Noise = "Resource(\"res://Assets/2D/Experiences/Background/t_cloud_mask.png\")"
 preview_params/NoiseSpeed = "-0.1"
 preview_params/NoiseStrength = "0.0"
+preview_params/HaloStrength = "1.0"
 nodes/fragment/0/position = Vector2(2100, 160)
 nodes/fragment/5/node = SubResource("VisualShaderNodeVectorCompose_6wedl")
 nodes/fragment/5/position = Vector2(-240, 40)
@@ -708,4 +726,8 @@ nodes/fragment/72/node = SubResource("VisualShaderNodeFloatFunc_0em0c")
 nodes/fragment/72/position = Vector2(-1460, 360)
 nodes/fragment/73/node = SubResource("VisualShaderNodeFloatOp_5rv7b")
 nodes/fragment/73/position = Vector2(-2167.23, 371.773)
-nodes/fragment/connections = PackedInt32Array(6, 0, 7, 0, 7, 1, 8, 0, 7, 2, 8, 1, 7, 3, 8, 2, 5, 0, 9, 0, 8, 0, 9, 1, 5, 0, 11, 0, 12, 0, 10, 1, 9, 0, 10, 0, 10, 0, 11, 2, 16, 0, 15, 1, 11, 0, 14, 0, 8, 0, 20, 0, 20, 0, 14, 1, 18, 0, 19, 1, 16, 0, 18, 0, 12, 0, 21, 0, 21, 0, 11, 1, 11, 0, 19, 0, 14, 0, 15, 0, 15, 0, 19, 2, 22, 0, 24, 2, 27, 0, 26, 0, 28, 0, 30, 1, 30, 0, 32, 0, 24, 0, 31, 0, 32, 1, 5, 0, 32, 2, 5, 1, 32, 3, 5, 2, 19, 0, 0, 0, 26, 4, 34, 0, 35, 0, 24, 0, 37, 0, 35, 2, 39, 0, 40, 0, 41, 0, 42, 0, 40, 0, 38, 0, 43, 0, 38, 2, 42, 0, 40, 2, 36, 0, 35, 1, 25, 0, 44, 0, 44, 0, 35, 0, 38, 1, 45, 0, 45, 0, 44, 1, 47, 0, 42, 1, 46, 0, 48, 0, 48, 0, 45, 3, 46, 0, 45, 4, 49, 0, 50, 2, 34, 0, 52, 0, 52, 0, 0, 1, 51, 0, 53, 0, 53, 0, 50, 0, 56, 0, 57, 0, 50, 1, 60, 0, 60, 0, 52, 1, 54, 0, 63, 0, 63, 0, 56, 0, 58, 0, 64, 0, 57, 0, 65, 0, 65, 0, 53, 1, 64, 0, 59, 0, 59, 0, 61, 0, 26, 0, 30, 0, 26, 4, 68, 1, 26, 0, 33, 0, 33, 0, 68, 0, 68, 0, 31, 1, 31, 0, 71, 0, 70, 0, 71, 1, 71, 0, 32, 1, 26, 4, 72, 0, 72, 0, 70, 0, 62, 0, 60, 1, 61, 0, 66, 0, 66, 0, 62, 0, 28, 0, 73, 0, 73, 0, 70, 1)
+nodes/fragment/74/node = SubResource("VisualShaderNodeFloatParameter_5rv7b")
+nodes/fragment/74/position = Vector2(420, -320)
+nodes/fragment/75/node = SubResource("VisualShaderNodeFloatOp_tpkak")
+nodes/fragment/75/position = Vector2(680, -440)
+nodes/fragment/connections = PackedInt32Array(6, 0, 7, 0, 7, 1, 8, 0, 7, 2, 8, 1, 7, 3, 8, 2, 5, 0, 9, 0, 8, 0, 9, 1, 5, 0, 11, 0, 12, 0, 10, 1, 9, 0, 10, 0, 10, 0, 11, 2, 16, 0, 15, 1, 11, 0, 14, 0, 8, 0, 20, 0, 20, 0, 14, 1, 18, 0, 19, 1, 16, 0, 18, 0, 12, 0, 21, 0, 21, 0, 11, 1, 11, 0, 19, 0, 14, 0, 15, 0, 15, 0, 19, 2, 22, 0, 24, 2, 27, 0, 26, 0, 28, 0, 30, 1, 30, 0, 32, 0, 24, 0, 31, 0, 32, 1, 5, 0, 32, 2, 5, 1, 32, 3, 5, 2, 19, 0, 0, 0, 26, 4, 34, 0, 35, 0, 24, 0, 37, 0, 35, 2, 39, 0, 40, 0, 41, 0, 42, 0, 40, 0, 38, 0, 43, 0, 38, 2, 42, 0, 40, 2, 36, 0, 35, 1, 25, 0, 44, 0, 44, 0, 35, 0, 38, 1, 45, 0, 45, 0, 44, 1, 47, 0, 42, 1, 46, 0, 48, 0, 48, 0, 45, 3, 46, 0, 45, 4, 49, 0, 50, 2, 34, 0, 52, 0, 52, 0, 0, 1, 51, 0, 53, 0, 53, 0, 50, 0, 56, 0, 57, 0, 50, 1, 60, 0, 54, 0, 63, 0, 63, 0, 56, 0, 58, 0, 64, 0, 57, 0, 65, 0, 65, 0, 53, 1, 64, 0, 59, 0, 59, 0, 61, 0, 26, 0, 30, 0, 26, 4, 68, 1, 26, 0, 33, 0, 33, 0, 68, 0, 68, 0, 31, 1, 31, 0, 71, 0, 70, 0, 71, 1, 71, 0, 32, 1, 26, 4, 72, 0, 72, 0, 70, 0, 62, 0, 60, 1, 61, 0, 66, 0, 66, 0, 62, 0, 28, 0, 73, 0, 73, 0, 70, 1, 60, 0, 75, 0, 75, 0, 52, 1, 74, 0, 75, 1)

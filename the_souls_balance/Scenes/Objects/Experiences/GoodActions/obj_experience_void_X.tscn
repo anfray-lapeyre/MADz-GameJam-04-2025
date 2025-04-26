@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c560hlelekqvl"]
+[gd_scene load_steps=11 format=3 uid="uid://c560hlelekqvl"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_wixk8"]
-[ext_resource type="Material" uid="uid://d3qvothfcms8i" path="res://Assets/Material/m_ghost.tres" id="2_cjca8"]
+[ext_resource type="Material" uid="uid://cexrj8fn45p44" path="res://Assets/Material/m_void_children.tres" id="2_b25kh"]
 [ext_resource type="Texture2D" uid="uid://c2vssiwq2yrc3" path="res://Assets/2D/Experiences/Outlines/t_cross_outline.png" id="2_j0kj4"]
+[ext_resource type="Material" uid="uid://7bwkywlxtgyk" path="res://Assets/Material/m_void.tres" id="2_l0x8b"]
 [ext_resource type="Material" uid="uid://vc0nj0l4c6w0" path="res://Assets/Material/m_void_preview.tres" id="4_cjca8"]
 [ext_resource type="Texture2D" uid="uid://c0qlwslbf803e" path="res://Assets/2D/Experiences/Outlines/t_round_outline.png" id="5_b25kh"]
 
@@ -47,11 +48,11 @@ _data = {
 
 [node name="obj_experience" instance=ExtResource("1_wixk8")]
 power_type = 1
-ex_ghost_material = ExtResource("2_cjca8")
+ex_ghost_material = ExtResource("2_b25kh")
 
 [node name="experience_sprite" parent="." index="0"]
 z_index = 1
-material = ExtResource("2_cjca8")
+material = ExtResource("2_l0x8b")
 texture = ExtResource("2_j0kj4")
 
 [node name="experience_collider" parent="." index="1"]

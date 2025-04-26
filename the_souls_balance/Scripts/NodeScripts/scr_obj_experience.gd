@@ -173,7 +173,7 @@ func restore_dash()->void:
 	
 	
 func _use_power():
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	match power_type:
 		PowerType.GHOST:
 			for child in $effect_area.get_overlapping_bodies():
@@ -182,7 +182,8 @@ func _use_power():
 					for grandchild in child.get_children():
 						if grandchild is Sprite2D:
 							(grandchild as Sprite2D).material = ex_ghost_material
-			queue_free()
+			self.freeze=true
+			$effect_area.queue_free()
 		PowerType.SLIME:
 			is_power_in_use=true;
 			self.linear_damp = 2.0

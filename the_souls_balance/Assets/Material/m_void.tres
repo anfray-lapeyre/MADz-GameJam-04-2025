@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://blm3ydj364akd" path="res://Assets/Material/Shader/sh_void.tres" id="1_vdemp"]
 [ext_resource type="Texture2D" uid="uid://xnmqb8r33dm7" path="res://Assets/2D/Experiences/Background/t_refuge_background.png" id="2_b2iyi"]
-[ext_resource type="Texture2D" uid="uid://dkrutr3314doa" path="res://Assets/2D/Experiences/Background/t_square_mask.png" id="3_b2iyi"]
+[ext_resource type="Texture2D" uid="uid://ds3mm5vgu3olw" path="res://Assets/2D/Experiences/Background/t_refuge_halo.png" id="3_b2iyi"]
 
 [resource]
 shader = ExtResource("1_vdemp")

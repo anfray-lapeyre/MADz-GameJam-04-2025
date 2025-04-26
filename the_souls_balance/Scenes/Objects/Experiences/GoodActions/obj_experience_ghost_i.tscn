@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb8swfwr3ew8e"]
+[gd_scene load_steps=6 format=3 uid="uid://cb8swfwr3ew8e"]
 
 [ext_resource type="PackedScene" uid="uid://csvwci44smh26" path="res://Scenes/Objects/Experiences/obj_experience.tscn" id="1_3pprt"]
 [ext_resource type="Material" uid="uid://d3qvothfcms8i" path="res://Assets/Material/m_ghost.tres" id="2_drvso"]
 [ext_resource type="Texture2D" uid="uid://dau3q5loo4jtb" path="res://Assets/2D/Experiences/Outlines/t_i_outline.png" id="2_tt3o4"]
-[ext_resource type="Material" uid="uid://7bwkywlxtgyk" path="res://Assets/Material/m_void.tres" id="3_8r6pa"]
 [ext_resource type="Material" uid="uid://vc0nj0l4c6w0" path="res://Assets/Material/m_void_preview.tres" id="4_ec214"]
-[ext_resource type="Material" uid="uid://id4sndy6400o" path="res://Assets/Material/m_void_halo.tres" id="5_3hlxj"]
-[ext_resource type="Texture2D" uid="uid://dm11remw171h1" path="res://Assets/2D/Experiences/Background/t_I_outline.png" id="6_gx23l"]
 [ext_resource type="Texture2D" uid="uid://c56ny8tmjixih" path="res://Assets/2D/Experiences/Background/t_i_mask_white.png" id="8_8r6pa"]
 
 [node name="obj_experience" instance=ExtResource("1_3pprt")]
@@ -15,14 +12,8 @@ ex_ghost_material = ExtResource("2_drvso")
 
 [node name="experience_sprite" parent="." index="0"]
 z_index = 5
-material = ExtResource("3_8r6pa")
+material = ExtResource("2_drvso")
 texture = ExtResource("2_tt3o4")
-
-[node name="Sprite2D" type="Sprite2D" parent="experience_sprite" index="0"]
-z_index = -1
-material = ExtResource("5_3hlxj")
-scale = Vector2(3.00719, 0.899057)
-texture = ExtResource("6_gx23l")
 
 [node name="experience_collider" parent="." index="1"]
 visible = false

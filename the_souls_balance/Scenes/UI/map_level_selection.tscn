@@ -27,9 +27,9 @@
 [ext_resource type="Material" uid="uid://d3qvothfcms8i" path="res://Assets/Material/m_ghost.tres" id="24_gygjs"]
 [ext_resource type="Material" uid="uid://vc0nj0l4c6w0" path="res://Assets/Material/m_void_preview.tres" id="25_7p7mm"]
 [ext_resource type="Texture2D" uid="uid://dau3q5loo4jtb" path="res://Assets/2D/Experiences/Outlines/t_i_outline.png" id="25_ym6m2"]
+[ext_resource type="Material" uid="uid://o8k4mo5d1hu4" path="res://Assets/Material/m_ghost_preview.tres" id="26_0k8rd"]
 [ext_resource type="Texture2D" uid="uid://c0qlwslbf803e" path="res://Assets/2D/Experiences/Outlines/t_round_outline.png" id="26_klwk7"]
-[ext_resource type="Material" uid="uid://id4sndy6400o" path="res://Assets/Material/m_void_halo.tres" id="29_klwk7"]
-[ext_resource type="Texture2D" uid="uid://dm11remw171h1" path="res://Assets/2D/Experiences/Background/t_I_outline.png" id="30_la5jx"]
+[ext_resource type="Texture2D" uid="uid://c56ny8tmjixih" path="res://Assets/2D/Experiences/Background/t_i_mask_white.png" id="30_7p7mm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fk30i"]
 texture = ExtResource("13_tuc7k")
@@ -412,19 +412,20 @@ scale = Vector2(1.69059, 1.20346)
 texture = ExtResource("20_sc7vt")
 
 [node name="PowerContainers4" type="Sprite2D" parent="SpecialPieces"]
-z_index = 999
-material = ExtResource("24_gygjs")
+z_index = 100
+material = ExtResource("18_wplfo")
 position = Vector2(664, 563)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("19_sc7vt")
 
 [node name="Sprite2D3" type="Sprite2D" parent="SpecialPieces/PowerContainers4"]
+z_index = -1
 material = ExtResource("25_7p7mm")
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("26_klwk7")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpecialPieces/PowerContainers4"]
-z_index = -1
+z_index = -2
 material = ExtResource("11_h4fdd")
 position = Vector2(16.6667, 217.5)
 scale = Vector2(2.302, 1.836)
@@ -462,17 +463,18 @@ autowrap_mode = 2
 
 [node name="PowerContainers5" type="Sprite2D" parent="SpecialPieces"]
 z_index = 10
-material = ExtResource("18_wplfo")
+material = ExtResource("24_gygjs")
 position = Vector2(984, 561)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("25_ym6m2")
 
 [node name="Sprite2D3" type="Sprite2D" parent="SpecialPieces/PowerContainers5"]
+modulate = Color(1, 1, 1, 0.305882)
 z_index = -1
-material = ExtResource("29_klwk7")
+material = ExtResource("26_0k8rd")
 position = Vector2(0, 0.000244141)
-scale = Vector2(2.26563, 1.77083)
-texture = ExtResource("30_la5jx")
+scale = Vector2(1.74479, 1.77083)
+texture = ExtResource("30_7p7mm")
 
 [node name="PowerLabel" type="Label" parent="SpecialPieces/PowerContainers5"]
 material = ExtResource("17_tvwu7")

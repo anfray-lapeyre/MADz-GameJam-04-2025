@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=70 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -603,6 +603,25 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kjit"]
 size = Vector2(8455.5, 279.5)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eu0xy"]
+texture = ExtResource("28_vpwou")
+texture_margin_bottom = 20.0
+modulate_color = Color(0.9, 0.9, 0.9, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpwou"]
+texture = ExtResource("28_vpwou")
+texture_margin_bottom = 20.0
+modulate_color = Color(0.41, 0.41, 0.41, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1a05"]
+texture = ExtResource("28_vpwou")
+texture_margin_bottom = 20.0
+modulate_color = Color(0.62, 0.62, 0.62, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hd7h6"]
+texture = ExtResource("28_vpwou")
+texture_margin_bottom = 20.0
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uvk6j"]
 distance = -1040.0
 
@@ -797,29 +816,26 @@ anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 650.0
 
-[node name="Resume" type="Button" parent="PauseLayer/PauseMenu"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 161.0
-offset_right = 807.0
-offset_bottom = 270.0
-text = "Resume"
+[node name="BackgroundPattern" type="Sprite2D" parent="PauseLayer/PauseMenu"]
+modulate = Color(1, 1, 1, 0.729412)
+material = ExtResource("17_rpu5o")
+position = Vector2(786, 638)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("18_i1g0q")
+offset = Vector2(-363.869, -491.09)
 
-[node name="Restart" type="Button" parent="PauseLayer/PauseMenu"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 297.0
-offset_right = 809.0
-offset_bottom = 406.0
-text = "Restart"
-
-[node name="Quit" type="Button" parent="PauseLayer/PauseMenu"]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 425.0
-offset_right = 809.0
-offset_bottom = 553.0
-text = "Quit"
+[node name="CreditsLabel" type="Label" parent="PauseLayer/PauseMenu/BackgroundPattern"]
+material = ExtResource("20_dahxx")
+offset_left = -561.29
+offset_top = -1114.52
+offset_right = 840.71
+offset_bottom = -915.516
+rotation = 0.00581188
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 40
+text = "Anfray Lapeyre - Max Humbert - Diane Ollier"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="music_slider" type="HSlider" parent="PauseLayer/PauseMenu"]
 layout_mode = 0
@@ -839,6 +855,94 @@ offset_bottom = 475.0
 min_value = -60.0
 max_value = 0.0
 
+[node name="Resume" type="Button" parent="PauseLayer/PauseMenu"]
+material = ExtResource("17_rpu5o")
+offset_left = 500.0
+offset_top = 138.0
+offset_right = 965.0
+offset_bottom = 352.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_eu0xy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_vpwou")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vpwou")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_hd7h6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hd7h6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_eu0xy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eu0xy")
+text = "Resume
+"
+icon_alignment = 1
+
+[node name="Restart" type="Button" parent="PauseLayer/PauseMenu"]
+material = ExtResource("17_rpu5o")
+offset_left = 500.0
+offset_top = 287.0
+offset_right = 965.0
+offset_bottom = 501.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_eu0xy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_vpwou")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vpwou")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_hd7h6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hd7h6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_eu0xy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eu0xy")
+text = "Restart"
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="PauseLayer/PauseMenu"]
+material = ExtResource("17_rpu5o")
+offset_left = 500.0
+offset_top = 438.0
+offset_right = 965.0
+offset_bottom = 652.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_eu0xy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_vpwou")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vpwou")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_hd7h6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hd7h6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s1a05")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_eu0xy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eu0xy")
+text = "Quit"
+icon_alignment = 1
+
 [node name="RealGround" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
@@ -849,13 +953,15 @@ shape = SubResource("WorldBoundaryShape2D_uvk6j")
 
 [node name="LifeLostAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+bus = &"SFX"
 
 [node name="VoiceOverPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
+[connection signal="value_changed" from="PauseLayer/PauseMenu/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="PauseLayer/PauseMenu/sfx_slider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PauseLayer/PauseMenu/Quit" to="." method="_on_quit_pressed"]
-[connection signal="value_changed" from="PauseLayer/PauseMenu/music_slider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="PauseLayer/PauseMenu/sfx_slider" to="." method="_on_sfx_slider_value_changed"]

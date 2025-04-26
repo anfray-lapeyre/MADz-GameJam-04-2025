@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://wavy321wdrbp"]
+[gd_scene load_steps=20 format=3 uid="uid://wavy321wdrbp"]
 
 [ext_resource type="Script" uid="uid://bsc6lnr4kcrqo" path="res://Scripts/NodeScripts/scr_level_selection.gd" id="1_j1j1t"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="1_soba2"]
@@ -10,6 +10,35 @@
 [ext_resource type="PackedScene" uid="uid://cy2tb06umhul8" path="res://Scenes/Levels/map_level_5.tscn" id="6_fk30i"]
 [ext_resource type="PackedScene" uid="uid://c173ywp1dsx4u" path="res://Scenes/Levels/map_level_6.tscn" id="7_axv0d"]
 [ext_resource type="PackedScene" uid="uid://x2pgpcr6n2qg" path="res://Scenes/UI/map_start_menu.tscn" id="8_70ct8"]
+[ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="11_h4fdd"]
+[ext_resource type="Material" uid="uid://bgus3vcaopeai" path="res://Assets/Material/m_experience_font_subtle.tres" id="12_tuc7k"]
+[ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="13_tuc7k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fk30i"]
+texture = ExtResource("13_tuc7k")
+texture_margin_bottom = 20.0
+modulate_color = Color(0.9, 0.9, 0.9, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_axv0d"]
+texture = ExtResource("13_tuc7k")
+texture_margin_bottom = 20.0
+modulate_color = Color(0.41, 0.41, 0.41, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70ct8"]
+texture = ExtResource("13_tuc7k")
+texture_margin_bottom = 20.0
+modulate_color = Color(0.62, 0.62, 0.62, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mqebt"]
+texture = ExtResource("13_tuc7k")
+texture_margin_bottom = 20.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_du01q"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="Shortcut" id="Shortcut_8g3jo"]
+events = [SubResource("InputEventKey_du01q")]
 
 [node name="world" type="Control"]
 layout_mode = 3
@@ -28,85 +57,240 @@ ex_level_5 = ExtResource("6_fk30i")
 ex_level_6 = ExtResource("7_axv0d")
 ex_start_menu = ExtResource("8_70ct8")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(576, 328)
-scale = Vector2(0.619571, 0.62963)
+[node name="BackgroundPattern2" type="Sprite2D" parent="."]
+material = ExtResource("11_h4fdd")
+position = Vector2(786, -5)
+scale = Vector2(0.63, 0.63)
 texture = ExtResource("1_soba2")
+offset = Vector2(-363.869, -491.09)
 
-[node name="Level_1" type="Button" parent="."]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 192.0
-offset_right = 400.0
-offset_bottom = 288.0
-theme_override_fonts/font = ExtResource("2_yqybe")
-theme_override_font_sizes/font_size = 32
-text = "Level 1"
+[node name="BackgroundPattern" type="Sprite2D" parent="."]
+material = ExtResource("11_h4fdd")
+position = Vector2(787, 667)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("1_soba2")
+offset = Vector2(-363.869, -491.09)
 
-[node name="Level_2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 192.0
-offset_right = 656.0
-offset_bottom = 288.0
+[node name="CreditsLabel" type="Label" parent="."]
+material = ExtResource("12_tuc7k")
+offset_left = 118.0
+offset_top = -79.0
+offset_right = 1520.0
+offset_bottom = 120.0
+rotation = 0.00581188
 theme_override_fonts/font = ExtResource("2_yqybe")
-theme_override_font_sizes/font_size = 32
-text = "Level 2"
+theme_override_font_sizes/font_size = 30
+text = "Anfray Lapeyre - Max Humbert - Diane Ollier"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Level_3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 760.0
-offset_top = 192.0
-offset_right = 920.0
-offset_bottom = 288.0
+[node name="return" type="Button" parent="."]
+material = ExtResource("11_h4fdd")
+offset_left = 14.0
+offset_top = 18.0
+offset_right = 454.0
+offset_bottom = 232.0
+scale = Vector2(0.295, 0.295)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
 theme_override_fonts/font = ExtResource("2_yqybe")
-theme_override_font_sizes/font_size = 32
-text = "Level 3"
-
-[node name="Level_4" type="Button" parent="."]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 384.0
-offset_right = 400.0
-offset_bottom = 480.0
-theme_override_fonts/font = ExtResource("2_yqybe")
-theme_override_font_sizes/font_size = 32
-text = "Level 4"
-
-[node name="Level_5" type="Button" parent="."]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 384.0
-offset_right = 656.0
-offset_bottom = 480.0
-theme_override_fonts/font = ExtResource("2_yqybe")
-theme_override_font_sizes/font_size = 32
-text = "Level 5"
-
-[node name="Level_6" type="Button" parent="."]
-layout_mode = 0
-offset_left = 760.0
-offset_top = 384.0
-offset_right = 920.0
-offset_bottom = 480.0
-theme_override_fonts/font = ExtResource("2_yqybe")
-theme_override_font_sizes/font_size = 32
-text = "Level 6"
-
-[node name="Return_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 126.0
-offset_bottom = 96.0
-theme_override_fonts/font = ExtResource("2_yqybe")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
+shortcut = SubResource("Shortcut_8g3jo")
 text = "Return"
 
+[node name="Level_1" type="Button" parent="."]
+material = ExtResource("11_h4fdd")
+offset_left = 368.0
+offset_top = 61.0
+offset_right = 833.0
+offset_bottom = 275.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("2_yqybe")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
+text = "  1 - Future Scribe  "
+icon_alignment = 1
+
+[node name="Level_2" type="Button" parent="."]
+material = ExtResource("11_h4fdd")
+offset_left = 633.0
+offset_top = 61.0
+offset_right = 1098.0
+offset_bottom = 275.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("2_yqybe")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
+text = "2 - Slave"
+icon_alignment = 1
+
+[node name="Level_3" type="Button" parent="."]
+material = ExtResource("11_h4fdd")
+offset_left = 894.0
+offset_top = 61.0
+offset_right = 1359.0
+offset_bottom = 275.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("2_yqybe")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
+text = "3 - Priest"
+icon_alignment = 1
+
+[node name="Level_4" type="Button" parent="."]
+material = ExtResource("11_h4fdd")
+offset_left = 368.0
+offset_top = 192.0
+offset_right = 833.0
+offset_bottom = 406.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("2_yqybe")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
+text = "4 - Embalmer"
+icon_alignment = 1
+
+[node name="Level_5" type="Button" parent="."]
+material = ExtResource("11_h4fdd")
+offset_left = 633.0
+offset_top = 192.0
+offset_right = 1098.0
+offset_bottom = 406.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("2_yqybe")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
+text = "5 - Soldier"
+icon_alignment = 1
+
+[node name="Level_6" type="Button" parent="."]
+material = ExtResource("11_h4fdd")
+offset_left = 894.0
+offset_top = 192.0
+offset_right = 1359.0
+offset_bottom = 406.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_hover_color = Color(0.714662, 0.505649, 0.243862, 1)
+theme_override_colors/font_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_focus_color = Color(0.578491, 0.402863, 0.179745, 1)
+theme_override_colors/font_pressed_color = Color(0.549744, 0.381307, 0.167626, 1)
+theme_override_fonts/font = ExtResource("2_yqybe")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_axv0d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mqebt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_70ct8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
+text = "6 - Concubine"
+icon_alignment = 1
+
+[connection signal="pressed" from="return" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level_2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level_3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Level_4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="Level_5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="Level_6" to="." method="_on_level_6_pressed"]
-[connection signal="pressed" from="Return_button" to="." method="_on_return_button_pressed"]

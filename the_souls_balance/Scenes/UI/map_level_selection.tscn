@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://wavy321wdrbp"]
+[gd_scene load_steps=24 format=3 uid="uid://wavy321wdrbp"]
 
 [ext_resource type="Script" uid="uid://bsc6lnr4kcrqo" path="res://Scripts/NodeScripts/scr_level_selection.gd" id="1_j1j1t"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="1_soba2"]
@@ -13,6 +13,10 @@
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="11_h4fdd"]
 [ext_resource type="Material" uid="uid://bgus3vcaopeai" path="res://Assets/Material/m_experience_font_subtle.tres" id="12_tuc7k"]
 [ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="13_tuc7k"]
+[ext_resource type="Texture2D" uid="uid://bs172rm2g6xy7" path="res://Assets/2D/Background/t_anubis_clear.png" id="14_mqebt"]
+[ext_resource type="Texture2D" uid="uid://b2o5cdp8prtbk" path="res://Assets/2D/Background/t_input.png" id="15_8g3jo"]
+[ext_resource type="Texture2D" uid="uid://cqyfs7c7kwy75" path="res://Assets/2D/Background/t_bubble.png" id="16_pwp7p"]
+[ext_resource type="Material" uid="uid://b2jp3sq8knkg" path="res://Assets/Material/m_experience_font.tres" id="17_tvwu7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fk30i"]
 texture = ExtResource("13_tuc7k")
@@ -73,19 +77,21 @@ offset = Vector2(-363.869, -491.09)
 
 [node name="CreditsLabel" type="Label" parent="."]
 material = ExtResource("12_tuc7k")
-offset_left = 118.0
-offset_top = -79.0
-offset_right = 1520.0
-offset_bottom = 120.0
+layout_mode = 0
+offset_left = 74.0
+offset_top = -83.0
+offset_right = 1476.0
+offset_bottom = 116.0
 rotation = 0.00581188
 theme_override_fonts/font = ExtResource("2_yqybe")
 theme_override_font_sizes/font_size = 30
-text = "Anfray Lapeyre - Max Humbert - Diane Ollier"
+text = "Anfray Lapeyre - Max Humbert - Diane Kaftandjiev"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="return" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
+layout_mode = 0
 offset_left = 14.0
 offset_top = 18.0
 offset_right = 454.0
@@ -115,6 +121,7 @@ text = "Return"
 
 [node name="Level_1" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
+layout_mode = 0
 offset_left = 368.0
 offset_top = 61.0
 offset_right = 833.0
@@ -144,6 +151,7 @@ icon_alignment = 1
 
 [node name="Level_2" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
+layout_mode = 0
 offset_left = 633.0
 offset_top = 61.0
 offset_right = 1098.0
@@ -173,6 +181,7 @@ icon_alignment = 1
 
 [node name="Level_3" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
+layout_mode = 0
 offset_left = 894.0
 offset_top = 61.0
 offset_right = 1359.0
@@ -202,6 +211,7 @@ icon_alignment = 1
 
 [node name="Level_4" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
+layout_mode = 0
 offset_left = 368.0
 offset_top = 192.0
 offset_right = 833.0
@@ -231,6 +241,7 @@ icon_alignment = 1
 
 [node name="Level_5" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
+layout_mode = 0
 offset_left = 633.0
 offset_top = 192.0
 offset_right = 1098.0
@@ -260,6 +271,7 @@ icon_alignment = 1
 
 [node name="Level_6" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
+layout_mode = 0
 offset_left = 894.0
 offset_top = 192.0
 offset_right = 1359.0
@@ -286,6 +298,47 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
 text = "6 - Concubine"
 icon_alignment = 1
+
+[node name="Anubis" type="Sprite2D" parent="."]
+z_index = 1000
+material = ExtResource("11_h4fdd")
+position = Vector2(357, 630)
+scale = Vector2(0.616137, 0.616137)
+texture = ExtResource("14_mqebt")
+
+[node name="Input" type="Sprite2D" parent="."]
+material = ExtResource("11_h4fdd")
+position = Vector2(184, 273)
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("15_8g3jo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("11_h4fdd")
+position = Vector2(788.25, 435.5)
+scale = Vector2(0.600273, 0.643258)
+texture = ExtResource("16_pwp7p")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+material = ExtResource("17_tvwu7")
+anchors_preset = -1
+anchor_left = 0.046
+anchor_top = 0.042
+anchor_right = 1.0
+anchor_bottom = 0.961
+offset_left = -549.462
+offset_top = -144.843
+offset_right = -598.0
+offset_bottom = -228.007
+theme_override_constants/line_spacing = -34
+theme_override_fonts/font = ExtResource("2_yqybe")
+theme_override_font_sizes/font_size = 45
+text = "Welcome, young one. Today, six souls await judgment.
+
+We must tread carefully... Not a single memory must be lost.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="return" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]

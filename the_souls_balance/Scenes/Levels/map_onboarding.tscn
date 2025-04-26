@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=72 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -57,6 +57,8 @@
 [ext_resource type="AudioStream" uid="uid://c3pvcv725bwqh" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_04.wav" id="40_ikxy1"]
 [ext_resource type="AudioStream" uid="uid://cj7pywjwh8xuj" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_05.wav" id="41_elunv"]
 [ext_resource type="AudioStream" uid="uid://b7xn76wx7icr3" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_06.wav" id="42_3uk4o"]
+[ext_resource type="Texture2D" uid="uid://blnikxy6d7cwk" path="res://Assets/2D/Background/t_frame.png" id="58_s1a05"]
+[ext_resource type="Texture2D" uid="uid://b2o5cdp8prtbk" path="res://Assets/2D/Background/t_input.png" id="59_hd7h6"]
 
 [sub_resource type="Animation" id="Animation_8u6bx"]
 resource_name = "HealthLost0"
@@ -648,14 +650,14 @@ offset = Vector2(-363.869, -491.09)
 
 [node name="CreditsLabel" type="Label" parent="Background"]
 material = ExtResource("20_dahxx")
-offset_left = 1135.0
-offset_top = -1539.0
-offset_right = 2537.0
-offset_bottom = -1340.0
+offset_left = 984.0
+offset_top = -1538.0
+offset_right = 2544.0
+offset_bottom = -1339.0
 rotation = 0.00581188
 theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 64
-text = "Anfray Lapeyre - Max Humbert - Diane Ollier"
+text = "Anfray Lapeyre - Max Humbert - Diane Kaftandjiev"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -826,37 +828,85 @@ offset = Vector2(-363.869, -491.09)
 
 [node name="CreditsLabel" type="Label" parent="PauseLayer/PauseMenu/BackgroundPattern"]
 material = ExtResource("20_dahxx")
-offset_left = -561.29
-offset_top = -1114.52
-offset_right = 840.71
-offset_bottom = -915.516
+offset_left = -611.29
+offset_top = -1119.35
+offset_right = 790.71
+offset_bottom = -920.354
 rotation = 0.00581188
 theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 40
-text = "Anfray Lapeyre - Max Humbert - Diane Ollier"
+text = "Anfray Lapeyre - Max Humbert - Diane Kaftandjiev"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VolumeContainer" type="Sprite2D" parent="PauseLayer/PauseMenu"]
+material = ExtResource("17_rpu5o")
+position = Vector2(978.433, 494.4)
+scale = Vector2(0.368635, 0.30026)
+texture = ExtResource("58_s1a05")
+
+[node name="Label" type="Label" parent="PauseLayer/PauseMenu/VolumeContainer"]
+material = ExtResource("30_hd7h6")
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 0.208
+offset_left = -251.0
+offset_top = -334.0
+offset_right = -342.904
+offset_bottom = -331.16
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 116
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="SFXLabel" type="Label" parent="PauseLayer/PauseMenu/VolumeContainer"]
+material = ExtResource("30_hd7h6")
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 0.208
+offset_left = -234.467
+offset_top = -177.846
+offset_right = -326.371
+offset_bottom = -163.006
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 80
+text = "SFX"
+
+[node name="MusicLabel" type="Label" parent="PauseLayer/PauseMenu/VolumeContainer"]
+material = ExtResource("30_hd7h6")
+anchors_preset = -1
+anchor_right = 0.952
+anchor_bottom = 0.208
+offset_left = -231.754
+offset_top = 55.2853
+offset_right = -323.658
+offset_bottom = 139.885
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 80
+text = "Music"
+
 [node name="music_slider" type="HSlider" parent="PauseLayer/PauseMenu"]
-layout_mode = 0
+material = ExtResource("30_hd7h6")
 offset_left = 908.0
-offset_top = 486.0
+offset_top = 549.0
 offset_right = 1053.0
-offset_bottom = 502.0
+offset_bottom = 565.0
 min_value = -60.0
 max_value = 0.0
 
 [node name="sfx_slider" type="HSlider" parent="PauseLayer/PauseMenu"]
+material = ExtResource("30_hd7h6")
 layout_mode = 0
 offset_left = 907.0
-offset_top = 425.0
+offset_top = 468.0
 offset_right = 1052.0
-offset_bottom = 475.0
+offset_bottom = 518.0
 min_value = -60.0
 max_value = 0.0
 
 [node name="Resume" type="Button" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
+layout_mode = 0
 offset_left = 500.0
 offset_top = 138.0
 offset_right = 965.0
@@ -887,6 +937,7 @@ icon_alignment = 1
 
 [node name="Restart" type="Button" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
+layout_mode = 0
 offset_left = 500.0
 offset_top = 287.0
 offset_right = 965.0
@@ -916,6 +967,7 @@ icon_alignment = 1
 
 [node name="Quit" type="Button" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
+layout_mode = 0
 offset_left = 500.0
 offset_top = 438.0
 offset_right = 965.0
@@ -942,6 +994,42 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_eu0xy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_eu0xy")
 text = "Quit"
 icon_alignment = 1
+
+[node name="Input" type="Sprite2D" parent="PauseLayer/PauseMenu"]
+material = ExtResource("17_rpu5o")
+position = Vector2(977, 226)
+scale = Vector2(0.375205, 0.375205)
+texture = ExtResource("59_hd7h6")
+
+[node name="LoreContainer" type="Sprite2D" parent="PauseLayer/PauseMenu"]
+material = ExtResource("17_rpu5o")
+position = Vector2(259.716, 362.2)
+scale = Vector2(0.504892, 0.511169)
+texture = ExtResource("58_s1a05")
+
+[node name="LoreLabel" type="Label" parent="PauseLayer/PauseMenu/LoreContainer"]
+material = ExtResource("30_hd7h6")
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.066
+anchor_right = 0.905
+anchor_bottom = 0.908
+offset_left = -313.7
+offset_top = -384.82
+offset_right = -313.435
+offset_bottom = -376.16
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 37
+text = "Just a moment to breathe...
+
+The weight of these lives... It's more than I imagined.
+
+So many memories, so many truths... I can't afford to misplace even one.
+
+But it's beautiful, in a way. Sacred."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="RealGround" type="StaticBody2D" parent="."]
 collision_layer = 3

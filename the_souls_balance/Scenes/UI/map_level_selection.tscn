@@ -332,9 +332,10 @@ offset_bottom = -228.007
 theme_override_constants/line_spacing = -34
 theme_override_fonts/font = ExtResource("2_yqybe")
 theme_override_font_sizes/font_size = 45
-text = "Welcome, young one. Today, six souls await judgment.
+text = "Welcome, Assistant.
+ Today, six souls await judgment.
 
-We must tread carefully... Not a single memory must be lost.
+We must treat them carefully... Not a single memory must be lost.
 "
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1097,7 +1097,7 @@ theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 80
 text = "Care
 
-Freeze all pieces in place."
+Remove all pieces in the area."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -1160,7 +1160,7 @@ theme_override_fonts/font = ExtResource("31_ktc1p")
 theme_override_font_sizes/font_size = 80
 text = "Self Sacrifice
 
-Remove all pieces in the area."
+Freeze all pieces in place."
 horizontal_alignment = 1
 autowrap_mode = 2
 

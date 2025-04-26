@@ -74,8 +74,6 @@ func _physics_process(delta: float) -> void:
 			# Trace a vertical movement to detect any upcoming collisions
 			var hits := trace_custom_polygon($experience_collider, global_position + direction)
 			if hits.size() > 0 && power_type != PowerType.GHOST:
-				print(hits)  # Debug info: show hit data
-
 				# If still controlled, relinquish control to simulate a "drop"
 				if is_controlled:
 					call_deferred("_release_control")  # Prevents weird simultaneous behaviors
@@ -83,7 +81,7 @@ func _physics_process(delta: float) -> void:
 
 			# --- Horizontal correction to align with target_position.x ---
 			direction = Vector2.ZERO
-			direction.x = (global_position.x - target_position.x) * (-0.25 if is_dashing else -1)  # Push toward the target X
+			direction.x = (global_position.x - target_position.x) * (-0.25 if is_dashing else -1.0)  # Push toward the target X
 
 			hits = trace_custom_polygon($experience_collider, global_position + direction)
 			if hits.size() > 0:

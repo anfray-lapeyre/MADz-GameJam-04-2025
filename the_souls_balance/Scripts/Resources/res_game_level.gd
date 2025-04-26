@@ -68,8 +68,10 @@ var level_size : int = 0 #To makes sure it spawns the right number of pieces (ch
 @export var ex_level_number: int
 @export var ex_experience_list: Array[PackedScene] #List of experience to spawn (keeps the order)
 @export var ex_voice_over_list: Array[AudioStream] #List of voice overs for each experience
-@export var ex_subtitle_list: Array[String] #List of life lost SFX
+@export var ex_subtitle_list: Array[String] #List of life lost subtitles
 @export var ex_life_lost_sfx_list: Array[AudioStream] #List of life lost SFX
+@export var ex_life_lost_subtitle_list: Array[String] #List of life lost subtitles
+var used_life_lost_sfx : Array[AudioStream]=[]
 
 @export var ex_spawn_position = Vector2(300,-100)
 @export var ex_spawn_delay: float = 2.0
@@ -89,6 +91,7 @@ var balance_scene = preload("res://Scenes/Objects/ground_container.tscn")
 @onready var base_balance_transform:Transform2D=$ground_container.transform
 @onready var current_balance := $ground_container
 @onready var subtitle_label := %VoiceOverLabel
+@onready var life_lost_label := %LifeLostLabel
 
 func _ready() -> void:
 	add_child(current_spawn_timer)
@@ -158,10 +161,42 @@ func _on_dead_zone_body_entered(body: Node2D) -> void: #connects with dead zone
 func lose_life() -> void: #func when you loose life
 	current_lives -= 1
 	can_lose_life = false
-	if ex_life_lost_sfx_list.size() >0:
-		sfx_player.stream= ex_life_lost_sfx_list[randi() % ex_life_lost_sfx_list.size()]
-		sfx_player.play()
 	
+	# Sélectionne un effet sonore aléatoire (en s'assurant qu'il n'est pas déjà utilisé)
+	var selected_sfx = pick_random_sfx()
+
+	# Joue le son associé à la perte de vie, si la liste n'est pas vide
+	if ex_life_lost_sfx_list.size() > 0:
+		sfx_player.stream = ex_life_lost_sfx_list[selected_sfx]
+		sfx_player.play()
+
+	# Affiche le sous-titre associé à la perte de vie, si la liste n'est pas vide
+	if ex_life_lost_subtitle_list.size() > 0:
+		life_lost_label.text = ex_life_lost_subtitle_list[selected_sfx]
+
+		# Applique une rotation aléatoire entre -9° et 9° pour donner du caractère à l'affichage
+		life_lost_label.rotation_degrees = randf_range(-9, 9.0)
+
+		# Met le label à une échelle de 130% pour l'effet d'apparition
+		life_lost_label.scale = Vector2.ONE * 1.3
+
+		# Crée un tween pour animer l'apparition du label
+		var tween = get_tree().create_tween()
+
+		# Anime l'opacité de 0 à 1 en 0.5s pour le faire apparaître
+		tween.tween_property(life_lost_label, "modulate:a", 1, 0.5)
+
+		# Les deux animations suivantes se font en parallèle
+		tween.set_parallel(true)
+
+		# Anime l'échelle pour donner un effet de pop (de 130% à 110%)
+		tween.tween_property(life_lost_label, "scale", Vector2.ONE * 1.1, 0.5).set_ease(Tween.EASE_IN)
+
+		# Attend 2 secondes avant de lancer la prochaine animation
+		tween.chain().tween_interval(2.0)
+
+		# Fait disparaître le label en baissant l’opacité à 0 en 0.5s
+		tween.chain().tween_property(life_lost_label, "modulate:a", 0.0, 0.5)
 	print("Vie perdue ! Il en reste : ", current_lives)
 	# feather display change
 	update_life_display()
@@ -175,11 +210,55 @@ func lose_life() -> void: #func when you loose life
 	await get_tree().create_timer(ex_hurt_cooldown_time).timeout
 	can_lose_life = true
 
+# Liste des SFX déjà joués pour éviter les répétitions
+# ex_life_lost_sfx_list : tous les sons possibles
+# used_life_lost_sfx : sons déjà joués
+
+func pick_random_sfx() -> int:
+	if ex_life_lost_sfx_list.size() <= 0:
+		return -1
+	
+	# Si on a tout utilisé, on remet à zéro
+	if used_life_lost_sfx.size() >= ex_life_lost_sfx_list.size():
+		used_life_lost_sfx.clear()
+	
+	var selected := randi() % ex_life_lost_sfx_list.size()
+	var selected_sfx := ex_life_lost_sfx_list[selected]
+	
+	# Vérifie si ce son a déjà été utilisé
+	if used_life_lost_sfx.find(selected_sfx) != -1:
+		# Si oui, tente de trouver le suivant disponible (jusqu’à 6 essais max)
+		return pick_next_available_sfx((selected + 1) % ex_life_lost_sfx_list.size(), 10)
+	else:
+		# Sinon, on le stocke comme utilisé et on retourne son index
+		used_life_lost_sfx.append(selected_sfx)
+		return selected
+
+
+func pick_next_available_sfx(value: int, remaining_recursion: int) -> int:
+	if ex_life_lost_sfx_list.size() <= 0 or ex_life_lost_sfx_list[value%ex_life_lost_sfx_list.size()] == null:
+		return -1
+	
+	if remaining_recursion <= 0:
+		return -1
+	
+	if used_life_lost_sfx.size() >= ex_life_lost_sfx_list.size():
+		used_life_lost_sfx.clear()
+	
+	var selected_sfx := ex_life_lost_sfx_list[value%ex_life_lost_sfx_list.size()]
+	
+	if used_life_lost_sfx.find(selected_sfx) != -1:
+		# Récurse sur l’élément suivant
+		return pick_next_available_sfx((value + 1) % ex_life_lost_sfx_list.size(), remaining_recursion - 1)
+	else:
+		used_life_lost_sfx.append(selected_sfx)
+		return value%ex_life_lost_sfx_list.size()
+
 
 func update_life_display():
 	for i in ex_max_lives:
 
-		var plume = %LifeDisplay.get_node("Feather" + str(i + 1))
+		var plume = %LifeDisplay.get_node("Feather" + str((i%4 + 1)))
 		plume.visible = false
 		# Display of the feather according to the number of lives
 	

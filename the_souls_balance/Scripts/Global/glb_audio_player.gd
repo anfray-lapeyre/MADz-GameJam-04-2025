@@ -7,6 +7,7 @@ var audio_player: AudioStreamPlayer
 func _ready():
 	audio_player = AudioStreamPlayer.new()
 	audio_player.bus = "Music"  # To control volume separately
+	audio_player.volume_db = -32.0
 	add_child(audio_player)
 	music.loop = true  # looping the music
 

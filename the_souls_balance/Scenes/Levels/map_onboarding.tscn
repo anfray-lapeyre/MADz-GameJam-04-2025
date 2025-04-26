@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=66 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -18,20 +18,45 @@
 [ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="15_qig3e"]
 [ext_resource type="PackedScene" uid="uid://ddshynk8kgm3j" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_disgust.tscn" id="16_x444r"]
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="17_rpu5o"]
+[ext_resource type="AudioStream" uid="uid://r8wji4j78w3t" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_01.wav" id="18_eu0xy"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="18_i1g0q"]
 [ext_resource type="Texture2D" uid="uid://b08kehashu6nk" path="res://Assets/2D/Background/T_Anubis.png" id="19_mas5p"]
+[ext_resource type="AudioStream" uid="uid://cxh6lhjtldr2i" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_02.wav" id="19_vpwou"]
 [ext_resource type="Material" uid="uid://bgus3vcaopeai" path="res://Assets/Material/m_experience_font_subtle.tres" id="20_dahxx"]
 [ext_resource type="Texture2D" uid="uid://bj0vpuy0reeml" path="res://Assets/2D/Background/T_FeatherBalance.png" id="20_hcfv1"]
+[ext_resource type="AudioStream" uid="uid://cs8xvwrjioclq" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_03.wav" id="20_s1a05"]
 [ext_resource type="Texture2D" uid="uid://dinafot2fgjhy" path="res://Assets/2D/Feathers/t_feather_1.png" id="21_6j74n"]
+[ext_resource type="AudioStream" uid="uid://c5lj8xi7y002d" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_04.wav" id="21_hd7h6"]
+[ext_resource type="AudioStream" uid="uid://chly51o81blou" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_05.wav" id="22_ktc1p"]
 [ext_resource type="Texture2D" uid="uid://ckv2tf4w718r6" path="res://Assets/2D/Feathers/t_feather_2.png" id="22_qyiap"]
+[ext_resource type="AudioStream" uid="uid://gfx02c2sk7ij" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_06.wav" id="23_6vto7"]
 [ext_resource type="Texture2D" uid="uid://f5i3ntqplyif" path="res://Assets/2D/Feathers/t_feather_3.png" id="23_qdma6"]
+[ext_resource type="AudioStream" uid="uid://ccuptffdt1qeb" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_07.wav" id="24_03knh"]
 [ext_resource type="Texture2D" uid="uid://dn5t3dytne5i7" path="res://Assets/2D/Feathers/t_feather_4.png" id="24_f6tp1"]
 [ext_resource type="Texture2D" uid="uid://bhdl81607gv5" path="res://Assets/2D/Background/t_feather_balance_foreground.png" id="25_4qdm5"]
+[ext_resource type="AudioStream" uid="uid://b43lbt0s3ymwo" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_08.wav" id="25_o4ico"]
+[ext_resource type="AudioStream" uid="uid://b8e83wbi2gqcs" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_09.wav" id="26_6uhms"]
+[ext_resource type="AudioStream" uid="uid://dnrb7mfvokkkj" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_10.wav" id="27_ohhye"]
+[ext_resource type="AudioStream" uid="uid://dkq4k33hqihcy" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_11.wav" id="28_60jp4"]
 [ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="28_vpwou"]
+[ext_resource type="AudioStream" uid="uid://cfi6p8jbm5gps" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_12.wav" id="29_ada61"]
 [ext_resource type="PackedScene" uid="uid://btbah4k837ywh" path="res://Scenes/Objects/ground_container.tscn" id="29_ikkrf"]
 [ext_resource type="Texture2D" uid="uid://cbfhiamgwuegv" path="res://Assets/2D/Experiences/Deprecated/T_L_Disgust.png" id="29_s1a05"]
+[ext_resource type="AudioStream" uid="uid://d3w7nq866xqvs" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_13.wav" id="30_61it5"]
 [ext_resource type="Material" uid="uid://b2jp3sq8knkg" path="res://Assets/Material/m_experience_font.tres" id="30_hd7h6"]
+[ext_resource type="AudioStream" uid="uid://xex8mkyeqf75" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_14.wav" id="31_5sv16"]
 [ext_resource type="FontFile" uid="uid://dd5vqpdollu01" path="res://Assets/UI/Fonts/Anubismythicalserif-lxdLy.otf" id="31_ktc1p"]
+[ext_resource type="AudioStream" uid="uid://bsogaq02cip5o" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_15.wav" id="32_6hve2"]
+[ext_resource type="AudioStream" uid="uid://26g67ankh2n5" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_16.wav" id="33_4axif"]
+[ext_resource type="AudioStream" uid="uid://b54ly2nmcjjnh" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_17.wav" id="34_riete"]
+[ext_resource type="AudioStream" uid="uid://bcgxttonuesjg" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_18.wav" id="35_5ssdb"]
+[ext_resource type="AudioStream" uid="uid://1x08whqea6dk" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_voice_19.wav" id="36_b33gi"]
+[ext_resource type="AudioStream" uid="uid://cevihknti7230" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_01.wav" id="37_20dlx"]
+[ext_resource type="AudioStream" uid="uid://b38e0n3pdrwlq" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_02.wav" id="38_qytck"]
+[ext_resource type="AudioStream" uid="uid://cl6p1y76we0oo" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_03.wav" id="39_4hnxr"]
+[ext_resource type="AudioStream" uid="uid://c3pvcv725bwqh" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_04.wav" id="40_ikxy1"]
+[ext_resource type="AudioStream" uid="uid://cj7pywjwh8xuj" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_05.wav" id="41_elunv"]
+[ext_resource type="AudioStream" uid="uid://b7xn76wx7icr3" path="res://Assets/SFX/Voices/FutureScribe/s_future_scribe_lost_life_06.wav" id="42_3uk4o"]
 
 [sub_resource type="Animation" id="Animation_8u6bx"]
 resource_name = "HealthLost0"
@@ -585,7 +610,10 @@ distance = -1040.0
 script = ExtResource("1_ikkrf")
 ex_level_number = 1
 ex_experience_list = Array[PackedScene]([ExtResource("2_dahxx"), ExtResource("3_x444r"), ExtResource("4_s8e4x"), ExtResource("5_o2uor"), ExtResource("6_e43iy"), ExtResource("7_eooqe"), ExtResource("8_bpqlv"), ExtResource("9_keecn"), ExtResource("10_uoc55"), ExtResource("7_eooqe"), ExtResource("8_bpqlv"), ExtResource("11_54ykf"), ExtResource("12_yafmf"), ExtResource("13_aro3v"), ExtResource("14_dahxx"), ExtResource("14_lnl3e"), ExtResource("16_x444r"), ExtResource("14_dahxx"), ExtResource("15_qig3e")])
-ex_subtitle_list = Array[String](["Bonjour", "Olalah il s'est passé quelque chose", "J'ai failli vivre quelque chose de fou"])
+ex_voice_over_list = Array[AudioStream]([ExtResource("18_eu0xy"), ExtResource("19_vpwou"), ExtResource("20_s1a05"), ExtResource("21_hd7h6"), ExtResource("22_ktc1p"), ExtResource("23_6vto7"), ExtResource("24_03knh"), ExtResource("25_o4ico"), ExtResource("26_6uhms"), ExtResource("27_ohhye"), ExtResource("28_60jp4"), ExtResource("29_ada61"), ExtResource("30_61it5"), ExtResource("31_5sv16"), ExtResource("32_6hve2"), ExtResource("33_4axif"), ExtResource("34_riete"), ExtResource("35_5ssdb"), ExtResource("36_b33gi")])
+ex_subtitle_list = Array[String](["The birdsong in the morning", "I learned a new hieroglyph!", "Oh! A cat in the reeds!", "He lent me his stylus and smiled at me…", "The scribe school exam is in three months…", "The fever made me miss the test... ", "I broke my tablet!", "The Opet festival with my family was amazing!", "The next test is in a year...", "I'm feeling sick, it hurts… And it’s not getting better…", "I heard them laugh outside", "My brother was laughing so I yelled at him!", "I won’t be there for the next test", "I wrote them a poem for after...", "Will they forget me when I’m gone?", "She was crying, so I made her laugh", "I hate that smell", "No one visits me now. I understand.", "I wish I could have seen them smile one last time"])
+ex_life_lost_sfx_list = Array[AudioStream]([ExtResource("37_20dlx"), ExtResource("38_qytck"), ExtResource("39_4hnxr"), ExtResource("40_ikxy1"), ExtResource("41_elunv"), ExtResource("42_3uk4o")])
+ex_life_lost_subtitle_list = Array[String](["What... Was I saying?", "Who am I again?", "I... lost myself...", "Where was I?", "I got lost...", "What was I saying?"])
 ex_spawn_position = Vector2(600, -2500)
 
 [node name="Background" type="Node2D" parent="."]
@@ -636,6 +664,27 @@ offset_left = 928.0
 offset_top = -1025.0
 offset_right = 2528.0
 offset_bottom = -725.0
+grow_horizontal = 0
+pivot_offset = Vector2(900, 100)
+theme_override_fonts/font = ExtResource("31_ktc1p")
+theme_override_font_sizes/font_size = 64
+text = "Ceci est un phrase"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LifeLostLabel" type="Label" parent="Background"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("30_hd7h6")
+layout_direction = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 493.0
+offset_top = -1379.0
+offset_right = 2093.0
+offset_bottom = -1079.0
 grow_horizontal = 0
 pivot_offset = Vector2(900, 100)
 theme_override_fonts/font = ExtResource("31_ktc1p")

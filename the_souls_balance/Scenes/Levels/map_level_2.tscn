@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://csgpfushyev08"]
+[gd_scene load_steps=59 format=3 uid="uid://csgpfushyev08"]
 
 [ext_resource type="PackedScene" uid="uid://b2l2ujykasaw6" path="res://Scenes/Levels/map_onboarding.tscn" id="1_y4itm"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_3kevv"]
@@ -23,10 +23,46 @@
 [ext_resource type="PackedScene" uid="uid://dupbphq7l3xrd" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_fear.tscn" id="21_fglfn"]
 [ext_resource type="PackedScene" uid="uid://cdni26wir2bt3" path="res://Scenes/Objects/Experiences/LL/obj_experience_LL_sadness.tscn" id="22_qheca"]
 [ext_resource type="PackedScene" uid="uid://d33lmyhym5gx4" path="res://Scenes/Objects/Experiences/T/obj_experience_T_joy.tscn" id="23_4yvg2"]
+[ext_resource type="AudioStream" uid="uid://dl6753bemlun0" path="res://Assets/SFX/Voices/Slave/s_slave_voice_01.wav" id="24_uq4ve"]
+[ext_resource type="AudioStream" uid="uid://cqujmni11fapd" path="res://Assets/SFX/Voices/Slave/s_slave_voice_02.wav" id="25_bgto7"]
+[ext_resource type="AudioStream" uid="uid://c34cvrj0xhs3h" path="res://Assets/SFX/Voices/Slave/s_slave_voice_03.wav" id="26_64cj8"]
+[ext_resource type="AudioStream" uid="uid://duux81k0pa1g4" path="res://Assets/SFX/Voices/Slave/s_slave_voice_04.wav" id="27_yvvnh"]
+[ext_resource type="AudioStream" uid="uid://cmr7dw3jmwf4b" path="res://Assets/SFX/Voices/Slave/s_slave_voice_05.wav" id="28_i5o5p"]
+[ext_resource type="AudioStream" uid="uid://dgrpqns1imr4c" path="res://Assets/SFX/Voices/Slave/s_slave_voice_06.wav" id="29_l6pou"]
+[ext_resource type="AudioStream" uid="uid://40nu4vi2ew8h" path="res://Assets/SFX/Voices/Slave/s_slave_voice_07.wav" id="30_aoo2y"]
+[ext_resource type="AudioStream" uid="uid://baihuq0o1vquy" path="res://Assets/SFX/Voices/Slave/s_slave_voice_08.wav" id="31_3j31y"]
+[ext_resource type="AudioStream" uid="uid://c1cmw5xy2fhtg" path="res://Assets/SFX/Voices/Slave/s_slave_voice_09.wav" id="32_7xibq"]
+[ext_resource type="AudioStream" uid="uid://fcf6qumep7k1" path="res://Assets/SFX/Voices/Slave/s_slave_voice_10.wav" id="33_6tjhh"]
+[ext_resource type="AudioStream" uid="uid://djmd3awp3xse" path="res://Assets/SFX/Voices/Slave/s_slave_voice_11.wav" id="34_dsd85"]
+[ext_resource type="AudioStream" uid="uid://bkdptqirow7jb" path="res://Assets/SFX/Voices/Slave/s_slave_voice_12.wav" id="35_6o36j"]
+[ext_resource type="AudioStream" uid="uid://cho7v7dic2q8p" path="res://Assets/SFX/Voices/Slave/s_slave_voice_13.wav" id="36_5sciq"]
+[ext_resource type="AudioStream" uid="uid://vf3nofdrl0aw" path="res://Assets/SFX/Voices/Slave/s_slave_voice_14.wav" id="37_b2i7c"]
+[ext_resource type="AudioStream" uid="uid://dncdgf5uh3s0e" path="res://Assets/SFX/Voices/Slave/s_slave_voice_15.wav" id="38_hxkhj"]
+[ext_resource type="AudioStream" uid="uid://br4u3ixsyn3vr" path="res://Assets/SFX/Voices/Slave/s_slave_voice_16.wav" id="39_gqv5v"]
+[ext_resource type="AudioStream" uid="uid://dmdmysfrtekg7" path="res://Assets/SFX/Voices/Slave/s_slave_voice_17.wav" id="40_xwhrq"]
+[ext_resource type="AudioStream" uid="uid://bcn0vms5g37jy" path="res://Assets/SFX/Voices/Slave/s_slave_voice_18.wav" id="41_t4qcr"]
+[ext_resource type="AudioStream" uid="uid://ch8b1e77ba4x0" path="res://Assets/SFX/Voices/Slave/s_slave_voice_19.wav" id="42_sipq0"]
+[ext_resource type="AudioStream" uid="uid://40hwnlwk51dl" path="res://Assets/SFX/Voices/Slave/s_slave_voice_20.wav" id="43_p1u1n"]
+[ext_resource type="AudioStream" uid="uid://crjy2r76ufu4y" path="res://Assets/SFX/Voices/Slave/s_slave_voice_21.wav" id="44_1x4up"]
+[ext_resource type="AudioStream" uid="uid://d0egc1ui7nhlb" path="res://Assets/SFX/Voices/Slave/s_slave_voice_22.wav" id="45_wptju"]
+[ext_resource type="AudioStream" uid="uid://dhi1c0bulk73g" path="res://Assets/SFX/Voices/Slave/s_slave_voice_23.wav" id="46_v2nqw"]
+[ext_resource type="AudioStream" uid="uid://b0fpxxo74pfuu" path="res://Assets/SFX/Voices/Slave/s_slave_voice_24.wav" id="47_0314h"]
+[ext_resource type="AudioStream" uid="uid://bkyp6o86yfn18" path="res://Assets/SFX/Voices/Slave/s_slave_voice_25.wav" id="48_3k5ko"]
+[ext_resource type="AudioStream" uid="uid://1o4mphyi2f1y" path="res://Assets/SFX/Voices/Slave/s_slave_voice_26.wav" id="49_5l3iq"]
+[ext_resource type="AudioStream" uid="uid://dabm21shplsfs" path="res://Assets/SFX/Voices/Slave/s_slave_voice_27.wav" id="50_0okna"]
+[ext_resource type="AudioStream" uid="uid://c24ntwjng6a5r" path="res://Assets/SFX/Voices/Slave/s_slave_voice_28.wav" id="51_lirma"]
+[ext_resource type="AudioStream" uid="uid://bmos6163v6l1g" path="res://Assets/SFX/Voices/Slave/s_slave_voice_29.wav" id="52_1y4nd"]
+[ext_resource type="AudioStream" uid="uid://cycqa48bil8gv" path="res://Assets/SFX/Voices/Slave/s_slave_life_lost_1.wav" id="53_c3sbe"]
+[ext_resource type="AudioStream" uid="uid://4wf7qvpypb1a" path="res://Assets/SFX/Voices/Slave/s_slave_life_lost_2.wav" id="54_4e1lm"]
+[ext_resource type="AudioStream" uid="uid://belfxvkkhpkul" path="res://Assets/SFX/Voices/Slave/s_slave_life_lost_3.wav" id="55_q3db6"]
+[ext_resource type="AudioStream" uid="uid://45pmjlbf1ulf" path="res://Assets/SFX/Voices/Slave/s_slave_life_lost_4.wav" id="56_kb6l8"]
+[ext_resource type="AudioStream" uid="uid://cv6da04qlxcdj" path="res://Assets/SFX/Voices/Slave/s_slave_life_lost_5.wav" id="57_hg5s3"]
+[ext_resource type="AudioStream" uid="uid://cefds2vjeeihj" path="res://Assets/SFX/Voices/Slave/s_slave_life_lost_6.wav" id="58_2jffs"]
 
 [node name="Node2D" instance=ExtResource("1_y4itm")]
 ex_level_number = 2
 ex_experience_list = Array[PackedScene]([ExtResource("2_3kevv"), ExtResource("3_6bayl"), ExtResource("4_1k8ju"), ExtResource("5_spsvw"), ExtResource("6_p8ecf"), ExtResource("7_eo8q7"), ExtResource("8_lx23k"), ExtResource("9_nlyxs"), ExtResource("10_afksv"), ExtResource("11_i52wu"), ExtResource("12_jnp7e"), ExtResource("13_bmfuw"), ExtResource("14_evxp2"), ExtResource("4_1k8ju"), ExtResource("15_aelfe"), ExtResource("5_spsvw"), ExtResource("15_aelfe"), ExtResource("8_lx23k"), ExtResource("7_eo8q7"), ExtResource("16_o71gp"), ExtResource("17_aiffa"), ExtResource("18_kc6bu"), ExtResource("7_eo8q7"), ExtResource("19_n46af"), ExtResource("20_1uwdj"), ExtResource("21_fglfn"), ExtResource("22_qheca"), ExtResource("13_bmfuw"), ExtResource("23_4yvg2")])
-
-[node name="PauseLayer" parent="." index="6"]
-visible = true
+ex_voice_over_list = Array[AudioStream]([ExtResource("24_uq4ve"), ExtResource("25_bgto7"), ExtResource("26_64cj8"), ExtResource("27_yvvnh"), ExtResource("28_i5o5p"), ExtResource("29_l6pou"), ExtResource("30_aoo2y"), ExtResource("31_3j31y"), ExtResource("32_7xibq"), ExtResource("33_6tjhh"), ExtResource("34_dsd85"), ExtResource("35_6o36j"), ExtResource("36_5sciq"), ExtResource("37_b2i7c"), ExtResource("38_hxkhj"), ExtResource("39_gqv5v"), ExtResource("40_xwhrq"), ExtResource("41_t4qcr"), ExtResource("42_sipq0"), ExtResource("43_p1u1n"), ExtResource("44_1x4up"), ExtResource("45_wptju"), ExtResource("46_v2nqw"), ExtResource("47_0314h"), ExtResource("48_3k5ko"), ExtResource("49_5l3iq"), ExtResource("50_0okna"), ExtResource("51_lirma"), ExtResource("52_1y4nd")])
+ex_subtitle_list = Array[String](["The master’s house always smells good", "Sometimes, I watch them eat from behind the jars", "Master smiled at me when I poured the wine!", "I imagined being his son, just for a second.", "Ani was tired, I took the blame for him", "“Faster” they said. I’m trying.", "No one talk to me unless they had to…", "He tripped me on purpose. And they laughed!", "The slap hurt but I didn’t move.", "Baking isn’t that complicated!", "I betrayed Imeni when he stole the bread…", "Another slave screamed in her sleep", "I saw his scars, I still feel bad…", "A beautiful maid helped me with the laundry", "The master is sick… Please be well…", "I stayed by him to change his pads all night", "I escaped to the temple to pray for him", "He got better. Didn’t say a word.", "I thought maybe… but no. back to work!", "The maid brushed past me -hiiiiii-", "Same rooms. Same steps. Same words.", "I gave him the fig, he was so hungry", "I knew they’d find out. It hurts…", "My right knee always hurts now", "I was polishing when I fell", "I need to get up, it’s laundry day", "I can’t work anymore, my whole body hurts", "At least, the healer tried ", "He stayed by me and smiled "])
+ex_life_lost_sfx_list = Array[AudioStream]([ExtResource("53_c3sbe"), ExtResource("54_4e1lm"), ExtResource("55_q3db6"), ExtResource("56_kb6l8"), ExtResource("57_hg5s3"), ExtResource("58_2jffs")])
+ex_life_lost_subtitle_list = Array[String](["What was I thinking?", "Who am I?", "Do... I remember it correctly?", "I... Can't remember...", "What is happening?", "Who... Who am I?"])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://iehta2qebktf"]
+[gd_scene load_steps=68 format=3 uid="uid://iehta2qebktf"]
 
 [ext_resource type="PackedScene" uid="uid://b2l2ujykasaw6" path="res://Scenes/Levels/map_onboarding.tscn" id="1_pqoms"]
 [ext_resource type="PackedScene" uid="uid://dq0oa0nsw00pf" path="res://Scenes/Objects/Experiences/T/obj_experience_T_sadness.tscn" id="2_y6j40"]
@@ -26,10 +26,52 @@
 [ext_resource type="PackedScene" uid="uid://ds48q32suyvle" path="res://Scenes/Objects/Experiences/GoodActions/obj_experience_slime_square.tscn" id="24_vx2wc"]
 [ext_resource type="PackedScene" uid="uid://c84grtsncp66o" path="res://Scenes/Objects/Experiences/ZZ/obj_experience_ZZ_anger.tscn" id="25_opp1c"]
 [ext_resource type="PackedScene" uid="uid://wqt3pfy314dv" path="res://Scenes/Objects/Experiences/Z/obj_experience_Z_anger.tscn" id="26_npme2"]
+[ext_resource type="AudioStream" uid="uid://ckq68wtx3y8bt" path="res://Assets/SFX/Voices/Priest/s_priest_voice_01.wav" id="27_3u6sr"]
+[ext_resource type="AudioStream" uid="uid://c00qmq8tipvl1" path="res://Assets/SFX/Voices/Priest/s_priest_voice_02.wav" id="28_gxq5i"]
+[ext_resource type="AudioStream" uid="uid://mqasvto178ey" path="res://Assets/SFX/Voices/Priest/s_priest_voice_03.wav" id="29_83pxy"]
+[ext_resource type="AudioStream" uid="uid://b7bisrmnpl13o" path="res://Assets/SFX/Voices/Priest/s_priest_voice_04.wav" id="30_fp2cl"]
+[ext_resource type="AudioStream" uid="uid://dj3vj646x1tc3" path="res://Assets/SFX/Voices/Priest/s_priest_voice_05.wav" id="31_7fx2a"]
+[ext_resource type="AudioStream" uid="uid://cjpq3s8opyigo" path="res://Assets/SFX/Voices/Priest/s_priest_voice_06.wav" id="32_8can2"]
+[ext_resource type="AudioStream" uid="uid://cdpdoywho5a6q" path="res://Assets/SFX/Voices/Priest/s_priest_voice_07.wav" id="33_podog"]
+[ext_resource type="AudioStream" uid="uid://d0kgdhaxpiah" path="res://Assets/SFX/Voices/Priest/s_priest_voice_08.wav" id="34_3sahe"]
+[ext_resource type="AudioStream" uid="uid://cn7cjiy76503w" path="res://Assets/SFX/Voices/Priest/s_priest_voice_09.wav" id="35_7h8g1"]
+[ext_resource type="AudioStream" uid="uid://b8njs6pn2kxhh" path="res://Assets/SFX/Voices/Priest/s_priest_voice_10.wav" id="36_ild2y"]
+[ext_resource type="AudioStream" uid="uid://b216g8isnfwq5" path="res://Assets/SFX/Voices/Priest/s_priest_voice_11.wav" id="37_ej6o1"]
+[ext_resource type="AudioStream" uid="uid://dfhjtuwi7at2o" path="res://Assets/SFX/Voices/Priest/s_priest_voice_12.wav" id="38_lpgiq"]
+[ext_resource type="AudioStream" uid="uid://cnq72j83el8tk" path="res://Assets/SFX/Voices/Priest/s_priest_voice_13.wav" id="39_4u82u"]
+[ext_resource type="AudioStream" uid="uid://b0sknjxuqxfpq" path="res://Assets/SFX/Voices/Priest/s_priest_voice_14.wav" id="40_h3ivp"]
+[ext_resource type="AudioStream" uid="uid://c04e3827np8wf" path="res://Assets/SFX/Voices/Priest/s_priest_voice_15.wav" id="41_2dfel"]
+[ext_resource type="AudioStream" uid="uid://i6el7efqpjo1" path="res://Assets/SFX/Voices/Priest/s_priest_voice_16.wav" id="42_e7qy1"]
+[ext_resource type="AudioStream" uid="uid://b5pdrbkdc2sep" path="res://Assets/SFX/Voices/Priest/s_priest_voice_17.wav" id="43_dd1an"]
+[ext_resource type="AudioStream" uid="uid://0w7jqst7tbip" path="res://Assets/SFX/Voices/Priest/s_priest_voice_18.wav" id="44_cn6gg"]
+[ext_resource type="AudioStream" uid="uid://dtcrso57bevqf" path="res://Assets/SFX/Voices/Priest/s_priest_voice_19.wav" id="45_so3gv"]
+[ext_resource type="AudioStream" uid="uid://mxgvd68iiqh2" path="res://Assets/SFX/Voices/Priest/s_priest_voice_20.wav" id="46_r50xy"]
+[ext_resource type="AudioStream" uid="uid://bqxajq1dnsahk" path="res://Assets/SFX/Voices/Priest/s_priest_voice_21.wav" id="47_gx748"]
+[ext_resource type="AudioStream" uid="uid://dkpcmp23420y6" path="res://Assets/SFX/Voices/Priest/s_priest_voice_22.wav" id="48_6662x"]
+[ext_resource type="AudioStream" uid="uid://b2uowb6ekukgn" path="res://Assets/SFX/Voices/Priest/s_priest_voice_23.wav" id="49_qw5dc"]
+[ext_resource type="AudioStream" uid="uid://cbax2kdup1x3k" path="res://Assets/SFX/Voices/Priest/s_priest_voice_24.wav" id="50_wkids"]
+[ext_resource type="AudioStream" uid="uid://b8efonwk2yh0u" path="res://Assets/SFX/Voices/Priest/s_priest_voice_25.wav" id="51_5h76o"]
+[ext_resource type="AudioStream" uid="uid://bksu2dfgegqq7" path="res://Assets/SFX/Voices/Priest/s_priest_voice_26.wav" id="52_yyveq"]
+[ext_resource type="AudioStream" uid="uid://bjaqlbu3q34co" path="res://Assets/SFX/Voices/Priest/s_priest_voice_27.wav" id="53_t218g"]
+[ext_resource type="AudioStream" uid="uid://b0gqgj1r271pa" path="res://Assets/SFX/Voices/Priest/s_priest_voice_28.wav" id="54_7oafu"]
+[ext_resource type="AudioStream" uid="uid://bh3c8cus7p0l5" path="res://Assets/SFX/Voices/Priest/s_priest_voice_29.wav" id="55_6gl1x"]
+[ext_resource type="AudioStream" uid="uid://ccll7v1a0dl0w" path="res://Assets/SFX/Voices/Priest/s_priest_voice_30.wav" id="56_dcf77"]
+[ext_resource type="AudioStream" uid="uid://cg8wve4vkcv3p" path="res://Assets/SFX/Voices/Priest/s_priest_voice_31.wav" id="57_dmvus"]
+[ext_resource type="AudioStream" uid="uid://dcwo1lbafiwa8" path="res://Assets/SFX/Voices/Priest/s_priest_voice_32.wav" id="58_63w41"]
+[ext_resource type="AudioStream" uid="uid://dq15pa7p8ooyw" path="res://Assets/SFX/Voices/Priest/s_priest_voice_33.wav" id="59_rqvqa"]
+[ext_resource type="AudioStream" uid="uid://soxr6wtxvv77" path="res://Assets/SFX/Voices/Priest/s_priest_voice_34.wav" id="60_xavgx"]
+[ext_resource type="AudioStream" uid="uid://6i5u7s5jjl6s" path="res://Assets/SFX/Voices/Priest/s_priest_voice_35.wav" id="61_qi6m8"]
+[ext_resource type="AudioStream" uid="uid://djf2m0u4jsonh" path="res://Assets/SFX/Voices/Priest/s_priest_voice_36.wav" id="62_608oy"]
+[ext_resource type="AudioStream" uid="uid://x82vj54x2obc" path="res://Assets/SFX/Voices/Priest/s_priest_voice_37.wav" id="63_xlret"]
+[ext_resource type="AudioStream" uid="uid://ehvoierlutt3" path="res://Assets/SFX/Voices/Priest/s_priest_lost_life_01.wav" id="64_dmkqh"]
+[ext_resource type="AudioStream" uid="uid://dhonf4yn4uyr6" path="res://Assets/SFX/Voices/Priest/s_priest_lost_life_02.wav" id="65_yed4h"]
+[ext_resource type="AudioStream" uid="uid://db6qaeryvb1ef" path="res://Assets/SFX/Voices/Priest/s_priest_lost_life_03.wav" id="66_321pi"]
+[ext_resource type="AudioStream" uid="uid://kl02iwew8l4s" path="res://Assets/SFX/Voices/Priest/s_priest_lost_life_04.wav" id="67_fdrlf"]
 
 [node name="Node2D" instance=ExtResource("1_pqoms")]
 ex_level_number = 3
 ex_experience_list = Array[PackedScene]([ExtResource("2_y6j40"), ExtResource("3_i8x3t"), ExtResource("4_nx5ao"), ExtResource("5_3lbxd"), ExtResource("6_ibn4p"), ExtResource("7_ytogd"), ExtResource("6_ibn4p"), ExtResource("8_ms2y5"), ExtResource("9_htqgb"), ExtResource("10_2j70u"), ExtResource("11_1l8dq"), ExtResource("12_p34mv"), ExtResource("13_72evo"), ExtResource("14_d1gyb"), ExtResource("15_ixvbf"), ExtResource("6_ibn4p"), ExtResource("16_5choe"), ExtResource("17_th3ox"), ExtResource("17_th3ox"), ExtResource("18_w3ew4"), ExtResource("19_4h44y"), ExtResource("18_w3ew4"), ExtResource("20_f1enc"), ExtResource("17_th3ox"), ExtResource("12_p34mv"), ExtResource("21_ln8tc"), ExtResource("22_mio7l"), ExtResource("22_mio7l"), ExtResource("7_ytogd"), ExtResource("12_p34mv"), ExtResource("17_th3ox"), ExtResource("23_e0rw0"), ExtResource("17_th3ox"), ExtResource("24_vx2wc"), ExtResource("25_opp1c"), ExtResource("26_npme2"), ExtResource("17_th3ox")])
-
-[node name="PauseLayer" parent="." index="6"]
-visible = true
+ex_voice_over_list = Array[AudioStream]([ExtResource("27_3u6sr"), ExtResource("28_gxq5i"), ExtResource("29_83pxy"), ExtResource("30_fp2cl"), ExtResource("31_7fx2a"), ExtResource("32_8can2"), ExtResource("33_podog"), ExtResource("34_3sahe"), ExtResource("35_7h8g1"), ExtResource("36_ild2y"), ExtResource("37_ej6o1"), ExtResource("38_lpgiq"), ExtResource("39_4u82u"), ExtResource("40_h3ivp"), ExtResource("41_2dfel"), ExtResource("42_e7qy1"), ExtResource("43_dd1an"), ExtResource("44_cn6gg"), ExtResource("45_so3gv"), ExtResource("46_r50xy"), ExtResource("47_gx748"), ExtResource("48_6662x"), ExtResource("49_qw5dc"), ExtResource("50_wkids"), ExtResource("51_5h76o"), ExtResource("52_yyveq"), ExtResource("53_t218g"), ExtResource("54_7oafu"), ExtResource("55_6gl1x"), ExtResource("56_dcf77"), ExtResource("57_dmvus"), ExtResource("58_63w41"), ExtResource("59_rqvqa"), ExtResource("60_xavgx"), ExtResource("61_qi6m8"), ExtResource("62_608oy"), ExtResource("63_xlret")])
+ex_subtitle_list = Array[String](["Mom please don’t leave me…", "The floor is so cold", "Maât has sooo many precepts", "The high priest is watching. Always.", "The others are whispering. I hear them.", "Hiding a kitten isn’t allowed, it’s his fault!", "My toga disappeared, what am I gonna do?!", "I forgot the 7th rule of Maât…", "A child ran into the shrine. Gross. ", "A letter from my father. I didn’t open it.", "A girl winked at me. Awkward.", "The high priest said I’m promising!", "I spilled the oil. They laughed", "I must scrub until it shines. Maât sees all.", "The hit was justified, it wasn’t perfect", "My sandals are gone. Again.", "I could have saved him, I didn’t want to", "The morning prayers are beautiful", "I don’t need their approval, only Maât’s", "I don’t want to sleep, I want to write praises", "Treating this kid was the right thing to do", "I’m so proud of the prayer I wrote!", "Mother came to the temple asking for money", "My knees are bleeding. Still, I kneel.", "The high priest promoted me!", "I see their jealousy. I love it.", "The high priest forgets everything ", "He recited the evening prayer incorrectly", "his time was passed anyway, I was gentle", "I have an office now!", "New recruits have arrived", "I really like teaching Maât’s precepts", "Everyone is working hard", "I stood for this bullied new recruit", "He is so clumsy!", "I’m tough, but he is promising!", "I’m yours Maât, always have been"])
+ex_life_lost_sfx_list = Array[AudioStream]([ExtResource("64_dmkqh"), ExtResource("65_yed4h"), ExtResource("66_321pi"), ExtResource("67_fdrlf")])
+ex_life_lost_subtitle_list = Array[String](["What was it again?", "No, that's not what happened!", "Aaah! I don't remember...", "Maât! Help me remember!"])

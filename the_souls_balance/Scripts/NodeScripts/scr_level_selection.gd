@@ -8,6 +8,7 @@ extends Control
 @export var ex_level_5 : PackedScene
 @export var ex_level_6 : PackedScene
 @export var ex_start_menu : PackedScene
+@export var ex_should_lock_levels:bool=false
 
 func _on_level_1_pressed() -> void:
 	get_tree().change_scene_to_packed(ex_level_1)
@@ -31,6 +32,8 @@ func _on_return_button_pressed() -> void:
 	get_tree().change_scene_to_packed(ex_start_menu)
 
 func _ready():
+	if !ex_should_lock_levels:
+		return
 	GlbGameManager.load_progress()
 	for i in range(1, ex_total_levels + 1):
 		var button = get_node("Level_" + str(i))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=78 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -624,6 +624,28 @@ modulate_color = Color(0.62, 0.62, 0.62, 1)
 texture = ExtResource("28_vpwou")
 texture_margin_bottom = 20.0
 
+[sub_resource type="InputEventKey" id="InputEventKey_s1a05"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_hd7h6"]
+events = [SubResource("InputEventKey_s1a05")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_hd7h6"]
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="Shortcut" id="Shortcut_ktc1p"]
+events = [SubResource("InputEventKey_hd7h6")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_6vto7"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="Shortcut" id="Shortcut_03knh"]
+events = [SubResource("InputEventKey_6vto7")]
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uvk6j"]
 distance = -1040.0
 
@@ -932,6 +954,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s1a05")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_eu0xy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_eu0xy")
+shortcut = SubResource("Shortcut_hd7h6")
 text = "Resume
 "
 icon_alignment = 1
@@ -963,6 +986,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s1a05")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_eu0xy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_eu0xy")
+shortcut = SubResource("Shortcut_ktc1p")
 text = "Restart"
 icon_alignment = 1
 
@@ -993,6 +1017,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_s1a05")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_s1a05")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_eu0xy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_eu0xy")
+shortcut = SubResource("Shortcut_03knh")
 text = "Quit"
 icon_alignment = 1
 

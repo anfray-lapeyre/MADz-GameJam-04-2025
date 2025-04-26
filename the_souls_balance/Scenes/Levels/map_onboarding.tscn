@@ -757,7 +757,7 @@ scale = Vector2(2.00636, 2.12295)
 texture = ExtResource("25_4qdm5")
 
 [node name="ground_container" parent="." instance=ExtResource("29_ikkrf")]
-position = Vector2(660, 510)
+position = Vector2(600, 510)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, -387)
@@ -841,7 +841,7 @@ vertical_alignment = 1
 
 [node name="VolumeContainer" type="Sprite2D" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
-position = Vector2(978.433, 494.4)
+position = Vector2(933.06, 494.4)
 scale = Vector2(0.368635, 0.30026)
 texture = ExtResource("58_s1a05")
 
@@ -887,9 +887,10 @@ text = "Music"
 
 [node name="music_slider" type="HSlider" parent="PauseLayer/PauseMenu"]
 material = ExtResource("30_hd7h6")
-offset_left = 908.0
+layout_mode = 0
+offset_left = 862.627
 offset_top = 549.0
-offset_right = 1053.0
+offset_right = 1007.63
 offset_bottom = 565.0
 min_value = -60.0
 max_value = 0.0
@@ -897,9 +898,9 @@ max_value = 0.0
 [node name="sfx_slider" type="HSlider" parent="PauseLayer/PauseMenu"]
 material = ExtResource("30_hd7h6")
 layout_mode = 0
-offset_left = 907.0
+offset_left = 861.627
 offset_top = 468.0
-offset_right = 1052.0
+offset_right = 1006.63
 offset_bottom = 518.0
 min_value = -60.0
 max_value = 0.0
@@ -907,9 +908,9 @@ max_value = 0.0
 [node name="Resume" type="Button" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
 layout_mode = 0
-offset_left = 500.0
+offset_left = 406.0
 offset_top = 138.0
-offset_right = 965.0
+offset_right = 871.0
 offset_bottom = 352.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
@@ -938,9 +939,9 @@ icon_alignment = 1
 [node name="Restart" type="Button" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
 layout_mode = 0
-offset_left = 500.0
+offset_left = 406.0
 offset_top = 287.0
-offset_right = 965.0
+offset_right = 871.0
 offset_bottom = 501.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
@@ -968,9 +969,9 @@ icon_alignment = 1
 [node name="Quit" type="Button" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
 layout_mode = 0
-offset_left = 500.0
+offset_left = 406.0
 offset_top = 438.0
-offset_right = 965.0
+offset_right = 871.0
 offset_bottom = 652.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_disabled_color = Color(0.58, 0.5423, 0.493, 1)
@@ -997,13 +998,13 @@ icon_alignment = 1
 
 [node name="Input" type="Sprite2D" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
-position = Vector2(977, 226)
+position = Vector2(931.627, 226)
 scale = Vector2(0.375205, 0.375205)
 texture = ExtResource("59_hd7h6")
 
 [node name="LoreContainer" type="Sprite2D" parent="PauseLayer/PauseMenu"]
 material = ExtResource("17_rpu5o")
-position = Vector2(259.716, 362.2)
+position = Vector2(218.716, 362.2)
 scale = Vector2(0.504892, 0.511169)
 texture = ExtResource("58_s1a05")
 

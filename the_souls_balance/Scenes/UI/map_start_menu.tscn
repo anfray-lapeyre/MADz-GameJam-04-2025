@@ -43,6 +43,7 @@ unicode = 32
 events = [SubResource("InputEventKey_du01q"), SubResource("InputEventKey_qhmpt")]
 
 [node name="world" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

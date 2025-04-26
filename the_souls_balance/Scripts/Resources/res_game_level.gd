@@ -368,6 +368,7 @@ func _on_restart_pressed() -> void:
 	_resume_game()
 
 func _on_quit_pressed() -> void:
+	_resume_game()
 	get_tree().change_scene_to_file("res://Scenes/UI/map_level_selection.tscn")
 
 func update_next_piece_preview():

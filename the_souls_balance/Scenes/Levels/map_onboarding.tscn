@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://b2l2ujykasaw6"]
+[gd_scene load_steps=88 format=3 uid="uid://b2l2ujykasaw6"]
 
 [ext_resource type="Script" uid="uid://l4oaemtl5eql" path="res://Scripts/Resources/res_game_level.gd" id="1_ikkrf"]
 [ext_resource type="PackedScene" uid="uid://bcghsl05wl582" path="res://Scenes/Objects/Experiences/Square/obj_experience_square_joy.tscn" id="2_dahxx"]
@@ -637,8 +637,13 @@ texture_margin_bottom = 20.0
 device = -1
 keycode = 4194305
 
+[sub_resource type="InputEventKey" id="InputEventKey_ada61"]
+device = -1
+keycode = 32
+unicode = 32
+
 [sub_resource type="Shortcut" id="Shortcut_hd7h6"]
-events = [SubResource("InputEventKey_s1a05")]
+events = [SubResource("InputEventKey_s1a05"), SubResource("InputEventKey_ada61")]
 
 [sub_resource type="InputEventKey" id="InputEventKey_hd7h6"]
 device = -1

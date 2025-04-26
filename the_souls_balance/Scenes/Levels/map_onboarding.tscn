@@ -1216,6 +1216,17 @@ bus = &"SFX"
 unique_name_in_owner = true
 bus = &"SFX"
 
+[node name="VictoryLabel" type="Label" parent="."]
+z_index = 4051
+material = ExtResource("30_hd7h6")
+offset_left = -329.0
+offset_top = -543.0
+offset_right = 536.0
+offset_bottom = -411.0
+scale = Vector2(2.28305, 2.02869)
+theme_override_font_sizes/font_size = 96
+text = "The soul now rests"
+
 [connection signal="body_entered" from="Dead_zone" to="." method="_on_dead_zone_body_entered"]
 [connection signal="value_changed" from="PauseLayer/PauseMenu/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="PauseLayer/PauseMenu/sfx_slider" to="." method="_on_sfx_slider_value_changed"]

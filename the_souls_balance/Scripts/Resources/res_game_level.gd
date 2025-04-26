@@ -101,6 +101,7 @@ func _ready() -> void:
 	current_lives = ex_max_lives
 	spawn_next_piece()
 	pause_menu.visible = false
+	$VictoryLabel.visible = false 
 
 func spawn_next_piece():
 	if current_index >= ex_experience_list.size():
@@ -319,10 +320,34 @@ func reset_level():
 
 func handle_victory():
 	print("VICTORY")
+	
+	# Met l'ordre du fade très haut pour passer devant tout
 	var fade = $ScreenFade
+	fade.z_index = 4050
+	
+		# Fade to black
+	fade.modulate.a = 0.0
+	fade.visible = true
 	var tween = get_tree().create_tween()
-	tween.tween_property(fade, "modulate:a", 1.0, 1.0)
+	tween.tween_property(fade, "modulate:a", 1.0, 1.0) # fondu au noir
 	await tween.finished
+	
+# Ensuite on affiche le label de victoire
+	$VictoryLabel.visible = true
+	$VictoryLabel.modulate.a = 0.0  # Commence transparent
+	var tween_label = get_tree().create_tween()
+	tween_label.tween_property($VictoryLabel, "modulate:a", 1.0, 1.0) # Fade in en 1s
+	await tween_label.finished
+	
+		# Pause 2 secondes pour laisser le joueur savourer
+	await get_tree().create_timer(2.0).timeout
+	
+	# Puis re-fade vers clair
+	var tween_back = get_tree().create_tween()
+	tween_back.tween_property(fade, "modulate:a", 0.0, 1.0) # fade out
+	await tween_back.finished
+	fade.visible = false
+	
 	#records progression
 	var this_level = ex_level_number # adapt according to level
 	if this_level >= GlbGameManager.highest_unlocked_level:

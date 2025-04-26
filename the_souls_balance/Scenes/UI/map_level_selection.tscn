@@ -366,7 +366,7 @@ texture = ExtResource("21_7p7mm")
 
 [node name="PowerLabel2" type="Label" parent="SpecialPieces/PowerContainers2"]
 material = ExtResource("17_tvwu7")
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -871.0
@@ -388,7 +388,7 @@ texture = ExtResource("23_la5jx")
 
 [node name="PowerLabel" type="Label" parent="SpecialPieces/PowerContainers2"]
 material = ExtResource("17_tvwu7")
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -383.0

@@ -454,7 +454,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(29.6302, -313.083)
 mode = 1
 flags/light_only = false
 preview_params/BackgroundPivot = "Vector2(0.45, 0.45)"

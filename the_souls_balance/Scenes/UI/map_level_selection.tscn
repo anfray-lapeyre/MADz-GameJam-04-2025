@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://wavy321wdrbp"]
+[gd_scene load_steps=38 format=3 uid="uid://wavy321wdrbp"]
 
 [ext_resource type="Script" uid="uid://bsc6lnr4kcrqo" path="res://Scripts/NodeScripts/scr_level_selection.gd" id="1_j1j1t"]
 [ext_resource type="Texture2D" uid="uid://534j7f7h3hxg" path="res://Assets/2D/Background/T_Background.png" id="1_soba2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://bae4jrormu8v" path="res://Assets/Material/m_experience.tres" id="11_h4fdd"]
 [ext_resource type="Material" uid="uid://bgus3vcaopeai" path="res://Assets/Material/m_experience_font_subtle.tres" id="12_tuc7k"]
 [ext_resource type="Texture2D" uid="uid://bm4jiagty0h1v" path="res://Assets/2D/Background/t_cartridge.png" id="13_tuc7k"]
+[ext_resource type="Texture2D" uid="uid://bx3ppnfrvj6fs" path="res://Assets/2D/Background/t_star.png" id="14_klwk7"]
 [ext_resource type="Texture2D" uid="uid://bs172rm2g6xy7" path="res://Assets/2D/Background/t_anubis_clear.png" id="14_mqebt"]
 [ext_resource type="Texture2D" uid="uid://b2o5cdp8prtbk" path="res://Assets/2D/Background/t_input.png" id="15_8g3jo"]
 [ext_resource type="Texture2D" uid="uid://cqyfs7c7kwy75" path="res://Assets/2D/Background/t_bubble.png" id="16_pwp7p"]
@@ -163,6 +164,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
 text = "  1 - Future Scribe  "
 icon_alignment = 1
 
+[node name="Level_1_Finished" type="Sprite2D" parent="Level_1"]
+material = ExtResource("11_h4fdd")
+position = Vector2(396, 18)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("14_klwk7")
+
 [node name="Level_2" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
 layout_mode = 0
@@ -192,6 +199,12 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
 text = "2 - Slave"
 icon_alignment = 1
+
+[node name="Level_2_Finished" type="Sprite2D" parent="Level_2"]
+material = ExtResource("11_h4fdd")
+position = Vector2(396, 18)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("14_klwk7")
 
 [node name="Level_3" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
@@ -223,6 +236,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
 text = "3 - Priest"
 icon_alignment = 1
 
+[node name="Level_3_Finished" type="Sprite2D" parent="Level_3"]
+material = ExtResource("11_h4fdd")
+position = Vector2(396, 18)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("14_klwk7")
+
 [node name="Level_4" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
 layout_mode = 0
@@ -252,6 +271,12 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
 text = "4 - Embalmer"
 icon_alignment = 1
+
+[node name="Level_4_Finished" type="Sprite2D" parent="Level_4"]
+material = ExtResource("11_h4fdd")
+position = Vector2(396, 18)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("14_klwk7")
 
 [node name="Level_5" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
@@ -283,6 +308,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
 text = "5 - Soldier"
 icon_alignment = 1
 
+[node name="Level_5_Finished" type="Sprite2D" parent="Level_5"]
+material = ExtResource("11_h4fdd")
+position = Vector2(396, 18)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("14_klwk7")
+
 [node name="Level_6" type="Button" parent="."]
 material = ExtResource("11_h4fdd")
 layout_mode = 0
@@ -312,6 +343,12 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fk30i")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fk30i")
 text = "6 - Concubine"
 icon_alignment = 1
+
+[node name="Level_6_Finished" type="Sprite2D" parent="Level_6"]
+material = ExtResource("11_h4fdd")
+position = Vector2(396, 18)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("14_klwk7")
 
 [node name="Anubis" type="Sprite2D" parent="."]
 z_index = 1000

@@ -366,7 +366,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-801.466, -900.239)
 mode = 1
 flags/light_only = false
 preview_params/tex_frg_7 = "Resource(\"res://Assets/2D/Experiences/Outlines/t_cross_outline.png\")"

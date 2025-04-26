@@ -32,9 +32,12 @@ func _on_return_button_pressed() -> void:
 	get_tree().change_scene_to_packed(ex_start_menu)
 
 func _ready():
+	GlbGameManager.load_progress()
+	for i in range(1, ex_total_levels + 1):
+		var button = get_node("Level_" + str(i)+"/Level_" + str(i)+"_Finished")
+		button.visible = !(i > GlbGameManager.highest_unlocked_level-1)
 	if !ex_should_lock_levels:
 		return
-	GlbGameManager.load_progress()
 	for i in range(1, ex_total_levels + 1):
 		var button = get_node("Level_" + str(i))
 		button.disabled = i > GlbGameManager.highest_unlocked_level

@@ -190,7 +190,7 @@ func _use_power():
 			for child in $void_area.get_overlapping_bodies():
 				if (child).is_in_group("Experiences") && child != self:
 					child.queue_free()
-			$void_area.queue_free()
+			queue_free()
 	
 func _rotate_piece(direction: int): 
 	current_rotation_state = (current_rotation_state + direction) % 4

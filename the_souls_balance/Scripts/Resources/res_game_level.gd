@@ -340,13 +340,9 @@ func handle_victory():
 	await tween_label.finished
 	
 		# Pause 2 secondes pour laisser le joueur savourer
+	reverse_gravity()
 	await get_tree().create_timer(2.0).timeout
 	
-	# Puis re-fade vers clair
-	var tween_back = get_tree().create_tween()
-	tween_back.tween_property(fade, "modulate:a", 0.0, 1.0) # fade out
-	await tween_back.finished
-	fade.visible = false
 	
 	#records progression
 	var this_level = ex_level_number # adapt according to level

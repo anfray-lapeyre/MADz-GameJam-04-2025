@@ -346,9 +346,8 @@ func handle_victory():
 	
 	#records progression
 	var this_level = ex_level_number # adapt according to level
-	if this_level >= GlbGameManager.highest_unlocked_level:
-		GlbGameManager.highest_unlocked_level = this_level + 1
-		GlbGameManager.save_progress()
+	GlbGameManager.beaten_levels[this_level-1]=true
+	GlbGameManager.save_progress()
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/map_level_selection.tscn")
 	

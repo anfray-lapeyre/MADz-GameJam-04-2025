@@ -1,16 +1,18 @@
 extends Node
 
-var highest_unlocked_level: int = 1
+var beaten_levels:Array[bool]=[false,false,false,false,false,false]
 
 func reset_progress():
 	var save = FileAccess.open("user://progress.save", FileAccess.WRITE)
-	save.store_32(1)
+	save.store_var([false,false,false,false,false,false])
 
 func save_progress():
 	var save = FileAccess.open("user://progress.save", FileAccess.WRITE)
-	save.store_32(highest_unlocked_level)
+	save.store_var(beaten_levels)
 
 func load_progress():
 	if FileAccess.file_exists("user://progress.save"):
 		var save = FileAccess.open("user://progress.save", FileAccess.READ)
-		highest_unlocked_level = save.get_32()
+		var levels =save.get_var()
+		if levels != null:
+			beaten_levels = levels

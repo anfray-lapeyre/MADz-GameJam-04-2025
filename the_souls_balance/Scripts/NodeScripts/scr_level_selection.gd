@@ -33,11 +33,11 @@ func _on_return_button_pressed() -> void:
 
 func _ready():
 	GlbGameManager.load_progress()
-	for i in range(1, ex_total_levels + 1):
-		var button = get_node("Level_" + str(i)+"/Level_" + str(i)+"_Finished")
-		button.visible = !(i > GlbGameManager.highest_unlocked_level-1)
+	for i in range(0, ex_total_levels):
+		var button = get_node("Level_" + str(i+1)+"/Level_" + str(i+1)+"_Finished")
+		button.visible =GlbGameManager.beaten_levels[i]
 	if !ex_should_lock_levels:
 		return
-	for i in range(1, ex_total_levels + 1):
-		var button = get_node("Level_" + str(i))
-		button.disabled = i > GlbGameManager.highest_unlocked_level
+	for i in range(1, ex_total_levels):
+		var button = get_node("Level_" + str(i+1))
+		button.visible =GlbGameManager.beaten_levels[i]
